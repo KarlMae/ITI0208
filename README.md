@@ -8,12 +8,12 @@ A fitness web application for following pre-prepared workout sessions or customi
 Project plan:
 
 Iterations:
-1) Working prototype, proof of concept with one pre-prepared workout plan which is stored in a database. Overview of a workout plan and an exercise.
+1) Working prototype, proof of concept with one pre-prepared workout plan, which is stored in a database. Overview of a workout plan and an exercise.
 
-database - Karl
-workouts view - Joosep
-exercies view - Rando
+database - Karl;
+workouts view - Joosep;
+exercies view - Rando.
 
-2)
+2) Add the possibility to create an account to track where a user currently stands in his/her progression. Gives him/her the option to continue on from that point the next time.
 
-3)
+3) Add functionality for a user to create his/her own workout plan. Design
