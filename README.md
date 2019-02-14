@@ -21,11 +21,11 @@ c) As a user i want an initial overview of the chosen workout;
 d) As a developer i want a place to save workouts;
 e) As a developer i want my work environment set up. 
 
-2) Add functionality for a user to create his/her own workout plan and change it. Design
+2) Add functionality for a user to create his/her own workout plan, change it and save the changes.
 
 create workout plan - Joosep;
 change workout plan - Rando;
-design - Karl.
+save changes - Karl.
 
 user stories:
 a) As a user i want to create my own workout plan;
@@ -34,15 +34,15 @@ c) As a user i want to navigate between exercises;
 d) As a user i want to save my modified workouts;
 e) As a user i want to time my sets;
 
-3) Add the possibility to create an account to track where a user currently stands in his/her progression. Gives him/her the option to continue on from that point the next time.
+3) Add the possibility to create an account and login. Design
 
-account creation - Karl;
-progress tracking - Rando;
-continuing where left off - Joosep.
+design - Karl;
+login - Rando;
+account creation - Joosep.
 
 user stories:
-a) 
-b) 
-c)
-d)
-e)
+a) As a user i want to create an account;
+b) As a user i want to login;
+c) As a user i want an eye-pleasing experience;
+d) As a developer i want to manage accounts;
+e) As a user i want the application to be comfortably usable on a device with a smaller screen.
