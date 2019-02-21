@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:10.7-alpine
+    restart: always
+    environment:
+          POSTGRES_PASSWORD: pass
+          POSTGRES_USER: user
+          PGDATA: /var/lib/postgresql/data/pgdata
+          POSTGRES_DB: training
+    ports:
+      - 8091:5432
+    volumes:
+      - /postgres:/var/lib/postgresql/data
+
+  spring:
+    build: ./spring-app
+    volumes:
+      - /spring-app/src:/usr/src/app
+    ports:
+      - 8090:8090
