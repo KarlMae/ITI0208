@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  postgres:
+  db:
     image: postgres:10.7-alpine
     restart: always
     environment:
@@ -14,7 +14,7 @@ services:
     volumes:
       - /postgres:/var/lib/postgresql/data
 
-  spring:
+  spring-app:
     build: ./spring-app
     volumes:
       - /spring-app/src:/usr/src/app
