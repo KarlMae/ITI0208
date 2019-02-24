@@ -13,9 +13,9 @@ public class Controller {
 
     private final WorkoutService workoutService;
 
-    @GetMapping("/")
-    public String index() {
-        return "Spring into Vue integration successful! Testing";
+    @PostMapping(path="/insert", consumes = "application/json")
+    public void insertWorkout(@RequestBody WorkoutDto dto) {
+        workoutService.insert(dto);
     }
 
     @GetMapping("/fetchAll")
@@ -23,8 +23,8 @@ public class Controller {
         return workoutService.fetchAll();
     }
 
-    @PostMapping(path="insert", consumes = "application/json")
-    public void insertTraining(@RequestBody WorkoutDto dto) {
-        workoutService.insertTraining(dto);
+    @GetMapping("/fetchById/{id}")
+    public WorkoutDto fetchById(@PathVariable(value="id") Integer id) {
+        return workoutService.fetchById(id);
     }
 }

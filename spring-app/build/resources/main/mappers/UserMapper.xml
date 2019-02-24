@@ -5,8 +5,10 @@
 <mapper namespace="com.training.dao.UserMapper">
 
     <insert id="insertUser">
-        INSERT INTO training.users(name, description)
-        VALUES (#{name}, #{description})
+        INSERT INTO
+          training.users(name, description)
+        VALUES
+          (#{name}, #{description})
     </insert>
     <select id="fetchAll" resultType="hashmap">
       SELECT * FROM training.users;

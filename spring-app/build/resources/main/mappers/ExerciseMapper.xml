@@ -8,8 +8,10 @@
     </select>
 
     <insert id="insertExercise">
-        INSERT INTO training.exercises(name, description)
-        VALUES (#{name}, #{description})
+        INSERT INTO
+          training.exercises(name, description)
+        VALUES
+          (#{name}, #{description})
     </insert>
 
     <select id="fetchById">
