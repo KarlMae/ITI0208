@@ -1,6 +1,6 @@
 package com.training.services;
 
-import com.training.dao.TrainingMapper;
+import com.training.dao.WorkoutMapper;
 import com.training.dto.WorkoutDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,13 +11,13 @@ import java.util.List;
 public class WorkoutService {
 
     @Autowired
-    private TrainingMapper dao;
+    private WorkoutMapper dao;
 
     public List<WorkoutDto> fetchAll() {
         return dao.fetchAll();
     }
 
     public void insertTraining(WorkoutDto dto) {
-        dao.insertTraining(dto);
+        dao.insertWorkout(dto);
     }
 }
