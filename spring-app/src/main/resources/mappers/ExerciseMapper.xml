@@ -3,7 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.training.dao.ExerciseMapper">
-    <select id="fetchAll" resultType="hashmap">
+
+    <select id="fetchAll" resultType="com.training.dto.ExerciseDto">
       SELECT * FROM training.exercises;
     </select>
 
@@ -17,4 +18,9 @@
     <select id="fetchById">
       SELECT * FROM training.exercises WHERE id = #{id}
     </select>
+
+    <select id="fetchByWorkoutId" parameterType="int" resultType="com.training.dto.ExerciseDto">
+      SELECT * FROM training.workout_exercises WHERE workout_id = #{id}
+    </select>
+
 </mapper>

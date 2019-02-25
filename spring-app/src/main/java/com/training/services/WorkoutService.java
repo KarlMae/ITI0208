@@ -1,27 +1,35 @@
 package com.training.services;
 
+import com.training.dao.ExerciseMapper;
 import com.training.dao.WorkoutMapper;
 import com.training.dto.WorkoutDto;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class WorkoutService {
 
-    @Autowired
-    private WorkoutMapper dao;
+    private final WorkoutMapper workoutDao;
+    private final ExerciseMapper exerciseDao;
 
     public void insert(WorkoutDto dto) {
-        dao.insert(dto);
+        workoutDao.insert(dto);
     }
 
     public List<WorkoutDto> fetchAll() {
-        return dao.fetchAll();
+        List<WorkoutDto> workouts = workoutDao.fetchAll();
+        workouts.forEach(workoutDto -> workoutDto.setExercises(exerciseDao.fetchByWorkoutId(workoutDto.getId())));
+
+        return workouts;
     }
 
     public WorkoutDto fetchById(Integer id) {
-        return dao.fetchById(id);
+        WorkoutDto workoutDto = workoutDao.fetchById(id);
+        workoutDto.setExercises(exerciseDao.fetchByWorkoutId(workoutDto.getId()));
+
+        return workoutDto;
     }
 }

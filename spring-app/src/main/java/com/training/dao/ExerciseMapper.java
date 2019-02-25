@@ -16,4 +16,6 @@ public interface ExerciseMapper {
     List<WorkoutDto> fetchAll();
 
     ExerciseDto insertTraining(WorkoutDto dto);
+
+    List<ExerciseDto> fetchByWorkoutId(Integer id);
 }

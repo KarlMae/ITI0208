@@ -11,7 +11,7 @@
           (#{name}, #{description})
     </insert>
 
-    <select id="fetchAll" resultType="hashmap">
+    <select id="fetchAll"  resultType="com.training.dto.WorkoutDto">
       SELECT
         *
       FROM
