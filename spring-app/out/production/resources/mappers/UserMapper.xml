@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.training.dao.UserMapper">
+
+    <insert id="insertUser">
+        INSERT INTO
+          training.users(name, description)
+        VALUES
+          (#{name}, #{description})
+    </insert>
+    <select id="fetchAll" resultType="hashmap">
+      SELECT * FROM training.users;
+    </select>
+
+    <select id="fetchById">
+      SELECT * FROM training.users WHERE id = #{id}
+    </select>
+</mapper>

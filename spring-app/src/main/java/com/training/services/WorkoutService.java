@@ -15,6 +15,7 @@ public class WorkoutService {
     private final WorkoutMapper workoutDao;
     private final ExerciseMapper exerciseDao;
 
+
     public void insert(WorkoutDto dto) {
         workoutDao.insert(dto);
     }

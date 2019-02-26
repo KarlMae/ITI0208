@@ -1,34 +1,20 @@
 <template>
   <div id="app">
-
-    <Header></Header>
-    <div id="exercise-section" class="exercise-section">
-      <p id="name" class="name">{{ exerciseName }}</p>
-      <p id="reps" class="info">Repetitions: {{ repetitions }}</p>
-      <p id="sets" class="info">Sets: {{ sets }}</p>
-      <p></p>
-    </div>
-    <Timer></Timer>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 
-import Header from './components/Header'
-import Timer from './components/Timer'
 
 export default {
   name: 'app',
   components: {
-    Header,
-    Timer
+
   },
   data() {
     return {
-      testField: String,
-      exerciseName: "Push up",
-      repetitions: 10,
-      sets: 3
+      testField: String
     }
   },
   async mounted () {

@@ -18,11 +18,13 @@ public class Controller {
         workoutService.insert(dto);
     }
 
+    @CrossOrigin
     @GetMapping("/fetchAll")
     public List<WorkoutDto> fetchAll() {
         return workoutService.fetchAll();
     }
 
+    @CrossOrigin
     @GetMapping("/fetchById/{id}")
     public WorkoutDto fetchById(@PathVariable(value="id") Integer id) {
         return workoutService.fetchById(id);
