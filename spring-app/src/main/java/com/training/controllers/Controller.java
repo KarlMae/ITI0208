@@ -1,8 +1,10 @@
 package com.training.controllers;
 
+import com.training.dto.ExerciseDto;
 import com.training.dto.WorkoutDto;
 import com.training.services.WorkoutService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
