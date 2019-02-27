@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="exercise-view">
         <Header></Header>
         <div id="exercise-section" class="exercise-section">
             <p id="name" class="name">{{ exerciseName }}</p>
@@ -17,23 +17,17 @@
     import Timer from '../components/Timer'
 
     export default {
-        name: 'app',
+        name: 'exercise-view',
         components: {
             Header,
             Timer
         },
         data() {
             return {
-                testField: String,
                 exerciseName: "Push up",
                 repetitions: 10,
                 sets: 3
             }
-        },
-        async mounted () {
-            this.testField = this.axios
-                .get('http://localhost:8090/')
-                .then(response => (this.testField = response.data));
         }
     }
 </script>
@@ -47,7 +41,7 @@
 
     }
 
-    #app {
+    #exercise-view {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

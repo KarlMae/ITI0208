@@ -2,7 +2,12 @@
     <div id="app">
         <Header></Header>
         <div id="workouts" class="workouts">
-            <Workout></Workout>
+            <Workout v-for="workout in workouts"
+                :key="workout.id"
+                :name="workout.name"
+                :description="workout.description"
+                :exercises="workout.exercises"
+            ></Workout>
         </div>
     </div>
 </template>
@@ -20,15 +25,19 @@
         },
         data() {
             return {
-                workouts: []
+                workouts: Array,
+                error: Array
             }
         },
         async mounted() {
             this.axios
-               .get('http://192.168.99.100:8090/fetchAll')
-               .then(response => {
+                .get('http://192.168.99.100:8090/fetchAll')
+                .then(response => {
                     this.workouts = response.data
-               })
+                })
+                .catch(error => {
+                    this.error = error;
+                })
         }
     }
 
@@ -50,7 +59,7 @@
 
     .workouts {
         display: flex;
-        margin: 1.5rem;
+        margin: 1rem;
     }
 
 </style>
