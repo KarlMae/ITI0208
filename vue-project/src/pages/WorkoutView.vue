@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header></Header>
-        <div class="workout">
+        <div class="workout-view">
         <ul v-if="workout">
             <p>{{ workout }}</p>
 
@@ -37,7 +37,7 @@
         },
         data() {
             return {
-                workout: Object
+                workout: null
             }
         },
         methods: {
@@ -61,7 +61,7 @@
 
 <style scoped>
 
-    .workout h4 {
+    .workout-view h4 {
         text-align: left;
     }
 
