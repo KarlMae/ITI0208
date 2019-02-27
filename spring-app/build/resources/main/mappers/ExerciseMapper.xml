@@ -5,22 +5,31 @@
 <mapper namespace="com.training.dao.ExerciseMapper">
 
     <select id="fetchAll" resultType="com.training.dto.ExerciseDto">
-      SELECT * FROM training.exercises;
+        SELECT * FROM training.exercises;
     </select>
 
     <insert id="insertExercise">
         INSERT INTO
-          training.exercises(name, description)
+            training.exercises(name, description)
         VALUES
-          (#{name}, #{description})
+            (#{name}, #{description})
     </insert>
 
     <select id="fetchById">
-      SELECT * FROM training.exercises WHERE id = #{id}
+        SELECT * FROM training.exercises WHERE id = #{id}
     </select>
 
     <select id="fetchByWorkoutId" parameterType="int" resultType="com.training.dto.ExerciseDto">
-      SELECT * FROM training.workout_exercises WHERE workout_id = #{id}
+        SELECT
+            *
+        FROM
+            training.workout_exercises t1
+                LEFT JOIN
+            training.exercises t2
+            ON
+                t2.id = t1.workout_id
+        WHERE
+            workout_id = #{id}
     </select>
 
 </mapper>

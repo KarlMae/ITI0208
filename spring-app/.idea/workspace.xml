@@ -2,35 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef98605d-2e58-4dbf-8aad-d05c0404802e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/spring-app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/spring-app.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/training/dto/ExerciseDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/training/dto/ExerciseDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/spring-app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/spring-app.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/mappers/ExerciseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mappers/ExerciseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/bootJar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/bootJar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/ExerciseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/ExerciseMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vue-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/571bb2bfb77e951d5307917e3b840647.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/571bb2bfb77e951d5307917e3b840647.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/7d53a31c99bade9b200deac64d18f77b.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/7d53a31c99bade9b200deac64d18f77b.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/ab86fd76e0cd6e70d52e475d554cf273.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/ab86fd76e0cd6e70d52e475d554cf273.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/ff261ce2ad9a1b3df5b404c0778b1c8f.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/ff261ce2ad9a1b3df5b404c0778b1c8f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/0730bb0071df4e2f51a0ed30b7608fd6.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/0730bb0071df4e2f51a0ed30b7608fd6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/0cf57838ecec49e7050b0053c5f583e8.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/0cf57838ecec49e7050b0053c5f583e8.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/2214496ad82ea5259f46a1ec2ff8af37.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/2214496ad82ea5259f46a1ec2ff8af37.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/245243fa6a03f037dd6e94b0951aa90c.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/245243fa6a03f037dd6e94b0951aa90c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/257c24187a2d7f57da2c289a42df5839.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/257c24187a2d7f57da2c289a42df5839.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/3c9fff1fbe84ac3f311720c79618dbf6.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/3c9fff1fbe84ac3f311720c79618dbf6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/589e984347c1d0111b91cc4303cec54d.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/589e984347c1d0111b91cc4303cec54d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/77000092cf83da0bb5563c5afc6d2a69.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/77000092cf83da0bb5563c5afc6d2a69.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/814dafea339d82b2ebf1145a5681d258.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/814dafea339d82b2ebf1145a5681d258.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/822ad2961efd3faa610274651071229e.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/822ad2961efd3faa610274651071229e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/8700c0bf81feef62c3409aad111a9e77.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/8700c0bf81feef62c3409aad111a9e77.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/89ed972fb5af8e2328a447e5a6376339.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/89ed972fb5af8e2328a447e5a6376339.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/8be87b433cb84fea06ebadb08197342c.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/8be87b433cb84fea06ebadb08197342c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/9d7988e5ae47317f97b8e1f3751dd592.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/9d7988e5ae47317f97b8e1f3751dd592.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/b28583146c4a23a26a8da94c02cfc56c.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/b28583146c4a23a26a8da94c02cfc56c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/b51b2b2b4f6632c0370c6e4a10b99f4a.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/b51b2b2b4f6632c0370c6e4a10b99f4a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/bb5acdfdcfab994706eb9c11c8f88a40.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/bb5acdfdcfab994706eb9c11c8f88a40.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/d9a8d8597db9d549e21202bc312a08b9.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/d9a8d8597db9d549e21202bc312a08b9.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/e8f761999cd934496c38a84d1b0bb1bd.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/e8f761999cd934496c38a84d1b0bb1bd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/src/components/Name.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/components/Name.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vue-project/src/components/Workout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/components/Workout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/src/pages/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/src/pages/Index.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../vue-project/src/pages/WorkoutView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/pages/WorkoutView.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -164,16 +153,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ExerciseMapper.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+            <state relative-caret-position="417">
+              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -201,11 +185,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/WorkoutMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -242,9 +235,6 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
-              <column-attributes>
-                <column name="ctid" enabled="false" />
-              </column-attributes>
             </state>
           </provider>
         </entry>
@@ -265,10 +255,12 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/db/changelog/dummy-data.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/ExerciseMapper.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="x" value="783" />
     <option name="y" value="23" />
     <option name="width" value="657" />
@@ -282,7 +274,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -300,6 +291,30 @@
               <item name="spring-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring-app" type="b2602c69:ProjectViewProjectNode" />
@@ -328,6 +343,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -428,17 +444,18 @@
       <workItem from="1551276321516" duration="3250000" />
       <workItem from="1551286026187" duration="795000" />
       <workItem from="1551288920649" duration="821000" />
+      <workItem from="1551297933366" duration="858000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19819000" />
+    <option name="totallyTimeSpent" value="20677000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="783" y="23" width="657" height="816" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12875536" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29593495" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -448,7 +465,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23614457" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23480663" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -471,7 +488,7 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.32970452" />
-      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.13733906" />
+      <window_info anchor="right" id="Database" order="7" weight="0.31219512" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Bean Validation" order="10" />
@@ -522,13 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/WorkoutDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -570,17 +580,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/changelog/first-db-layout.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db/changelog/dummy-data.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -591,14 +597,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://a1cb14f9-e9bc-4b9f-94ca-7dd9eedb221e/database/training/schema/training/table/workouts">
+    <entry file="das://a1cb14f9-e9bc-4b9f-94ca-7dd9eedb221e/database/training/schema/training/table/exercises">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="das://a1cb14f9-e9bc-4b9f-94ca-7dd9eedb221e/database/training/schema/training/table/exercises">
+    <entry file="das://a1cb14f9-e9bc-4b9f-94ca-7dd9eedb221e/database/training/schema/training/table/workouts">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -609,22 +615,34 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-          <column-attributes>
-            <column name="ctid" enabled="false" />
-          </column-attributes>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ExerciseMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/WorkoutMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db/changelog/dummy-data.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ExerciseMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
         </state>
       </provider>
     </entry>

@@ -1,13 +1,15 @@
 <template>
     <div id="header" class="header">
         <img src="../assets/menu-logo.svg">
-        <Name class="name"></Name>
+        <Name v-on:click="toHome" class="name"></Name>
     </div>
 </template>
 
 <script>
 
     import Name from './Name'
+    import Vue from 'vue'
+    import VueRouter from 'vue-router';
 
     export default {
         name: "Header",

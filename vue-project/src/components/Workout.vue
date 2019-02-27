@@ -7,6 +7,7 @@
                 <li>{{ exercise }}</li>
             </ul>
         </div>
+        <button v-on:click="selectWorkout">Select</button>
     </div>
 </template>
 
@@ -23,6 +24,11 @@
             name: String,
             description: String,
             exercises: Array
+        },
+        methods: {
+            selectWorkout() {
+                this.$router.push('/workout/?id=1')
+            }
         }
     }
 
@@ -40,6 +46,18 @@
 
     .name {
         font-size: 1.5rem;
+    }
+
+    button {
+        color: #494949;
+        text-transform: uppercase;
+        background: #ffffff;
+        padding: 5px;
+        margin: 10px;
+        border: 2px solid #494949;
+        border-radius: 6px;
+        display: inline-block;
+        font-size: large;
     }
 
     .exercises {

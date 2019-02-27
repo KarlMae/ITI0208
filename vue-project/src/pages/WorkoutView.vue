@@ -3,19 +3,19 @@
         <Header></Header>
         <div class="workout-view">
         <ul v-if="workout">
-            <p>{{ workout }}</p>
-
             <h2>{{ workout.name }}</h2>
             <h5>{{ workout.description }}</h5>
             <h4>Exercises: </h4>
-            <div v-on:click="toExercise" class="exercise">
-                <h3>*nimi*</h3>
-                <p>Repetitions: *reps*</p>
-                <p>Sets: *setid*</p>
+
+            <div v-for="exercise in workout.exercises" class="exercise">
+                <h3>{{ exercise.name }}</h3>
+                <p>Repetitions: {{ exercise.repetitions }}</p>
+                <p>Sets: {{ exercise.sets }}</p>
             </div>
         </ul>
         <p v-else>Error on loading workout.</p>
         </div>
+        <button v-on:click="startWorkout">Start</button>
     </div>
 
 </template>
@@ -41,7 +41,7 @@
             }
         },
         methods: {
-            toExercise() {
+            startWorkout() {
                 this.$router.push('/')
             }
         },
@@ -72,7 +72,7 @@
         flex-direction: column;
         text-align: left;
         padding: 10px;
-        cursor: pointer;
+        margin-bottom: 10px;
     }
 
     .exercise p, h3 {
