@@ -17,3 +17,13 @@ INSERT INTO
   training.exercises(name, category)
 VALUES
   ('Burpee', 'Compound exercise');
+
+INSERT INTO
+  "training"."workout_exercises" ("exercise_id", "workout_id", "repetitions", "sets")
+VALUES
+  (1, 1, 8, 4);
+
+INSERT INTO
+  "training"."workout_exercises" ("exercise_id", "workout_id", "repetitions", "sets")
+VALUES
+  (2, 1, 12, 3);
