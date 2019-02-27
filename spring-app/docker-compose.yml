@@ -7,11 +7,16 @@ services:
     environment:
           POSTGRES_PASSWORD: pass
           POSTGRES_USER: user
+          PGDATA: /var/lib/postgresql/data/pgdata
           POSTGRES_DB: training
     ports:
-      - 8091:5432
+      - 8091
+    volumes:
+      - /postgres:/var/lib/postgresql/data
 
   spring-app:
     build: ./
+    volumes:
+      - /src:/usr/src/app
     ports:
       - 8090:8090
