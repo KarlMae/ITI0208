@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './pages/App.vue'
 import axios from 'axios'
 import VueRouter from 'vue-router';
 import Index from './pages/Index';

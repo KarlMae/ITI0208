@@ -18,6 +18,7 @@ INSERT INTO
 VALUES
   ('Burpee', 'Compound exercise');
 
+<<<<<<< HEAD
 INSERT INTO
   "training"."workout_exercises" ("exercise_id", "workout_id", "repetitions", "sets")
 VALUES
@@ -27,3 +28,5 @@ INSERT INTO
   "training"."workout_exercises" ("exercise_id", "workout_id", "repetitions", "sets")
 VALUES
   (2, 1, 12, 3);
+=======
+>>>>>>> master

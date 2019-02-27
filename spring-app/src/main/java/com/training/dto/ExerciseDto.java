@@ -9,4 +9,8 @@ public class ExerciseDto {
     private String category;
     private int sets;
     private int repetitions;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

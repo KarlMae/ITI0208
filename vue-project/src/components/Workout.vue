@@ -7,28 +7,37 @@
                 <li>{{ exercise }}</li>
             </ul>
         </div>
+<<<<<<< HEAD
         <button v-on:click="selectWorkout">Select</button>
+=======
+>>>>>>> master
     </div>
 </template>
 
 <script>
 
+<<<<<<< HEAD
     import Vue from 'vue'
     import VueRouter from 'vue-router';
 
     Vue.use(VueRouter);
 
+=======
+>>>>>>> master
     export default {
         name: 'workout',
         props: {
             name: String,
             description: String,
             exercises: Array
+<<<<<<< HEAD
         },
         methods: {
             selectWorkout() {
                 this.$router.push('/workout/?id=1')
             }
+=======
+>>>>>>> master
         }
     }
 
@@ -48,6 +57,7 @@
         font-size: 1.5rem;
     }
 
+<<<<<<< HEAD
     button {
         color: #494949;
         text-transform: uppercase;
@@ -60,6 +70,8 @@
         font-size: large;
     }
 
+=======
+>>>>>>> master
     .exercises {
         display: inline-block;
         text-align: left;

@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/spring-app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/spring-app.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/training/dto/ExerciseDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/training/dto/ExerciseDto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/spring-app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/spring-app.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/mappers/ExerciseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mappers/ExerciseMapper.xml" afterDir="false" />
@@ -21,6 +22,14 @@
       <change beforePath="$PROJECT_DIR$/../vue-project/src/components/Name.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/components/Name.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vue-project/src/components/Workout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/components/Workout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vue-project/src/pages/WorkoutView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/pages/WorkoutView.vue" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/build/libs/spring-app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/spring-app.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/db/changelog/changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/db/changelog/changelog-master.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/db/changelog/changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/db/changelog/changelog-master.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelog-master.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/src/pages/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/pages/App.vue" afterDir="false" />
+>>>>>>> master
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -153,6 +162,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ExerciseMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -172,48 +182,99 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="30" />
+              <folding>
+                <element signature="e#574#575#0" expanded="true" />
+                <element signature="e#616#617#0" expanded="true" />
+                <element signature="e#687#688#0" expanded="true" />
+                <element signature="e#735#736#0" expanded="true" />
+                <element signature="e#843#844#0" expanded="true" />
+                <element signature="e#894#895#0" expanded="true" />
+              </folding>
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/resources/db/changelog/dummy-data.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+=======
+        <entry file="das://169237b0-25a7-4be5-9e8d-124f8afca9ca/database/training/schema/training/table/workout_exercises">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+              <column-attributes>
+                <column name="ctid" enabled="false" />
+              </column-attributes>
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
               <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/resources/db/changelog/first-db-layout.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/WorkoutMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
               <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/db/changelog/dummy-data.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/WorkoutMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="das://a1cb14f9-e9bc-4b9f-94ca-7dd9eedb221e/database/training/schema/training/table/exercises">
+=======
+        <entry file="das://169237b0-25a7-4be5-9e8d-124f8afca9ca/database/training/schema/training/table/workouts">
+>>>>>>> master
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -222,6 +283,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="das://a1cb14f9-e9bc-4b9f-94ca-7dd9eedb221e/database/training/schema/training/table/workouts">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -235,6 +297,17 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+=======
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/169237b0-25a7-4be5-9e8d-124f8afca9ca/console.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+>>>>>>> master
             </state>
           </provider>
         </entry>
@@ -249,22 +322,37 @@
       <list>
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/training/services/WorkoutService.java" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+>>>>>>> master
         <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/db/changelog/changelog-master.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/db/changelog/dummy-data.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/ExerciseMapper.xml" />
+=======
+        <option value="$PROJECT_DIR$/src/main/resources/db/changelog/dummy-data.sql" />
+>>>>>>> master
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="783" />
     <option name="y" value="23" />
     <option name="width" value="657" />
     <option name="height" value="816" />
+=======
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+>>>>>>> master
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -274,6 +362,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> master
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -297,6 +389,7 @@
               <item name="spring-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+<<<<<<< HEAD
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -321,6 +414,8 @@
               <item name="spring-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+=======
+>>>>>>> master
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -331,6 +426,7 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="changelog" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
             <path>
               <item name="spring-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
@@ -339,11 +435,16 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mappers" type="462c0819:PsiDirectoryNode" />
             </path>
+=======
+>>>>>>> master
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> master
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -361,7 +462,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551276280567" />
     <property name="database.console.LAST_STATE" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vue-project" />
+>>>>>>> master
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -442,13 +547,17 @@
       <workItem from="1551195466938" duration="4053000" />
       <workItem from="1551250468231" duration="1666000" />
       <workItem from="1551276321516" duration="3250000" />
+<<<<<<< HEAD
       <workItem from="1551286026187" duration="795000" />
       <workItem from="1551288920649" duration="821000" />
       <workItem from="1551297933366" duration="858000" />
+=======
+>>>>>>> master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="20677000" />
   </component>
   <component name="ToolWindowManager">
@@ -456,6 +565,15 @@
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29593495" />
+=======
+    <option name="totallyTimeSpent" value="18203000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="10" y="20" width="1346" height="688" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30559877" />
+>>>>>>> master
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -465,22 +583,34 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23480663" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32972974" />
+>>>>>>> master
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32972974" />
       <window_info anchor="bottom" id="Spring" order="8" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32891566" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="9" />
+>>>>>>> master
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007776" side_tool="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4992224" weight="0.32972974" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="15" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.32891566" />
       <window_info anchor="bottom" id="CheckStyle" order="17" />
+=======
+      <window_info anchor="bottom" id="Database Console" order="16" weight="0.32972974" />
+>>>>>>> master
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -488,7 +618,11 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.32970452" />
+<<<<<<< HEAD
       <window_info anchor="right" id="Database" order="7" weight="0.31219512" />
+=======
+      <window_info anchor="right" id="Database" order="7" weight="0.32970452" />
+>>>>>>> master
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Bean Validation" order="10" />
@@ -539,6 +673,19 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ExerciseMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> master
     <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/WorkoutDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -546,8 +693,28 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/169237b0-25a7-4be5-9e8d-124f8afca9ca/console.sql" />
     <entry file="das://169237b0-25a7-4be5-9e8d-124f8afca9ca/database/training/schema/training/table/workouts" />
+=======
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/169237b0-25a7-4be5-9e8d-124f8afca9ca/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://169237b0-25a7-4be5-9e8d-124f8afca9ca/database/training/schema/training/table/workouts">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> master
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -572,6 +739,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="das://169237b0-25a7-4be5-9e8d-124f8afca9ca/database/training/schema/training/table/workout_exercises" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -622,11 +790,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/WorkoutMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#616#617#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#894#895#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://169237b0-25a7-4be5-9e8d-124f8afca9ca/database/training/schema/training/table/workout_exercises">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="ctid" enabled="false" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db/changelog/first-db-layout.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/changelog/dummy-data.sql">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="420">
           <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
         </state>
@@ -643,6 +850,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
           <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+=======
+        <state relative-caret-position="218">
+          <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
