@@ -20,7 +20,6 @@
     </select>
 
     <select id="fetchByWorkoutId" parameterType="int" resultType="com.training.dto.ExerciseDto">
-<<<<<<< HEAD
         SELECT
             *
         FROM
@@ -31,18 +30,6 @@
                 t2.id = t1.workout_id
         WHERE
             workout_id = #{id}
-=======
-      SELECT
-        *
-      FROM
-        training.workout_exercises t1
-      LEFT JOIN
-        training.exercises t2
-      ON
-        t2.id = t1.workout_id
-      WHERE
-        workout_id = #{id}
->>>>>>> master
     </select>
 
 </mapper>

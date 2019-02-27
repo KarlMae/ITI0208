@@ -9,13 +9,7 @@ services:
           POSTGRES_USER: user
           POSTGRES_DB: training
     ports:
-<<<<<<< HEAD
       - 8091:5432
-=======
-      - 8091
-    volumes:
-      - /postgres:/var/lib/postgresql/data
->>>>>>> master
 
   spring-app:
     build: ./
