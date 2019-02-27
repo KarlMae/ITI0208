@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <Header></Header>
-        <div id="workouts">
+        <div id="workouts" class="workouts">
             <Workout></Workout>
         </div>
     </div>
@@ -25,7 +25,7 @@
         },
         async mounted() {
             this.axios
-               .get('http://localhost:8090/fetchAll')
+               .get('http://192.168.99.100:8090/fetchAll')
                .then(response => {
                     this.workouts = response.data
                })
@@ -42,11 +42,15 @@
         background-color: #f4f4f4;
     }
 
-     #app {
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-align: center;
-     }
+    #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .workouts {
+        display: flex;
+        margin: 1.5rem;
+    }
 
 </style>

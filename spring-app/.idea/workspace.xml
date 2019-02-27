@@ -2,30 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef98605d-2e58-4dbf-8aad-d05c0404802e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../vue-project/src/pages/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/training/controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/training/controllers/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/training/dto/ExerciseDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/training/dto/ExerciseDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/training/dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/training/dto/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/training/dto/WorkoutDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/training/dto/WorkoutDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/training/services/WorkoutService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/training/services/WorkoutService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/spring-app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/spring-app.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-project/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/2b81b68f4e5d85fc5915d0b80001c995.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/2b81b68f4e5d85fc5915d0b80001c995.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/782165e73a519d4b39b2144a47345a19.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/782165e73a519d4b39b2144a47345a19.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/bfb640ea506952dde53074a53674470d.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/babel-loader/bfb640ea506952dde53074a53674470d.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/096e2b8ab4fb027fa536cc756b21728c.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/096e2b8ab4fb027fa536cc756b21728c.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/0a243f8ba3105b505a58c340729a50e4.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/0a243f8ba3105b505a58c340729a50e4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/31841d0da187ac1d5092569dd176d6ba.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/31841d0da187ac1d5092569dd176d6ba.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/3309b1e759d6f5d15fed56b9494074f4.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/3309b1e759d6f5d15fed56b9494074f4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/3afd7db3db6a4a15960d525c34b59a59.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/3afd7db3db6a4a15960d525c34b59a59.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/4ac9e5590c7eab268470aae04db71feb.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/4ac9e5590c7eab268470aae04db71feb.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/6b876f30985259dba123814207ce7906.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/6b876f30985259dba123814207ce7906.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/783454a0c10e0a2abacedcfe352c116a.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/783454a0c10e0a2abacedcfe352c116a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/7fe3fc2cc63c99c8bab7f9d71b048e79.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/7fe3fc2cc63c99c8bab7f9d71b048e79.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/8ce260d7102bfb49174ed846cd5cbf51.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/8ce260d7102bfb49174ed846cd5cbf51.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/9acf81b7dc1329ff799496cb9d4216d2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/9acf81b7dc1329ff799496cb9d4216d2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/c1939dda556d6bb1b8d1c8bb764f2797.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/c1939dda556d6bb1b8d1c8bb764f2797.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/d43765f0327cfa68052252eb5822e582.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/d43765f0327cfa68052252eb5822e582.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/e692279faf08f321b669723d04056612.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/e692279faf08f321b669723d04056612.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/f423c2231b62781298acf3ef3274e3e4.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/f423c2231b62781298acf3ef3274e3e4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/fd7b19fa34b17ed7bd7f8dfb256788fd.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/node_modules/.cache/vue-loader/fd7b19fa34b17ed7bd7f8dfb256788fd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/src/components/Name.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/components/Name.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/src/components/Workout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/components/Workout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/src/pages/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/pages/App.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -91,8 +100,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            <state relative-caret-position="340">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/WorkoutDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -107,9 +134,9 @@
       <list>
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/training/services/WorkoutService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java" />
       </list>
     </option>
   </component>
@@ -127,8 +154,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,6 +224,21 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="training" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mappers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -295,18 +337,19 @@
       <workItem from="1551192334800" duration="816000" />
       <workItem from="1551193160111" duration="1739000" />
       <workItem from="1551194958528" duration="8000" />
-      <workItem from="1551195466938" duration="816000" />
+      <workItem from="1551195466938" duration="4053000" />
+      <workItem from="1551250468231" duration="1666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8607000" />
+    <option name="totallyTimeSpent" value="13510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="20" width="1346" height="688" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2962675" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30093312" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -353,9 +396,6 @@
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/liquibase.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/gradlew.bat">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -366,20 +406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/WorkoutDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -397,10 +423,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELP.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liquibase.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ExerciseMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/WorkoutMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-33" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/ExerciseDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/training/dto/WorkoutDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/training/controllers/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        <state relative-caret-position="340">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
