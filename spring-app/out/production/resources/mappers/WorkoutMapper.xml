@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.training.dao.WorkoutMapper">
+
+    <insert id="insert">
+        INSERT INTO
+          training.workouts(name, description)
+        VALUES
+          (#{name}, #{description})
+    </insert>
+
+    <select id="fetchAll"  resultType="com.training.dto.WorkoutDto">
+      SELECT
+        *
+      FROM
+        training.workouts
+    </select>
+
+    <select id="fetchById" resultType="com.training.dto.WorkoutDto">
+      SELECT
+        id,
+        name,
+        description
+      FROM
+        training.workouts
+      WHERE
+        id = #{id}
+    </select>
+</mapper>
