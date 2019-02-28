@@ -24,10 +24,10 @@
             *
         FROM
             training.workout_exercises t1
-                LEFT JOIN
+        LEFT JOIN
             training.exercises t2
-            ON
-                t2.id = t1.workout_id
+        ON
+            t2.id = t1.exercise_id
         WHERE
             workout_id = #{id}
     </select>
