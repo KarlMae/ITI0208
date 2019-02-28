@@ -42,7 +42,7 @@
         },
         methods: {
             startWorkout() {
-                this.$router.push('/exercise')
+              this.$router.push({ name: 'exercise', params: {workout: this.workout}})
             }
         },
         created() {

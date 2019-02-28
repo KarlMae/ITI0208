@@ -2,10 +2,18 @@
     <div id="exercise-view">
         <Header></Header>
         <div id="exercise-section" class="exercise-section">
-            <p id="name" class="name">{{ exerciseName }}</p>
-            <p id="reps" class="info">Repetitions: {{ repetitions }}</p>
-            <p id="sets" class="info">Sets: {{ sets }}</p>
-            <p></p>
+            <p id="name" class="name">{{ exercise.name }}</p>
+            <p id="reps" class="info">Repetitions: {{ exercise.repetitions }}</p>
+            <p id="sets" class="info">Sets: {{ exercise.sets }}</p>
+
+          <div class="navigation">
+            <button v-on:click="nextExercise">
+              <p> &lt </p>
+            </button>
+            <button v-on:click="previousExercise">
+              &gt
+            </button>
+          </div>
         </div>
         <Timer></Timer>
     </div>
@@ -22,12 +30,31 @@
             Header,
             Timer
         },
-        data() {
-            return {
-                exerciseName: "Push up",
-                repetitions: 10,
-                sets: 3
+        data: function() {
+               return {
+            exerciseIndex: 0
+          };
+        },
+        props: {
+          workout: Object
+        },
+        computed: {
+          exercise() {
+            return this.workout.exercises[this.exerciseIndex];
+          },
+        },
+        methods: {
+          nextExercise() {
+            console.log(this.workout.exercises.length);
+            if (this.exerciseIndex < this.workout.exercises.length - 1) {
+              this.exerciseIndex += 1;
             }
+          },
+          previousExercise() {
+            if (this.exerciseIndex > 0) {
+              this.exerciseIndex -= 1;
+            }
+          }
         }
     }
 </script>
@@ -55,5 +82,10 @@
     .exercise-section {
         text-align: left;
         padding: 5rem;
+    }
+
+    .navigation {
+      display: flex;
+      flex-direction: row;
     }
 </style>
