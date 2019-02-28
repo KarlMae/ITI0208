@@ -1,24 +1,24 @@
 <template>
-    <p v-on:click="toHome" id="name" class="name">Workout app</p>
+  <p v-on:click="toHome" id="name" class="name">Workout app</p>
 </template>
 
 <script>
 
-    export default {
-        methods: {
-            toHome() {
-                this.$router.push('/')
-            }
-        }
+  export default {
+    methods: {
+      toHome() {
+        this.$router.push('/')
+      }
     }
+  }
 
 </script>
 
 <style>
 
-    .name {
-        margin: 0 auto;
-        cursor: pointer;
-    }
+  .name {
+    margin: 0 auto;
+    cursor: pointer;
+  }
 
 </style>

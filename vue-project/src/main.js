@@ -14,7 +14,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {path: "/", component: Index},
-  {path: "/workout", component: WorkoutView},
+  {name: "workout", path: "/workout", component: WorkoutView, props: true},
   {name: "exercise", path: "/exercise", component: Exercise, props: true}
 ];
 

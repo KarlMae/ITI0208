@@ -1,8 +1,6 @@
 <template>
   <div id="timer" class="timer">
-    <img class="reset" src="../assets/menu-logo.svg">
-    <p class="timer-text">Timer: {{ time }}</p>
-    <img class="start-pause" src="../assets/menu-logo.svg">
+    <p class="timer-text">{{ time }}</p>
   </div>
 </template>
 
@@ -11,7 +9,7 @@
     name: "Timer",
     computed: {
       time() {
-        return 5;
+        return '00:00';
       }
     }
   }
@@ -19,9 +17,10 @@
 
 <style scoped>
   .timer-text {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    color: aliceblue;
   }
-  
+
   .timer {
     min-height: 4rem;
     width: 100%;
