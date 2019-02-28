@@ -42,7 +42,7 @@
         },
         methods: {
             startWorkout() {
-                this.$router.push('/')
+                this.$router.push('/exercise')
             }
         },
         created() {

@@ -4,6 +4,7 @@ import axios from 'axios'
 import VueRouter from 'vue-router';
 import Index from './pages/Index';
 import WorkoutView from "./pages/WorkoutView";
+import Exercise from "./pages/Exercise";
 
 Vue.prototype.axios = axios;
 
@@ -13,7 +14,8 @@ Vue.use(VueRouter);
 
 const routes = [
   {path: "/", component: Index},
-  {path: "/workout", component: WorkoutView}
+  {path: "/workout", component: WorkoutView},
+  {path: "/exercise", component: Exercise}
 ];
 
 const router = new VueRouter({

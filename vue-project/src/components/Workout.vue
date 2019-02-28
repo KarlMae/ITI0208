@@ -4,7 +4,7 @@
         <p id="description" class="description">{{ description }}</p>
         <div id="exercises" class="exercises">
             <ul v-for="exercise in exercises" :key="exercise.id">
-                <li>{{ exercise }}</li>
+                <li>{{ exercise.name }}</li>
             </ul>
         </div>
         <button v-on:click="selectWorkout">Select</button>
@@ -61,9 +61,14 @@
     }
 
     .exercises {
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
         text-align: left;
         font-size: 0.8rem;
+    }
+
+    ul {
+        list-style-type: none;
     }
 
 </style>
