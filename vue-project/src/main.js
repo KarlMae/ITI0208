@@ -4,7 +4,9 @@ import axios from 'axios'
 import VueRouter from 'vue-router';
 import Index from './pages/Index';
 import WorkoutView from "./pages/WorkoutView";
-import Exercise from "./pages/Exercise";
+import Exercise from "./pages/exercise/Exercise";
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 Vue.prototype.axios = axios;
 

@@ -1,6 +1,6 @@
 <template>
   <div id="header" class="header">
-    <img src="../assets/menu-logo.svg">
+    <img src="../assets/icons/menu.svg">
     <Name class="name"></Name>
   </div>
 </template>
