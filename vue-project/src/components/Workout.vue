@@ -1,7 +1,9 @@
 <template>
   <div id="workout" class="workout">
-    <p id="name" class="name">{{ name }}</p>
-    <p id="description" class="description">{{ description }}</p>
+    <WorkoutImage
+            :name="name"
+            :description="description"
+    />
     <div id="exercises" class="exercises">
       <ul v-for="exercise in exercises" :key="exercise.id">
         <li>{{ exercise.name }}</li>
@@ -15,11 +17,15 @@
 
   import Vue from 'vue'
   import VueRouter from 'vue-router';
+  import WorkoutImage from '../components/WorkoutImage';
 
   Vue.use(VueRouter);
 
   export default {
     name: 'workout',
+    components: {
+      WorkoutImage
+    },
     props: {
       id: Number,
       name: String,
@@ -46,6 +52,8 @@
 
   .name {
     font-size: 1.5rem;
+    color: black;
+    font-weight: bolder;
   }
 
   button {

@@ -17,7 +17,7 @@
     </div>
     <button
         v-on:click="startWorkout"
-        v-if="workout.exercises.length"
+        v-if="workout.exercises"
     >
       Start
     </button>
