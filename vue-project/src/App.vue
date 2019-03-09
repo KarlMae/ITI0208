@@ -4,23 +4,6 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: 'app',
-    components: {},
-    data() {
-      return {
-        testField: String
-      }
-    },
-    async mounted() {
-      this.testField = this.axios
-        .get('http://localhost:8090/')
-        .then(response => (this.testField = response.data));
-    }
-  }
-</script>
-
 <style>
   html {
     height: 100%;
