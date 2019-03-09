@@ -8,7 +8,7 @@
         <div v-if="workout.exercises && workout.exercises.length > 0">
           <h4>Exercises: </h4>
 
-          <div v-for="(exercise, index) in workout.exercises" :key="exercise.id + index" class="exercise">
+          <div v-for="exercise in distinct(workout.exercises)" :key="exercise.id" class="exercise">
             <h3>{{ exercise.name }}</h3>
             <p>Sets: {{ exercise.set_nr }}</p>
           </div>
@@ -31,6 +31,7 @@
   import Header from '../components/Header.vue';
   import Vue from 'vue'
   import VueRouter from 'vue-router';
+  import _ from 'lodash';
 
   Vue.use(VueRouter);
 
@@ -46,6 +47,9 @@
     methods: {
       startWorkout() {
         this.$router.push({name: 'exercise', params: {workout: this.workout}})
+      },
+      distinct: function (exercises) {
+          return _.uniqBy(exercises, 'name')
       }
     },
     created() {
