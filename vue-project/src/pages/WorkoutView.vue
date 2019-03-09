@@ -5,19 +5,20 @@
       <ul v-if="workout">
         <h2>{{ workout.name }}</h2>
         <h5>{{ workout.description }}</h5>
-        <h4>Exercises: </h4>
+        <div v-if="workout.exercises && workout.exercises.length > 0">
+          <h4>Exercises: </h4>
 
-        <div v-for="exercise in workout.exercises" class="exercise">
-          <h3>{{ exercise.name }}</h3>
-          <p>Repetitions: {{ exercise.repetitions }}</p>
-          <p>Sets: {{ exercise.sets }}</p>
+          <div v-for="(exercise, index) in workout.exercises" :key="exercise.id + index" class="exercise">
+            <h3>{{ exercise.name }}</h3>
+            <p>Sets: {{ exercise.set_nr }}</p>
+          </div>
         </div>
       </ul>
       <p v-else>Error on loading workout.</p>
     </div>
     <button
         v-on:click="startWorkout"
-        v-if="workout.exercises.length"
+        v-if="workout.exercises && workout.exercises.length > 0"
     >
       Start
     </button>
@@ -39,7 +40,7 @@
     },
     data() {
       return {
-        workout: null
+        workout: Object
       }
     },
     methods: {
@@ -49,7 +50,7 @@
     },
     created() {
       let workoutId = this.$route.query.id;
-      axios.get('http://localhost:8090/fetchById/' + workoutId)
+      axios.get('http://192.168.99.100:8090/fetchById/' + workoutId)
         .then(response => {
           this.workout = response.data;
         })

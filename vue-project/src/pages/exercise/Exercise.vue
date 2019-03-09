@@ -16,8 +16,8 @@
         <div class="info">
           <p id="name" class="name">{{ exercise.name }}</p>
           <p id="reps">Repetitions: {{ exercise.repetitions }}</p>
-          <p id="sets">Sets: {{ exercise.sets }}</p>
-          <p id="weight">Weight: {{ exercise.sets }}</p>
+          <p id="set">Set: {{ exercise.set_nr }}</p>
+          <p id="weight" v-if="exercise.unit > 0">Weight: {{ exercise.unit }}</p>
         </div>
       </div>
 
