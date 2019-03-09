@@ -9,5 +9,5 @@ public class WorkoutDto {
     private int id;
     private String name;
     private String description;
-    private List<ExerciseDto> exercises;
+    private List<WorkoutExerciseDto> exercises;
 }

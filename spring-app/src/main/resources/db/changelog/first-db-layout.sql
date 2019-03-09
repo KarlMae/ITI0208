@@ -5,7 +5,8 @@ SET search_path TO training;
 CREATE TABLE exercises (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  category VARCHAR(255)
+  category VARCHAR(255),
+  unit INTEGER
 );
 
 CREATE TABLE workouts (
@@ -24,7 +25,7 @@ CREATE TABLE workout_exercises (
   exercise_id INTEGER REFERENCES exercises(id),
   workout_id INTEGER REFERENCES workouts(id),
   repetitions INTEGER,
-  sets INTEGER
+  set_nr INTEGER
 );
 
 CREATE TABLE user_workouts (
