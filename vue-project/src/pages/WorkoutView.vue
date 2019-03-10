@@ -3,24 +3,58 @@
     <Header></Header>
     <div class="workout-view">
       <ul v-if="workout">
-        <h2>{{ workout.name }}</h2>
-        <h5>{{ workout.description }}</h5>
-        <h4>Exercises: </h4>
 
-        <div v-for="exercise in workout.exercises" class="exercise">
-          <h3>{{ exercise.name }}</h3>
-          <p>Repetitions: {{ exercise.repetitions }}</p>
-          <p>Sets: {{ exercise.sets }}</p>
+        <Workout
+          :id = workout.id
+        ></Workout>
+
+        <div class="workout-info">
+
+          <h3>{{workout.name}}</h3>
+          <p>{{workout.description}}</p>
+
         </div>
+
       </ul>
-      <p v-else>Error on loading workout.</p>
     </div>
-    <button
+
+    <div role="tablist" class="tablist">
+      <b-card no-body class="mb-1">
+        <b-card-header header-tag="header" class="p-1" role="tab">
+          <b-button block href="#" v-b-toggle.accordion1 variant="secondary">Warm-up</b-button>
+        </b-card-header>
+        <b-collapse id="accordion1" accordion="my-accordion" role="tabpanel">
+          <b-card-body>
+            <p class="card-text">{{ text }}</p>
+          </b-card-body>
+        </b-collapse>
+      </b-card>
+
+      <b-card no-body class="mb-1">
+        <b-card-header header-tag="header" class="p-1" role="tab">
+          <b-button block href="#" v-b-toggle.accordion2 variant="secondary">Main exercises</b-button>
+        </b-card-header>
+        <b-collapse id="accordion2" accordion="my-accordion" role="tabpanel">
+          <b-card-body><p class="card-text">{{ text }}</p></b-card-body>
+        </b-collapse>
+      </b-card>
+
+      <b-card no-body class="mb-1">
+        <b-card-header header-tag="header" class="p-1" role="tab">
+          <b-button block href="#" v-b-toggle.accordion3 variant="secondary">Cool-down</b-button>
+        </b-card-header>
+        <b-collapse id="accordion3" accordion="my-accordion" role="tabpanel">
+          <b-card-body><p class="card-text">{{ text }}</p></b-card-body>
+        </b-collapse>
+      </b-card>
+    </div>
+
+    <b-button variant="danger"
         v-on:click="startWorkout"
         v-if="workout.exercises"
     >
       Start
-    </button>
+    </b-button>
   </div>
 </template>
 
@@ -31,11 +65,13 @@
   import Vue from 'vue'
   import VueRouter from 'vue-router';
   import { exerciseStore } from './exercise/ExerciseStore';
+  import Workout from "../components/Workout";
 
   Vue.use(VueRouter);
 
   export default {
     components: {
+      Workout,
       Header
     },
     data() {
@@ -65,8 +101,31 @@
 </script>
 
 <style scoped>
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    padding: 1rem;
+  }
+
   .workout-view h4 {
     text-align: left;
+  }
+
+  .workout-info {
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+  .workout-info h3, p {
+    font-weight: bolder;
+  }
+
+  .tablist {
+    padding: 1rem;
   }
 
   .exercise {
@@ -79,8 +138,5 @@
     margin-bottom: 10px;
   }
 
-  .exercise p, h3 {
-    margin: 5px;
-  }
 
 </style>
