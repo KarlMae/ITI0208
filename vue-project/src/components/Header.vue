@@ -26,7 +26,7 @@
 
   .name {
     color: aliceblue;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: auto 2rem;
     white-space: nowrap;
   }

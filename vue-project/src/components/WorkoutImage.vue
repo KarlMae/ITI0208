@@ -1,8 +1,11 @@
 <template>
-    <div class="image-wrapper">
-        <div class="workout-info">
-            <h2>{{name}}</h2>
-            <p>{{description}}</p>
+    <div>
+        <div class="image-wrapper">
+            <img :src="imgurl">
+            <div class="workout-info">
+                <h3>{{name}}</h3>
+                <p>{{description}}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -12,7 +15,13 @@
     name: "WorkoutImage",
     props: {
       name: String,
-      description: String
+      description: String,
+      id: Number
+    },
+    data() {
+      return {
+        imgurl: require("../assets/" + this.id + ".jpg")
+      }
     }
   }
 </script>
@@ -20,31 +29,27 @@
 <style scoped>
 
     .image-wrapper {
-        height: 15rem;
+        height: auto;
         overflow: auto;
         position: relative;
         margin: auto;
         border-radius: 1rem;
-        background:
-                linear-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.5)),
-                url("../assets/DSC07713-5.jpg");
-                background-size: cover;
-
     }
 
-
-    .workout-image {
-        max-width: 100%;
-    }
-
-    .workout-image {
-        content: " ";
+    .image-wrapper::after {
+        display: block;
+        position: relative;
+        background-image: linear-gradient(rgba(255, 255, 255, 0) 0, #000000 100%);
+        margin-top: -15rem;
+        height: 15rem;
         width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
+        content: '';
+        border-radius: 1rem;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     .workout-info {
@@ -53,6 +58,7 @@
         bottom: 0.3rem;
         font-weight: bold;
         color: white;
+        z-index: 1;
     }
 
 </style>
