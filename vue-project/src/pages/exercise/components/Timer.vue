@@ -8,7 +8,7 @@
     <div class="col">
     <img
         @click="resetTimer"
-        src="../../assets/icons/restart.svg"
+        src="../../../assets/icons/restart.svg"
         class="restart">
     </div>
   </div>

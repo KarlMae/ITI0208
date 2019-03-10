@@ -30,6 +30,7 @@
   import Header from '../components/Header.vue';
   import Vue from 'vue'
   import VueRouter from 'vue-router';
+  import { exerciseStore } from './exercise/ExerciseStore';
 
   Vue.use(VueRouter);
 
@@ -39,12 +40,14 @@
     },
     data() {
       return {
-        workout: null
+        workout: null,
+        exerciseStore: exerciseStore
       }
     },
     methods: {
       startWorkout() {
-        this.$router.push({name: 'exercise', params: {workout: this.workout}})
+        this.exerciseStore.setWorkout(this.workout);
+        this.$router.push({ name: 'exercise' });
       }
     },
     created() {

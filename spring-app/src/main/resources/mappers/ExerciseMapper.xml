@@ -31,5 +31,4 @@
         WHERE
             workout_id = #{id}
     </select>
-
 </mapper>
