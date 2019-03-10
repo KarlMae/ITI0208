@@ -21,7 +21,7 @@
     name: 'app',
     components: {
       Header,
-      Workout
+      Workout,
     },
     data() {
       return {
@@ -51,7 +51,6 @@
   }
 
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

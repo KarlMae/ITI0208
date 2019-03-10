@@ -1,13 +1,13 @@
 <template>
   <div class="img-wrapper">
-    <img src="../../../assets/DSC07713-5.jpg" class="image">
+    <img src="../../../assets/1.jpg" class="image">
     <img src="../../../assets/icons/info.svg" class="info-svg">
   </div>
 </template>
 
 <script>
   export default {
-    name: "ExerciseImage"
+    name: "ExerciseImage",
   }
 </script>
 
