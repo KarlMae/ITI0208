@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="workout-view">
       <ul v-if="workout">
-
+      
         <Workout
           :id = workout.id
         ></Workout>
@@ -51,6 +51,7 @@
 
     <b-button variant="danger"
         v-on:click="startWorkout"
+        v-if="workout.exercises && workout.exercises.length > 0"
         v-if="workout.exercises"
     >
       Start
@@ -76,19 +77,22 @@
     },
     data() {
       return {
-        workout: null,
+        workout: Object,
         exerciseStore: exerciseStore
       }
     },
     methods: {
       startWorkout() {
-        this.exerciseStore.setWorkout(this.workout);
-        this.$router.push({ name: 'exercise' });
+          this.exerciseStore.setWorkout(this.workout);
+          this.$router.push({ name: 'exercise' });
+      },
+      distinct: function (exercises) {
+          return _.uniqBy(exercises, 'name')
       }
     },
     created() {
       let workoutId = this.$route.query.id;
-      axios.get('http://localhost:8090/fetchById/' + workoutId)
+      axios.get('http://192.168.99.100:8090/fetchById/' + workoutId)
         .then(response => {
           this.workout = response.data;
         })

@@ -8,5 +8,4 @@
 
     <include file="db/changelog/first-db-layout.sql" />
     <include file="db/changelog/dummy-data.sql" />
-    <include file="db/changelog/more-dummy-data.sql" />
 </databaseChangeLog>
