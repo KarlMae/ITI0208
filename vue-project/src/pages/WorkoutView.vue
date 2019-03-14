@@ -3,18 +3,13 @@
     <Header></Header>
     <div class="workout-view">
       <ul v-if="workout">
-      
         <Workout
           :id = workout.id
         ></Workout>
-
         <div class="workout-info">
-
           <h3>{{workout.name}}</h3>
           <p>{{workout.description}}</p>
-
         </div>
-
       </ul>
     </div>
 
@@ -52,7 +47,6 @@
     <b-button variant="danger"
         v-on:click="startWorkout"
         v-if="workout.exercises && workout.exercises.length > 0"
-        v-if="workout.exercises"
     >
       Start
     </b-button>
