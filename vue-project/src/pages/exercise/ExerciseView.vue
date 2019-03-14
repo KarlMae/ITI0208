@@ -1,7 +1,5 @@
 <template>
-
   <div id="exercise-view">
-
     <button
         v-if="exerciseStore.previousExercisePresent()"
         v-on:click="previousExercise"
@@ -11,10 +9,12 @@
     </button>
 
     <div class="exercise-section">
-      <Header />
-      <ExerciseImage />
-      <Exercise />
-      <Timer />
+      <Header/>
+      <ExerciseImage/>
+      <Exercise
+          v-on:openEditModal="toggleEditModal"
+      />
+      <Timer/>
     </div>
 
     <button
@@ -23,19 +23,24 @@
       &gt;
     </button>
 
-  </div>
 
+    <EditModal
+        v-if="isModalVisible"
+        :exercise-id="exerciseStore.getExercise().id"
+        @close="toggleEditModal"
+    />
+  </div>
 </template>
 
 <script>
 
   import Timer from './components/Timer'
   import Header from './components/Header'
-  import ExerciseImage from './components/ExerciseImage';
-  import Exercise from './components/Exercise';
-  import { exerciseStore } from './ExerciseStore.js';
+  import ExerciseImage from './components/exercise/ExerciseImage';
+  import Exercise from './components/exercise/Exercise';
+  import EditModal from './components/editmodal/EditModal'
+  import {exerciseStore} from './ExerciseStore.js';
   import * as Cookies from 'js-cookie';
-
 
   export default {
     name: 'exercise-view',
@@ -43,11 +48,14 @@
       Exercise,
       ExerciseImage,
       Header,
-      Timer
+      Timer,
+      EditModal
     },
     data() {
       return {
-        exerciseStore: exerciseStore
+        exerciseStore: exerciseStore,
+        isModalVisible: false
+
       };
     },
     created() {
@@ -59,10 +67,22 @@
       },
       previousExercise() {
         this.exerciseStore.previousExercise();
+      },
+      toggleEditModal() {
+        this.exerciseStore.toggleEditModal();
+      },
+    },
+    computed: {
+      isEditModalVisible() {
+        return this.exerciseStore.state.isEditModalVisible;
       }
-    }
+    },
+    watch: {
+      isEditModalVisible() {
+        this.isModalVisible = this.exerciseStore.isEditModalVisible();
+      }
+    },
   }
-
 </script>
 
 <style scoped>

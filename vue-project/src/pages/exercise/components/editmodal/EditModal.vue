@@ -17,29 +17,31 @@
             <p class="title">Set</p>
             <div class="btn-group" role="group">
               <template v-for="set in this.exercise.sets">
-                <button type="button" class="btn btn-secondary">{{ set }}</button>
+                <button
+                    v-on:click="changeSet(set.setNumber - 1)"
+                    :key="set.setNumber"
+                    type="button"
+                    class="btn btn-secondary"
+                >
+                  {{ set.setNumber }}
+                </button>
               </template>
             </div>
           </div>
 
-          <div class="line">
-            <button class="btn amount-btn">-</button>
-            <div>
-              <p class="title">Repetitions</p>
-              <p>{{ this.exercise.repetitions }}</p>
-            </div>
-            <button class="btn amount-btn">+</button>
-          </div>
+          <EditModalRow
+              name="repetitions"
+              :amount="selectedSet.repetitions"
+              v-on:add="add"
+              v-on:subtract="subtract"
+          />
 
-          <div class="line">
-            <button class="btn amount-btn">-</button>
-            <div>
-              <p class="title">Weight</p>
-              <p>{{ this.exercise.amount + this.exercise.unit }}</p>
-            </div>
-            <button class="btn amount-btn">+</button>
-          </div>
-
+          <EditModalRow
+              name="amount"
+              :amount="selectedSet.amount"
+              v-on:add="add"
+              v-on:subtract="subtract"
+          />
         </div>
         <button
             v-on:click="saveChanges"
@@ -51,8 +53,18 @@
 </template>
 
 <script>
+  import EditModalRow from './EditModalRow'
+
   export default {
     name: "EditModal",
+    components: {
+      EditModalRow
+    },
+    data() {
+      return {
+        selectedSet: {}
+      }
+    },
     props: {
       exerciseId: {
         type: Number,
@@ -63,11 +75,32 @@
       // Send GET request
       this.exercise = {
         name: 'Tuck planche',
-        sets: 4,
-        repetitions: 4,
-        amount: 10,
-        unit: 'kg'
-      }
+        unit: 'kg',
+        sets: [
+          {
+            setNumber: 1,
+            repetitions: 10,
+            amount: 11
+          },
+          {
+            setNumber: 2,
+            repetitions: 20,
+            amount: 21,
+          },
+          {
+            setNumber: 3,
+            repetitions: 30,
+            amount: 31,
+          },
+          {
+            setNumber: 4,
+            repetitions: 40,
+            amount: 41,
+          }
+        ],
+      };
+
+      this.selectedSet = this.exercise.sets[0]
     },
     methods: {
       closeModal() {
@@ -76,8 +109,17 @@
       saveChanges() {
         // Send POST request
         this.$emit('close');
+      },
+      changeSet(setNumber) {
+        this.selectedSet = this.exercise.sets[setNumber];
+      },
+      add(element) {
+        this.selectedSet[element] = this.selectedSet[element] + 1
+      },
+      subtract(element) {
+        this.selectedSet[element] = this.selectedSet[element] - 1;
       }
-    }
+    },
   }
 </script>
 
@@ -85,13 +127,6 @@
   .modal {
     display: block;
     padding-top: 2rem;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    font-weight: bolder;
-    padding-top: 1rem;
-    margin-bottom: 0.5rem;
   }
 
   .modal-header .close {
@@ -115,12 +150,10 @@
     padding: 1rem;
   }
 
-  .line {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .amount-btn {
-    font-size: 2rem;
+  .title {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding-top: 1rem;
+    margin-bottom: 0.5rem;
   }
 </style>
