@@ -32,5 +32,4 @@
             workout_id = #{id}
         ORDER BY exercise_id, set_nr DESC
     </select>
-
 </mapper>

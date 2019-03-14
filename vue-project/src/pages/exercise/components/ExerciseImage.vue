@@ -1,7 +1,7 @@
 <template>
   <div class="img-wrapper">
-    <img src="../../assets/DSC07713-5.jpg" class="image">
-    <img src="../../assets/icons/info.svg" class="info-svg">
+    <img src="../../../assets/DSC07713-5.jpg" class="image">
+    <img src="../../../assets/icons/info.svg" class="info-svg">
   </div>
 </template>
 

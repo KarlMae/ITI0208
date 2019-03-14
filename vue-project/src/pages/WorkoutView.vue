@@ -31,7 +31,6 @@
   import Header from '../components/Header.vue';
   import Vue from 'vue'
   import VueRouter from 'vue-router';
-  import _ from 'lodash';
 
   Vue.use(VueRouter);
 
@@ -41,15 +40,18 @@
     },
     data() {
       return {
-        workout: Object
+        workout: Object,
+        exerciseStore: exerciseStore
       }
     },
     methods: {
       startWorkout() {
-        this.$router.push({name: 'exercise', params: {workout: this.workout}})
+          this.exerciseStore.setWorkout(this.workout);
+          this.$router.push({ name: 'exercise' });this.$router.push({name: 'exercise', params: {workout: this.workout}})
       },
       distinct: function (exercises) {
           return _.uniqBy(exercises, 'name')
+
       }
     },
     created() {

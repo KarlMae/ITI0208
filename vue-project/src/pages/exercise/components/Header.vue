@@ -1,13 +1,18 @@
 <template>
   <div class="header container-fluid">
+      <img src="../../../assets/icons/menu.svg" class="menu-svg">
       <p class="logo">Logo</p>
-      <img src="../../assets/icons/menu.svg" class="menu-svg">
   </div>
 </template>
 
 <script>
   export default {
-    name: "Header"
+    name: "Header",
+    data() {
+      return {
+        exerciseStore: 0
+      };
+    },
   }
 </script>
 
