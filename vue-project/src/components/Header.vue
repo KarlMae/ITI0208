@@ -20,12 +20,11 @@
   .header {
     min-height: 4rem;
     width: 100%;
-    background-color: #CC2A49;
     display: flex;
   }
 
   .name {
-    color: aliceblue;
+    color: #3a3a3a;
     font-size: 2rem;
     margin: auto 2rem;
     white-space: nowrap;

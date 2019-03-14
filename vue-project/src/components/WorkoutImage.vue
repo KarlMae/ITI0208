@@ -49,7 +49,7 @@
 
     img {
         max-width: 100%;
-        height: auto;
+        height: 15rem;
     }
 
     .workout-info {
