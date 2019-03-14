@@ -19,8 +19,12 @@
           <b-button block href="#" v-b-toggle.accordion1 variant="secondary">Warm-up</b-button>
         </b-card-header>
         <b-collapse id="accordion1" accordion="my-accordion" role="tabpanel">
-          <b-card-body>
-            <p class="card-text">{{ text }}</p>
+          <b-card-body class="b-card-body">
+            <ul id="example-1">
+              <li v-for="exercise in workout.exercises" class="exercise-list">
+                <p>{{ exercise.name }}</p>
+              </li>
+            </ul>
           </b-card-body>
         </b-collapse>
       </b-card>
@@ -30,7 +34,7 @@
           <b-button block href="#" v-b-toggle.accordion2 variant="secondary">Main exercises</b-button>
         </b-card-header>
         <b-collapse id="accordion2" accordion="my-accordion" role="tabpanel">
-          <b-card-body><p class="card-text">{{ text }}</p></b-card-body>
+          <b-card-body><p class="card-text">{{  }}</p></b-card-body>
         </b-collapse>
       </b-card>
 
@@ -39,7 +43,7 @@
           <b-button block href="#" v-b-toggle.accordion3 variant="secondary">Cool-down</b-button>
         </b-card-header>
         <b-collapse id="accordion3" accordion="my-accordion" role="tabpanel">
-          <b-card-body><p class="card-text">{{ text }}</p></b-card-body>
+          <b-card-body><p class="card-text">{{  }}</p></b-card-body>
         </b-collapse>
       </b-card>
     </div>
@@ -109,6 +113,11 @@
     padding: 1rem;
   }
 
+  p {
+    margin: 0;
+    padding: 0.5rem;
+  }
+
   .workout-view h4 {
     text-align: left;
   }
@@ -124,6 +133,21 @@
 
   .tablist {
     padding: 1rem;
+  }
+
+  .exercise-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+
+  .exercise-list:last-child {
+    border-bottom: none;
+  }
+
+  .b-card-body {
+    padding: 0;
   }
 
   .exercise {
