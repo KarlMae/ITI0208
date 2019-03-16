@@ -10,9 +10,9 @@
 
     <insert id="insertExercise">
         INSERT INTO
-            training.exercises(name, category, unit)
+            training.exercises(name, category, weight, duration)
         VALUES
-            (#{name}, #{category}, #{unit})
+            (#{name}, #{category}, #{weight}, #{duration})
     </insert>
 
     <select id="fetchById">

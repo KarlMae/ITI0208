@@ -46,7 +46,7 @@ VALUES
 ('Squat', 80);
 
 INSERT INTO
-  training.exercises(name, weight)
+  training.exercises(name, duration)
 VALUES
 ('Plank', 30);
 
@@ -56,9 +56,9 @@ VALUES
 ('Lunges', 20);
 
 INSERT INTO
-  training.exercises(name, category)
+  training.exercises(name, category, duration)
 VALUES
-('Swan position', 'Cool-down');
+('Swan position', 'Cool-down', 150);
 
 
 

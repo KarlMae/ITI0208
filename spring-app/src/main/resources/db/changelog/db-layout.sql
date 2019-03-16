@@ -6,7 +6,8 @@ CREATE TABLE exercises (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   category VARCHAR(255) NOT NULL DEFAULT 'Main exercises',
-  weight INTEGER DEFAULT NULL
+  weight INTEGER DEFAULT NULL,
+  duration INTEGER DEFAULT NULL
 );
 
 CREATE TABLE workouts (

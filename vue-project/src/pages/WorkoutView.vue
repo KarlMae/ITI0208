@@ -18,7 +18,7 @@
           <b-button block href="#" v-b-toggle.accordion1 variant="secondary">Warm-up</b-button>
         </b-card-header>
         <b-collapse id="accordion1" accordion="my-accordion" role="tabpanel">
-          <b-card-body class="b-card-body">
+          <b-card-body>
             <ul v-if="workout.exercises">
               <li v-for="exercise in filterByCategoryAndDistinct(workout.exercises, 'Warm-up')" :key="exercise.id" class="exercise-list">
                 <p>{{ exercise.name }}</p>
@@ -49,7 +49,7 @@
         </b-card-header>
         <b-collapse id="accordion3" accordion="my-accordion" role="tabpanel">
           <b-card-body>
-            <ul>
+            <ul v-if="workout.exercises">
               <li v-for="exercise in filterByCategoryAndDistinct(workout.exercises, 'Cool-down')" :key="exercise.id" class="exercise-list">
                 <p>{{ exercise.name }}</p>
               </li>

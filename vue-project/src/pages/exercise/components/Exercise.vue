@@ -7,6 +7,7 @@
         <p id="reps">Repetitions: {{ exercise.repetitions }}</p>
         <p id="sets">Sets left: {{ exercise.set_nr }}</p>
         <p id="weight" v-if="exercise.weight">Weight: {{ exercise.weight }}</p>
+        <p id="duration" v-if="exercise.duration">Duration: {{ format(exercise.duration) }}</p>
       </div>
     </transition>
   </div>
@@ -37,6 +38,16 @@
       exerciseIndex() {
         this.exercise = this.exerciseStore.getExercise();
       }
+    },
+    methods: {
+        format: function (duration) {
+            const min = Math.floor(duration / 60);
+            const sec = duration - min * 60;
+            if (min === 0) {
+              return `${sec} sec`
+            }
+            return `${min} min ${sec} sec`;
+        }
     }
   }
 
