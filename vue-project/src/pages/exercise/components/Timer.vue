@@ -1,20 +1,24 @@
 <template>
+
   <div class="timer container-fluid">
-    <div class="col">
-    </div>
+    <div class="col"></div>
+
     <div @click="toggleTimer">
       <p class="timer-text col">{{ minutes }}:{{ seconds }}</p>
     </div>
+
     <div class="col">
-    <img
-        @click="resetTimer"
-        src="../../../assets/icons/restart.svg"
-        class="restart">
+      <img
+          @click="resetTimer"
+          src="../../../assets/icons/restart.svg"
+          class="restart" alt="restart timer">
     </div>
   </div>
+
 </template>
 
 <script>
+
   export default {
     name: "Timer",
     data() {
@@ -60,6 +64,7 @@
       },
     }
   }
+
 </script>
 
 <style scoped>

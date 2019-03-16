@@ -1,14 +1,13 @@
 <template>
+
   <div>
-    <Header></Header>
+    <Header />
     <div class="workout-view">
       <ul v-if="workout">
-        <Workout
-          :id = workout.id
-        ></Workout>
+        <Workout :id = workout.id />
         <div class="workout-info">
-          <h3>{{workout.name}}</h3>
-          <p>{{workout.description}}</p>
+          <h3>{{ workout.name }}</h3>
+          <p>{{ workout.description }}</p>
         </div>
       </ul>
     </div>
@@ -20,8 +19,8 @@
         </b-card-header>
         <b-collapse id="accordion1" accordion="my-accordion" role="tabpanel">
           <b-card-body class="b-card-body">
-            <ul id="example-1">
-              <li v-for="exercise in workout.exercises" class="exercise-list">
+            <ul v-if="workout.exercises">
+              <li v-for="exercise in filterByCategoryAndDistinct(workout.exercises, 'Warm-up')" :key="exercise.id" class="exercise-list">
                 <p>{{ exercise.name }}</p>
               </li>
             </ul>
@@ -34,7 +33,13 @@
           <b-button block href="#" v-b-toggle.accordion2 variant="secondary">Main exercises</b-button>
         </b-card-header>
         <b-collapse id="accordion2" accordion="my-accordion" role="tabpanel">
-          <b-card-body><p class="card-text">{{  }}</p></b-card-body>
+          <b-card-body>
+            <ul v-if="workout.exercises">
+              <li v-for="exercise in filterByCategoryAndDistinct(workout.exercises, 'Main exercises')" :key="exercise.id" class="exercise-list">
+                <p>{{ exercise.name }}</p>
+              </li>
+            </ul>
+          </b-card-body>
         </b-collapse>
       </b-card>
 
@@ -43,7 +48,13 @@
           <b-button block href="#" v-b-toggle.accordion3 variant="secondary">Cool-down</b-button>
         </b-card-header>
         <b-collapse id="accordion3" accordion="my-accordion" role="tabpanel">
-          <b-card-body><p class="card-text">{{  }}</p></b-card-body>
+          <b-card-body>
+            <ul>
+              <li v-for="exercise in filterByCategoryAndDistinct(workout.exercises, 'Cool-down')" :key="exercise.id" class="exercise-list">
+                <p>{{ exercise.name }}</p>
+              </li>
+            </ul>
+          </b-card-body>
         </b-collapse>
       </b-card>
     </div>
@@ -51,20 +62,21 @@
     <b-button variant="danger"
         v-on:click="startWorkout"
         v-if="workout.exercises && workout.exercises.length > 0"
-    >
-      Start
-    </b-button>
+    >Start</b-button>
   </div>
+
 </template>
 
 
 <script>
+
   import axios from 'axios';
   import Header from '../components/Header.vue';
   import Vue from 'vue'
   import VueRouter from 'vue-router';
   import { exerciseStore } from './exercise/ExerciseStore';
   import Workout from "../components/Workout";
+  import _ from 'lodash';
 
   Vue.use(VueRouter);
 
@@ -84,8 +96,8 @@
           this.exerciseStore.setWorkout(this.workout);
           this.$router.push({ name: 'exercise' });
       },
-      distinct: function (exercises) {
-          return _.uniqBy(exercises, 'name')
+      filterByCategoryAndDistinct: function (exercises, category) {
+          return _.uniqBy(exercises.filter(exercise => exercise.category === category), 'name')
       }
     },
     created() {

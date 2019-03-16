@@ -1,5 +1,7 @@
 <template>
+
   <div id="exercise-view">
+
     <button
         v-if="exerciseStore.previousExercisePresent()"
         v-on:click="previousExercise"
@@ -20,7 +22,9 @@
         v-on:click="nextExercise()" class="nav-button" style="right: 0.5rem">
       &gt;
     </button>
+
   </div>
+
 </template>
 
 <script>
@@ -58,6 +62,7 @@
       }
     }
   }
+
 </script>
 
 <style scoped>

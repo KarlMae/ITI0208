@@ -1,20 +1,20 @@
 <template>
+
   <div class="transition-wrapper">
     <transition name="slide-fade">
-      <div
-          v-bind:key="exercise.name"
-          class="exercise"
-      >
+      <div :key="exercise.name" class="exercise">
         <h2 id="name">{{ exercise.name }}</h2>
         <p id="reps">Repetitions: {{ exercise.repetitions }}</p>
-        <p id="sets">Sets: {{ exercise.sets }}</p>
-        <p id="weight">Weight: {{ exercise.amount + exercise.unit }}</p>
+        <p id="sets">Sets left: {{ exercise.set_nr }}</p>
+        <p id="weight" v-if="exercise.weight > 0">Weight: {{ exercise.eight }}</p>
       </div>
     </transition>
   </div>
+
 </template>
 
 <script>
+
   import { exerciseStore } from '../ExerciseStore';
 
   export default {
@@ -39,9 +39,11 @@
       }
     }
   }
+
 </script>
 
 <style scoped>
+
   p {
     margin: 0;
   }
@@ -66,4 +68,5 @@
     transform: translateX(3rem);
     opacity: 0;
   }
+
 </style>

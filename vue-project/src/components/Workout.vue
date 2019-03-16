@@ -1,11 +1,13 @@
 <template>
+
   <div v-on:click="selectWorkout" id="workout" class="workout">
     <WorkoutImage
-            :name="name"
-            :description="description"
-            :id="id"
+      :id="id"
+      :name="name"
+      :description="description"
     />
   </div>
+
 </template>
 
 <script>

@@ -1,14 +1,17 @@
 <template>
+
   <div id="app">
-    <Header></Header>
+    <Header />
     <div id="workouts" class="workouts">
       <Workout v-for="workout in workouts"
+               :key="workout.id"
                :id="workout.id"
                :name="workout.name"
                :description="workout.description"
-      ></Workout>
+      />
     </div>
   </div>
+
 </template>
 
 <script>

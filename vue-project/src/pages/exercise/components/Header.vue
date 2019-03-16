@@ -1,11 +1,14 @@
 <template>
+
   <div class="header container-fluid">
-      <img src="../../../assets/icons/menu.svg" class="menu-svg">
-      <p class="logo">Logo</p>
+      <img src="../../../assets/icons/menu.svg" class="menu-svg" alt="menu">
+      <p class="logo" v-on:click="toHome">Logo</p>
   </div>
+
 </template>
 
 <script>
+
   export default {
     name: "Header",
     data() {
@@ -13,7 +16,13 @@
         exerciseStore: 0
       };
     },
+    methods: {
+        toHome() {
+            this.$router.push('/')
+        }
+    }
   }
+
 </script>
 
 <style scoped>

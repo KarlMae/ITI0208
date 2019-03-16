@@ -1,14 +1,18 @@
 <template>
+
   <div class="img-wrapper">
-    <img src="../../../assets/1.jpg" class="image">
-    <img src="../../../assets/icons/info.svg" class="info-svg">
+    <img src="../../../assets/1.jpg" class="image" alt="exercise">
+    <img src="../../../assets/icons/info.svg" class="info-svg" alt="exercise info">
   </div>
+
 </template>
 
 <script>
+
   export default {
     name: "ExerciseImage"
   }
+
 </script>
 
 <style scoped>
