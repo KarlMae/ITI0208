@@ -6,7 +6,7 @@
         <h2 id="name">{{ exercise.name }}</h2>
         <p id="reps">Repetitions: {{ exercise.repetitions }}</p>
         <p id="sets">Sets left: {{ exercise.set_nr }}</p>
-        <p id="weight" v-if="exercise.weight > 0">Weight: {{ exercise.eight }}</p>
+        <p id="weight" v-if="exercise.weight">Weight: {{ exercise.weight }}</p>
       </div>
     </transition>
   </div>
