@@ -1,6 +1,6 @@
 package com.training.services;
 
-import com.training.dao.ExerciseMapper;
+import com.training.dao.WorkoutExerciseMapper;
 import com.training.dao.WorkoutMapper;
 import com.training.dto.WorkoutDto;
 import lombok.AllArgsConstructor;
@@ -13,8 +13,7 @@ import java.util.List;
 public class WorkoutService {
 
     private final WorkoutMapper workoutDao;
-    private final ExerciseMapper exerciseDao;
-
+    private final WorkoutExerciseMapper workoutExerciseDao;
 
     public void insert(WorkoutDto dto) {
         workoutDao.insert(dto);
@@ -22,15 +21,16 @@ public class WorkoutService {
 
     public List<WorkoutDto> fetchAll() {
         List<WorkoutDto> workouts = workoutDao.fetchAll();
-        workouts.forEach(workoutDto -> workoutDto.setExercises(exerciseDao.fetchByWorkoutId(workoutDto.getId())));
+        workouts.forEach(workoutDto -> workoutDto.setExercises(workoutExerciseDao.fetchByWorkoutId(workoutDto.getId())));
 
         return workouts;
     }
 
     public WorkoutDto fetchById(Integer id) {
         WorkoutDto workoutDto = workoutDao.fetchById(id);
-        workoutDto.setExercises(exerciseDao.fetchByWorkoutId(workoutDto.getId()));
+        workoutDto.setExercises(workoutExerciseDao.fetchByWorkoutId(workoutDto.getId()));
 
         return workoutDto;
     }
+
 }

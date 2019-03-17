@@ -28,4 +28,5 @@
       WHERE
         id = #{id}
     </select>
+
 </mapper>

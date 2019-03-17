@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 @Configuration
-public class Config {
+public class CorsConfig {
 
     @Bean
     public FilterRegistrationBean simpleCorsFilter() {
@@ -27,4 +27,5 @@ public class Config {
         bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return bean;
     }
+
 }

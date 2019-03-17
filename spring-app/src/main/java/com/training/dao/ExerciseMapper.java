@@ -1,7 +1,6 @@
 package com.training.dao;
 
-import com.training.dto.WorkoutExerciseDto;
-import com.training.dto.WorkoutDto;
+import com.training.dto.ExerciseDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -11,11 +10,9 @@ import java.util.List;
 @Repository
 public interface ExerciseMapper {
 
-    void insertExercise();
+    void insertExercise(ExerciseDto dto);
 
-    List<WorkoutDto> fetchAll();
+    ExerciseDto fetchById(Integer id);
 
-    WorkoutExerciseDto insertTraining(WorkoutDto dto);
-
-    List<WorkoutExerciseDto> fetchByWorkoutId(Integer id);
+    List<ExerciseDto> fetchAll();
 }

@@ -22,4 +22,5 @@ public class DatabaseConfig {
         InputStream inputStream = Resources.getResourceAsStream(resource);
         return new SqlSessionFactoryBuilder().build(inputStream);
     }
+
 }

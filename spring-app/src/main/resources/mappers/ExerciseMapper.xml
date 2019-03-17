@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.training.dao.ExerciseMapper">
 
-    <select id="fetchAll" resultType="com.training.dto.WorkoutExerciseDto">
+    <select id="fetchAll" resultType="com.training.dto.ExerciseDto">
         SELECT * FROM training.exercises;
     </select>
 
@@ -19,17 +19,4 @@
         SELECT * FROM training.exercises WHERE id = #{id}
     </select>
 
-    <select id="fetchByWorkoutId" parameterType="int" resultType="com.training.dto.WorkoutExerciseDto">
-        SELECT
-            *
-        FROM
-            training.workout_exercises t1
-        LEFT JOIN
-            training.exercises t2
-        ON
-            t2.id = t1.exercise_id
-        WHERE
-            workout_id = #{id}
-        ORDER BY exercise_id, set_nr DESC
-    </select>
 </mapper>

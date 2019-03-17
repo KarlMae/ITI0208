@@ -16,4 +16,5 @@ public interface UserMapper {
     List<WorkoutDto> fetchAll();
 
     UserDto fetchById();
+
 }

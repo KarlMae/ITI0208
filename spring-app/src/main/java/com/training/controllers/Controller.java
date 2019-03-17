@@ -1,6 +1,8 @@
 package com.training.controllers;
 
 import com.training.dto.WorkoutDto;
+import com.training.dto.WorkoutExerciseDto;
+import com.training.services.WorkoutExerciseService;
 import com.training.services.WorkoutService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -9,25 +11,33 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@CrossOrigin
 public class Controller {
 
     private final WorkoutService workoutService;
+    private final WorkoutExerciseService workoutExerciseService;
 
-    @PostMapping(path="/insert", consumes = "application/json")
+    @PostMapping(path = "/insert", consumes = "application/json")
     public void insertWorkout(@RequestBody WorkoutDto dto) {
         workoutService.insert(dto);
     }
 
-    @CrossOrigin
     @GetMapping("/fetchAll")
     public List<WorkoutDto> fetchAll() {
         return workoutService.fetchAll();
     }
 
-    @CrossOrigin
     @GetMapping("/fetchById/{id}")
     public WorkoutDto fetchById(@PathVariable(value="id") Integer id) {
         return workoutService.fetchById(id);
     }
+
+    @PostMapping(path = "/update", consumes = "application/json")
+    public void updateWorkoutExercise(@RequestBody WorkoutExerciseDto dto) {
+        if (dto.getWeight() != 0) {
+            workoutExerciseService.updateWithWeight(dto);
+        } else {
+            workoutExerciseService.updateWithDuration(dto);
+        }
+    }
+
 }

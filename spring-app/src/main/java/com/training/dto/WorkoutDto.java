@@ -6,8 +6,10 @@ import java.util.List;
 
 @Data
 public class WorkoutDto {
+
     private int id;
     private String name;
     private String description;
     private List<WorkoutExerciseDto> exercises;
+
 }
