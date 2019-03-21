@@ -11,7 +11,7 @@ public class WorkoutExerciseDto {
     private int id;
     private String name;
     private String category;
-    private int weight;
+    private Integer weight;
     private int duration;
 
 }

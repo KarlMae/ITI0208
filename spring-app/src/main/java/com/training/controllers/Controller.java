@@ -33,7 +33,7 @@ public class Controller {
 
     @PostMapping(path = "/update", consumes = "application/json")
     public void updateWorkoutExercise(@RequestBody WorkoutExerciseDto dto) {
-        if (dto.getWeight() != 0) {
+        if (dto.getWeight() != null) {
             workoutExerciseService.updateWithWeight(dto);
         } else {
             workoutExerciseService.updateWithDuration(dto);
