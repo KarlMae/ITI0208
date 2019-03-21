@@ -4,6 +4,7 @@ export var exerciseStore = {
   state: {
     exercises: [],
     exerciseIndex: 0,
+    isEditModalVisible: false
   },
 
   setWorkout(workout) {
@@ -28,5 +29,11 @@ export var exerciseStore = {
   },
   nextExercisePresent() {
     return this.state.exerciseIndex < this.state.exercises.length - 1;
+  },
+  toggleEditModal() {
+    this.state.isEditModalVisible = !this.state.isEditModalVisible;
+  },
+  isEditModalVisible() {
+    return this.state.isEditModalVisible;
   }
 };

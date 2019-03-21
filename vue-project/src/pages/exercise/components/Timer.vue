@@ -1,24 +1,20 @@
 <template>
-
   <div class="timer container-fluid">
-    <div class="col"></div>
-
+    <div class="col">
+    </div>
     <div @click="toggleTimer">
       <p class="timer-text col">{{ minutes }}:{{ seconds }}</p>
     </div>
-
     <div class="col">
       <img
           @click="resetTimer"
           src="../../../assets/icons/restart.svg"
-          class="restart" alt="restart timer">
+          class="restart">
     </div>
   </div>
-
 </template>
 
 <script>
-
   export default {
     name: "Timer",
     data() {
@@ -29,11 +25,11 @@
       }
     },
     computed: {
-      minutes: function() {
+      minutes: function () {
         const minutes = Math.floor(this.totalTime / 60);
         return this.padTime(minutes);
       },
-      seconds: function() {
+      seconds: function () {
         const seconds = this.totalTime - (this.minutes * 60);
         return this.padTime(seconds);
       }
@@ -59,12 +55,11 @@
       countdown() {
         this.totalTime++;
       },
-      padTime(time){
+      padTime(time) {
         return (time < 10 ? '0' : '') + time;
       },
     }
   }
-
 </script>
 
 <style scoped>
