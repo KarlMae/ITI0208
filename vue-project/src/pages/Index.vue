@@ -33,7 +33,7 @@
     },
     async mounted() {
       this.axios
-        .get('http://192.168.99.100:8090/fetchAll')
+        .get(process.env.VUE_APP_BACKEND_IP + '/fetchAll')
         .then(response => {
           this.workouts = response.data
         })
