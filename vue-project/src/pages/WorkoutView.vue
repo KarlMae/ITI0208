@@ -102,7 +102,7 @@
     },
     created() {
       let workoutId = this.$route.query.id;
-      axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchAll')
+      axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchById/' + + workoutId)
         .then(response => {
           this.workout = response.data;
         })
