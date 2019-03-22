@@ -14,7 +14,7 @@ To demo it:
 * Make an endpoint, that uses user input inside it's SQL.
 * Inside the mybatis SQL, that the endpoint uses, use '${variableName}'
 * Create a table in the DB (for example 'demo_db')
-* Use postman to make a request with body: {"variable": "attack incoming'); DROP TABLE demo_db; --"}  
+* Use postman to make a request with body: {"variable": "attack incoming"); DROP TABLE demo_db; --"}  
   (We use view, so demo_db should be prefixed with 'training.')
 * The table is deleted. SQL injection has been executed.
 
