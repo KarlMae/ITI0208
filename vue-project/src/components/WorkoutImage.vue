@@ -1,5 +1,4 @@
 <template>
-
   <div class="image-wrapper">
     <img :src="imgurl" alt="workout cover">
     <div class="workout-info">
@@ -7,11 +6,9 @@
       <p>{{ description }}</p>
     </div>
   </div>
-
 </template>
 
 <script>
-
   export default {
     name: "WorkoutImage",
     props: {
@@ -25,11 +22,9 @@
       }
     }
   }
-
 </script>
 
 <style scoped>
-
   .image-wrapper {
     height: auto;
     overflow: auto;
@@ -62,5 +57,4 @@
     color: white;
     z-index: 1;
   }
-
 </style>

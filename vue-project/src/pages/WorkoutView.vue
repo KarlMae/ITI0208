@@ -49,7 +49,7 @@
         </b-card-header>
         <b-collapse id="accordion3" accordion="my-accordion" role="tabpanel">
           <b-card-body>
-            <ul>
+            <ul v-if="workout.exercises">
               <li v-for="exercise in filterByCategoryAndDistinct(workout.exercises, 'Cool-down')" :key="exercise.id" class="exercise-list">
                 <p>{{ exercise.name }}</p>
               </li>

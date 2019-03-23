@@ -14,116 +14,36 @@ VALUES
 ('Demo workout', 'Best workout for demo purposes');
 
 
-
 INSERT INTO
-  training.exercises(name, category)
+  training.exercises (workout_id, set, repetitions, name, category, weight, duration)
 VALUES
-('Jumping jacks', 'Warm-up');
-
-INSERT INTO
-  training.exercises(name)
-VALUES
-  ('Tuck planche');
-
-INSERT INTO
-  training.exercises(name)
-VALUES
-  ('Burpee');
-
-INSERT INTO
-  training.exercises(name, weight)
-VALUES
-('Pull up', 10);
-
-INSERT INTO
-  training.exercises(name, weight)
-VALUES
-('Push up', 10);
-
-INSERT INTO
-  training.exercises(name, weight)
-VALUES
-('Squat', 80);
-
-INSERT INTO
-  training.exercises(name, duration)
-VALUES
-('Plank', 30);
-
-INSERT INTO
-  training.exercises(name, weight)
-VALUES
-('Lunges', 20);
-
-INSERT INTO
-  training.exercises(name, category, duration)
-VALUES
-('Swan position', 'Cool-down', 150);
-
-
+(1, 1, 5, 'Plank', 'Warm-up', 100, 100);
 
 
 INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
+  training.exercises (workout_id, set, repetitions, name, category, weight, duration)
 VALUES
-(1, 1, 2);
+(1, 2, 5, 'Plank', 'Warm-up', 100, 100);
+
 
 INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
+  training.exercises (workout_id, set, repetitions, name, category, weight, duration)
 VALUES
-  (2, 1, 8);
+(1, 3, 5, 'Plank', 'Warm-up', 100, 100);
+
 
 INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions, set_nr)
+  training.exercises (workout_id, set, repetitions, name, category, weight, duration)
 VALUES
-(2, 1, 7, 2);
+(1, 1, 5, 'Pushup', 'Main exercises', 20, null);
 
 INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions, set_nr)
+  training.exercises (workout_id, set, repetitions, name, category, weight, duration)
 VALUES
-(2, 1, 6, 3);
+(1, 2, 5, 'Pushup', 'Main exercises', null, 30);
+
 
 INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
+  training.exercises (workout_id, set, repetitions, name, category)
 VALUES
-  (3, 1, 12);
-
-INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
-VALUES
-(2, 3, 8);
-
-INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
-VALUES
-(3, 3, 12);
-
-INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
-VALUES
-(4, 3, 12);
-
-INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
-VALUES
-(5, 3, 12);
-
-INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
-VALUES
-(6, 3, 12);
-
-INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
-VALUES
-(7, 3, 12);
-
-INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
-VALUES
-(8, 3, 12);
-
-INSERT INTO
-  training.workout_exercises (exercise_id, workout_id, repetitions)
-VALUES
-(9, 1, 1);
+(1, 3, 5, 'Pushup', 'Main exercises');
