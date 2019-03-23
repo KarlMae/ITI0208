@@ -1,8 +1,8 @@
 package com.training.controllers;
 
 import com.training.dto.WorkoutDto;
-import com.training.dto.WorkoutExerciseDto;
-import com.training.services.WorkoutExerciseService;
+import com.training.dto.ExerciseDto;
+import com.training.services.ExerciseService;
 import com.training.services.WorkoutService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.List;
 public class Controller {
 
     private final WorkoutService workoutService;
-    private final WorkoutExerciseService workoutExerciseService;
+    private final ExerciseService exerciseService;
 
     @PostMapping(path = "/insert", consumes = "application/json")
     public void insertWorkout(@RequestBody WorkoutDto dto) {
@@ -32,12 +32,8 @@ public class Controller {
     }
 
     @PostMapping(path = "/update", consumes = "application/json")
-    public void updateWorkoutExercise(@RequestBody WorkoutExerciseDto dto) {
-        if (dto.getWeight() != null) {
-            workoutExerciseService.updateWithWeight(dto);
-        } else {
-            workoutExerciseService.updateWithDuration(dto);
-        }
+    public void updateWorkoutExercise(@RequestBody ExerciseDto dto) {
+        exerciseService.update(dto);
     }
 
 }

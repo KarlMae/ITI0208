@@ -18,7 +18,6 @@
         <mapper resource="mappers/ExerciseMapper.xml"/>
         <mapper resource="mappers/UserMapper.xml"/>
         <mapper resource="mappers/WorkoutMapper.xml"/>
-        <mapper resource="mappers/WorkoutExerciseMapper.xml"/>
     </mappers>
 
 </configuration>

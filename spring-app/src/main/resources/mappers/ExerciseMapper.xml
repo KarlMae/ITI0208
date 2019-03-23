@@ -4,19 +4,40 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.training.dao.ExerciseMapper">
 
-    <select id="fetchAll" resultType="com.training.dto.ExerciseDto">
-        SELECT * FROM training.exercises;
-    </select>
-
-    <insert id="insertExercise">
+    <insert id="insert">
         INSERT INTO
-            training.exercises(name, category, weight, duration)
+          training.exercises(workout_id, name, category, set, repetitions, weight, duration)
         VALUES
-            (#{name}, #{category}, #{weight}, #{duration})
+          (#{workoutId}, #{name}, #{category}, #{set}, #{repetitions}, #{weight}, #{duration})
     </insert>
 
-    <select id="fetchById">
-        SELECT * FROM training.exercises WHERE id = #{id}
+    <update id="update" parameterType="com.training.dto.ExerciseDto">
+        UPDATE
+            training.exercises
+        SET
+            <if test="weight != null">
+                weight = #{weight},
+            </if>
+            <if test="duration != null">
+                duration = #{duration},
+            </if>
+            repetitions = #{repetitions}
+        WHERE
+            id = #{id}
+        AND
+            workout_id = #{workoutId}
+        AND
+            set = #{set}
+    </update>
+
+    <select id="fetchByWorkoutId" parameterType="int" resultType="com.training.dto.ExerciseDto">
+        SELECT
+            *
+        FROM
+            training.exercises
+        WHERE
+            workout_id = #{id}
+        ORDER BY id, set DESC
     </select>
 
 </mapper>

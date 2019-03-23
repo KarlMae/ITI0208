@@ -10,7 +10,7 @@
       <div v-bind:key="exercise.name" class="exercise">
         <h2 id="name">{{ exercise.name }}</h2>
         <p id="reps">Repetitions: {{ exercise.repetitions }}</p>
-        <p id="sets">Sets left: {{ exercise.set_nr }}</p>
+        <p id="sets">Sets left: {{ exercise.set }}</p>
         <p id="weight" v-if="exercise.weight">Weight: {{ exercise.weight }}</p>
         <p id="duration" v-if="exercise.duration">Duration: {{ format(exercise.duration) }}</p>
       </div>
