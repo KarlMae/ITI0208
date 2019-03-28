@@ -8,7 +8,7 @@
     </button>
     <div>
       <p class="title">{{ this.name }}</p>
-      <p>{{ this.amount + this.unit }}</p>
+      <p>{{ displayAmount }}</p>
     </div>
     <button
         v-on:click="add"
@@ -27,13 +27,25 @@
         type: String,
         required: true
       },
-      amount: {
-        type: Number,
-        default: 0
+      duration: {
+        type: Number
       },
-      unit: {
-        type: String,
-        default: ''
+      weight: {
+        type: Number
+      },
+      repetitions: {
+        type: Number
+      }
+    },
+    computed: {
+      displayAmount() {
+        if (this.duration) {
+          return this.duration + "sec";
+        } else if (this.weight) {
+          return this.weight + "kg";
+        } else {
+          return this.repetitions;
+        }
       }
     },
     methods: {

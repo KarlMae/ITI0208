@@ -1,4 +1,4 @@
-<template>
+<template v-if="exercise">
   <div class="modal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -18,27 +18,37 @@
             <div class="btn-group" role="group">
               <template v-for="set in this.exercise.sets">
                 <button
-                    v-on:click="changeSet(set.setNumber - 1)"
-                    :key="set.setNumber"
+                    v-on:click="changeSet(set.set - 1)"
+                    :key="set.set"
                     type="button"
                     class="btn btn-secondary"
                 >
-                  {{ set.setNumber }}
+                  {{ set.set }}
                 </button>
               </template>
             </div>
           </div>
 
           <EditModalRow
+              v-if="selectedSet.repetitions !== 0"
               name="repetitions"
-              :amount="selectedSet.repetitions"
+              :repetitions="selectedSet.repetitions"
               v-on:add="add"
               v-on:subtract="subtract"
           />
 
           <EditModalRow
-              name="amount"
-              :amount="selectedSet.amount"
+              v-if="selectedSet.duration !== 0"
+              name="duration"
+              :duration="selectedSet.duration"
+              v-on:add="add"
+              v-on:subtract="subtract"
+          />
+
+          <EditModalRow
+              v-if="selectedSet.weight !== 0"
+              name="weight"
+              :weight="selectedSet.weight"
               v-on:add="add"
               v-on:subtract="subtract"
           />
@@ -54,6 +64,7 @@
 
 <script>
   import EditModalRow from './EditModalRow'
+  import axios from 'axios';
 
   export default {
     name: "EditModal",
@@ -62,56 +73,46 @@
     },
     data() {
       return {
-        selectedSet: {}
+        selectedSetId: 0,
+        exercise: {}
       }
     },
     props: {
-      exerciseId: {
-        type: Number,
-        required: true
+      exerciseStore: {
+
       }
     },
-    created() {
-      // Send GET request
-      this.exercise = {
-        name: 'Tuck planche',
-        unit: 'kg',
-        sets: [
-          {
-            setNumber: 1,
-            repetitions: 10,
-            amount: 11
-          },
-          {
-            setNumber: 2,
-            repetitions: 20,
-            amount: 21,
-          },
-          {
-            setNumber: 3,
-            repetitions: 30,
-            amount: 31,
-          },
-          {
-            setNumber: 4,
-            repetitions: 40,
-            amount: 41,
-          }
-        ],
-      };
-
-      this.selectedSet = this.exercise.sets[0]
+    async mounted() {
+       await axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.exerciseStore.getExercise().groupId)
+          .then(response => {
+            this.exercise = response.data;
+          })
+          .catch(e => {
+            this.errors.push(e)
+          });
+    },
+    computed: {
+      selectedSet() {
+        return this.exercise.sets[this.selectedSetId]
+      }
     },
     methods: {
       closeModal() {
         this.$emit('close');
       },
-      saveChanges() {
-        // Send POST request
+      async saveChanges() {
+        await axios.post(process.env.VUE_APP_BACKEND_IP + '/updateExercise', this.exercise)
+          .catch(e => {
+            this.errors.push(e)
+          });
+
+        debugger;
+        this.exerciseStore.updateCurrentExercise(this.exercise);
+
         this.$emit('close');
       },
       changeSet(setNumber) {
-        this.selectedSet = this.exercise.sets[setNumber];
+        this.selectedSetId = setNumber;
       },
       add(element) {
         this.selectedSet[element] = this.selectedSet[element] + 1

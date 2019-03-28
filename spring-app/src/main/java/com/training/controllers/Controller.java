@@ -1,7 +1,8 @@
 package com.training.controllers;
 
-import com.training.dto.WorkoutDto;
 import com.training.dto.ExerciseDto;
+import com.training.dto.ExerciseGroupDto;
+import com.training.dto.WorkoutDto;
 import com.training.services.ExerciseService;
 import com.training.services.WorkoutService;
 import lombok.AllArgsConstructor;
@@ -26,13 +27,18 @@ public class Controller {
         return workoutService.fetchAll();
     }
 
-    @GetMapping("/fetchById/{id}")
-    public WorkoutDto fetchById(@PathVariable(value="id") Integer id) {
+    @GetMapping("/fetchWorkout/{id}")
+    public WorkoutDto fetchWorkout(@PathVariable(value="id") Integer id) {
         return workoutService.fetchById(id);
     }
 
-    @PostMapping(path = "/update", consumes = "application/json")
-    public void updateWorkoutExercise(@RequestBody ExerciseDto dto) {
+    @GetMapping("/fetchGroup/{id}")
+    public ExerciseGroupDto fetchExerciseGroup(@PathVariable(value="id") Integer id) {
+        return exerciseService.fetchGroup(id);
+    }
+
+    @PostMapping(path = "/updateExercise", consumes = "application/json")
+    public void updateExercise(@RequestBody ExerciseGroupDto dto) {
         exerciseService.update(dto);
     }
 

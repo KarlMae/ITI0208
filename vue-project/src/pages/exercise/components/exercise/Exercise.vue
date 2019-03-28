@@ -7,12 +7,11 @@
     >
 
     <transition name="slide-fade">
-      <div v-bind:key="exercise.name" class="exercise">
-        <h2 id="name">{{ exercise.name }}</h2>
-        <p id="reps">Repetitions: {{ exercise.repetitions }}</p>
-        <p id="sets">Sets left: {{ exercise.set }}</p>
-        <p id="weight" v-if="exercise.weight">Weight: {{ exercise.weight }}</p>
-        <p id="duration" v-if="exercise.duration">Duration: {{ format(exercise.duration) }}</p>
+      <div v-bind:key="currentSet.name" class="exercise">
+        <h2 id="name">{{ currentSet.name }}</h2>
+        <p id="reps">Repetitions: {{ currentSet.repetitions }}</p>
+        <p id="weight" v-if="currentSet.weight">Weight: {{ currentSet.weight }}</p>
+        <p id="duration" v-if="currentSet.duration">Duration: {{ format(currentSet.duration) }}</p>
       </div>
     </transition>
   </div>
@@ -26,7 +25,8 @@
     data() {
       return {
         exerciseStore: exerciseStore,
-        exercise: exerciseStore.getExercise()
+        exercise: exerciseStore.getExercise(),
+        setIndex: 0
       };
     },
     created() {
@@ -35,11 +35,17 @@
     computed: {
       exerciseIndex() {
         return this.exerciseStore.state.exerciseIndex;
+      },
+      currentSet() {
+        return this.exerciseStore.getExercise().sets[this.setIndex];
       }
     },
     watch: {
       exerciseIndex() {
         this.exercise = this.exerciseStore.getExercise();
+      },
+      currentSet() {
+        console.log("pede")
       }
     },
     methods: {

@@ -15,35 +15,31 @@ VALUES
 
 
 INSERT INTO
-  training.exercises (workout_id, set, repetitions, name, category, weight, duration)
+  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
 VALUES
-(1, 1, 5, 'Plank', 'Warm-up', 100, 100);
-
+(1, 5, 'Plank', 'Warm-up', 100, 100, 1, 1);
 
 INSERT INTO
-  training.exercises (workout_id, set, repetitions, name, category, weight, duration)
+  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
 VALUES
-(1, 2, 5, 'Plank', 'Warm-up', 100, 100);
-
+(2, 5, 'Plank', 'Warm-up', 100, 100, 1, 1);
 
 INSERT INTO
-  training.exercises (workout_id, set, repetitions, name, category, weight, duration)
+  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
 VALUES
-(1, 3, 5, 'Plank', 'Warm-up', 100, 100);
-
+(3, 5, 'Plank', 'Warm-up', 100, 100, 1, 1);
 
 INSERT INTO
-  training.exercises (workout_id, set, repetitions, name, category, weight, duration)
+  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
 VALUES
-(1, 1, 5, 'Pushup', 'Main exercises', 20, null);
+(1, 5, 'Pushup', 'Warm-up', 100, 100, 2, 1);
 
 INSERT INTO
-  training.exercises (workout_id, set, repetitions, name, category, weight, duration)
+  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
 VALUES
-(1, 2, 5, 'Pushup', 'Main exercises', null, 30);
-
+(2, 5, 'Pushup', 'Warm-up', 100, 100, 2, 1);
 
 INSERT INTO
-  training.exercises (workout_id, set, repetitions, name, category)
+  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
 VALUES
-(1, 3, 5, 'Pushup', 'Main exercises');
+(3, 5, 'Pushup', 'Warm-up', 100, 100, 2, 1);

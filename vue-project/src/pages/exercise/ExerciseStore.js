@@ -2,13 +2,14 @@ import * as Cookies from 'js-cookie';
 
 export var exerciseStore = {
   state: {
-    exercises: [],
+    exerciseGroups: [],
     exerciseIndex: 0,
+    setIndex: 0,
     isEditModalVisible: false
   },
 
   setWorkout(workout) {
-    this.state.exercises = workout.exercises;
+    this.state.exerciseGroups = workout.exerciseGroups;
     this.state.exerciseIndex = workout.exerciseIndex | 0;
 
     Cookies.set('state', this.state)
@@ -22,13 +23,17 @@ export var exerciseStore = {
     Cookies.set('state', this.state)
   },
   getExercise() {
-    return this.state.exercises[this.state.exerciseIndex];
+    return this.state.exerciseGroups[this.state.exerciseIndex];
+  },
+  updateCurrentExercise(exercise) {
+    debugger;
+    this.state.exerciseGroups[this.state.exerciseIndex] = exercise;
   },
   previousExercisePresent() {
     return this.state.exerciseIndex > 0;
   },
   nextExercisePresent() {
-    return this.state.exerciseIndex < this.state.exercises.length - 1;
+    return this.state.exerciseIndex < this.state.exerciseGroups.length - 1;
   },
   toggleEditModal() {
     this.state.isEditModalVisible = !this.state.isEditModalVisible;

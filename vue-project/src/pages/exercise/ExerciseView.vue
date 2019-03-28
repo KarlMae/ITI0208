@@ -26,7 +26,7 @@
 
     <EditModal
         v-if="isModalVisible"
-        :exercise-id="exerciseStore.getExercise().id"
+        :exercise-store="exerciseStore"
         @close="toggleEditModal"
     />
   </div>

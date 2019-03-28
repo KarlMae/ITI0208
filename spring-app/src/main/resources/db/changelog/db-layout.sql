@@ -10,7 +10,8 @@ CREATE TABLE workouts (
 
 CREATE TABLE exercises (
   id SERIAL PRIMARY KEY,
-  workout_id INTEGER REFERENCES workouts(id),
+  group_id INTEGER NOT NULL,
+  workout_id INTEGER NOT NULL,
   name VARCHAR(255) NOT NULL,
   category VARCHAR(255) NOT NULL DEFAULT 'Main exercises',
   set INTEGER NOT NULL DEFAULT 1,
