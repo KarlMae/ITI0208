@@ -1,3 +1,4 @@
+.gitignore
 .idea
 vue-project/node_modules
 spring-app/docker-compose.yml
