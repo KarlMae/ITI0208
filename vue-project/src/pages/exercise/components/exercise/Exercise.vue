@@ -9,7 +9,7 @@
     <transition name="slide-fade">
       <div v-bind:key="currentSet.name" class="exercise">
         <h2 id="name">{{ currentSet.name }}</h2>
-        <p id="reps">Repetitions: {{ currentSet.repetitions }}</p>
+        <p id="reps" v-if="currentSet.repetitions">Repetitions: {{ currentSet.repetitions }}</p>
         <p id="weight" v-if="currentSet.weight">Weight: {{ currentSet.weight }}</p>
         <p id="duration" v-if="currentSet.duration">Duration: {{ format(currentSet.duration) }}</p>
       </div>

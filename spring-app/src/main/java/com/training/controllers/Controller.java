@@ -1,12 +1,15 @@
 package com.training.controllers;
 
-import com.training.dto.ExerciseDto;
 import com.training.dto.ExerciseGroupDto;
 import com.training.dto.WorkoutDto;
 import com.training.services.ExerciseService;
 import com.training.services.WorkoutService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -29,6 +32,7 @@ public class Controller {
 
     @GetMapping("/fetchWorkout/{id}")
     public WorkoutDto fetchWorkout(@PathVariable(value="id") Integer id) {
+        System.out.println(id);
         return workoutService.fetchById(id);
     }
 

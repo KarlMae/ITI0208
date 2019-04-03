@@ -1,8 +1,10 @@
 package com.training.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class ExerciseDto {
 
     private int id;
