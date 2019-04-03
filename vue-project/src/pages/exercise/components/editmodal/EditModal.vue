@@ -1,33 +1,24 @@
-<template v-if="exercise">
-  <div class="modal">
-    <div class="modal-dialog">
+<template>
+  <div class="modal" @click='closeModal'>
+    <div class="modal-dialog" @click.stop='() => {}'>
       <div class="modal-content">
         <div class="modal-header">
-          <button
-              v-on:click="closeModal"
-              class="close"
-          >
+          <button v-on:click="closeModal" class="close">
             <span>&lt;</span>
           </button>
           <h5 class="modal-title">{{ this.exercise.name }}</h5>
         </div>
-        <div class="modal-body">
 
+        <div class="modal-body">
           <div>
             <p class="title">Set</p>
-            <div class="btn-group" role="group">
-              <template v-for="set in exercise.sets">
-                <button
-                    v-on:click="changeSet(set.set - 1)"
-                    :key="set.set"
-                    type="button"
-                    class="btn btn-secondary"
-                >
-                  {{ set.set }}
-                </button>
-              </template>
-            </div>
+            <SetSelector
+                :set-count="exercise.sets.length + 2"
+                :set="selectedSetId"
+                @selectSet="selectSet"
+            />
           </div>
+
 
           <EditModalRow
               v-if="selectedSet.repetitions !== 0"
@@ -53,9 +44,8 @@
               v-on:subtract="subtract"
           />
         </div>
-        <button
-            v-on:click="saveChanges"
-            class="btn btn-primary save-button">Save changes
+        <button v-on:click="saveChanges" class="btn btn-primary save-button">
+          Save changes
         </button>
       </div>
     </div>
@@ -65,15 +55,17 @@
 <script>
   import EditModalRow from './EditModalRow'
   import axios from 'axios';
+  import SetSelector from '../setSelector/SetSelector';
 
   export default {
     name: "EditModal",
     components: {
+      SetSelector,
       EditModalRow
     },
     data() {
       return {
-        selectedSetId: 0,
+        selectedSetId: 2,
         exercise: {
           sets: [
             {
@@ -84,13 +76,13 @@
       }
     },
     mounted() {
-       axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.$store.getters.currentExercise.groupId)
-          .then(response => {
-            this.exercise = response.data
-          })
-          .catch(e => {
-            this.errors.push(e)
-          });
+      axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.$store.getters.currentExercise.groupId)
+        .then(response => {
+          this.exercise = response.data
+        })
+        .catch(e => {
+          this.errors.push(e)
+        });
     },
     computed: {
       selectedSet() {
@@ -107,7 +99,7 @@
         this.$store.commit('updateCurrentExercise', this.exercise);
         this.$emit('close')
       },
-      changeSet(setNumber) {
+      selectSet(setNumber) {
         this.selectedSetId = setNumber
       },
       add(element) {
@@ -118,12 +110,16 @@
       },
       closeModal() {
         this.$emit('close')
+      },
+      ok() {
+        console.log("ok");
       }
     }
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import '../../../../assets/colors';
   .modal {
     display: block;
     padding-top: 2rem;
@@ -142,12 +138,15 @@
     padding: 0 1rem 1rem 1rem;
   }
 
-  .modal {
-    background-color: #30000090;
-  }
-
   .save-button {
     padding: 1rem;
+    border-radius: 0;
+    background-color: $primary-main;
+    border: solid 1px $primary-shade;
+  }
+
+  .modal {
+    background-color: #00000070;
   }
 
   .title {

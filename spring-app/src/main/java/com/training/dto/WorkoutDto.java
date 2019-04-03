@@ -16,7 +16,6 @@ public class WorkoutDto {
     private String name;
     private String description;
     private List<ExerciseGroupDto> exerciseGroups = new ArrayList<>();
-    private List<ExerciseDto> exercises;
 
     public void addExerciseGroup(ExerciseGroupDto group) {
         this.exerciseGroups.add(group);

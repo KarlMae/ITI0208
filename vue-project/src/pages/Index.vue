@@ -29,7 +29,6 @@ export default {
     }
   },
   async mounted() {
-    console.log("mounted");
     this.axios
       .get(process.env.VUE_APP_BACKEND_IP + '/fetchAllWorkouts')
       .then(response => {

@@ -19,7 +19,7 @@
           <SetSelector
               :set-count="currentExercise.length"
               :set="currentSet.set"
-              @selectSet="selectSet"
+              @selectSet="seledddctSeta"
           />
         </div>
       </div>
@@ -53,7 +53,6 @@
           return `${min} min ${sec} sec`;
       },
       selectSet(index) {
-        this.$store.commit('selectSet', index)
       },
       openEditModal() {
         this.$emit('openEditModal');
