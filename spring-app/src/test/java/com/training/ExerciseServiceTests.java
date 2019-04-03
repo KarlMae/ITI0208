@@ -41,6 +41,19 @@ public class ExerciseServiceTests {
     }
 
     @Test
+    public void testGetAllExercises() {
+        ExerciseDto exercise = new ExerciseDto(1, 1, 1, "Push up", "Warm-up", 1,
+                10, 0, 0);
+        ExerciseDto exercise2 = new ExerciseDto(2, 1, 1, "Push up", "Warm-up", 2,
+                11, 0, 0);
+        List<ExerciseDto> exerciseDtos = Arrays.asList(exercise, exercise2);
+        when(exerciseDao.fetchAll()).thenReturn(exerciseDtos);
+        List<ExerciseDto> exercises = exerciseDao.fetchAll();
+        verify(exerciseDao).fetchAll();
+        assertEquals(exercises.size(), 2);
+    }
+
+    @Test
     public void testUpdateExercise() {
         ExerciseDto exercise = new ExerciseDto(1, 1, 1, "Push up", "Warm-up", 1,
                 10, 0, 0);
