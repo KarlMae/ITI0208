@@ -14,6 +14,8 @@ public interface ExerciseMapper {
 
     List<ExerciseDto> fetchGroup(Integer id);
 
+    List<ExerciseDto> fetchAll();
+
     void update(ExerciseDto dto);
 
     void bulkInsert(List<ExerciseDto> dto);

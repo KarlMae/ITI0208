@@ -20,6 +20,10 @@ public class ExerciseService {
         return ExerciseGroupDto.createExerciseGroupDto(exercises);
     }
 
+    public List<ExerciseDto> fetchAll() {
+        return exerciseDao.fetchAll();
+    }
+
     public void update(ExerciseGroupDto dto) {
         dto.getSets().forEach(exerciseDao::update);
     }

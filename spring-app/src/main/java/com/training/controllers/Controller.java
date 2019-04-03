@@ -1,5 +1,6 @@
 package com.training.controllers;
 
+import com.training.dto.ExerciseDto;
 import com.training.dto.ExerciseGroupDto;
 import com.training.dto.WorkoutDto;
 import com.training.services.ExerciseService;
@@ -25,9 +26,14 @@ public class Controller {
         workoutService.insert(dto);
     }
 
-    @GetMapping("/fetchAll")
-    public List<WorkoutDto> fetchAll() {
+    @GetMapping("/fetchAllWorkouts")
+    public List<WorkoutDto> fetchAllWorkouts() {
         return workoutService.fetchAll();
+    }
+
+    @GetMapping("/fetchAllExercises")
+    public List<ExerciseDto> fetchAllExercises() {
+        return exerciseService.fetchAll();
     }
 
     @GetMapping("/fetchWorkout/{id}")

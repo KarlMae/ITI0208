@@ -6,7 +6,5 @@ spring-app/build
 .gradle
 spring-app/gradle/wrapper/gradle-wrapper.jar
 spring-app/gradle/wrapper/gradle-wrapper.properties
-
 spring-app/.env.local
-
 node_modules
