@@ -7,11 +7,21 @@
     >
 
     <transition name="slide-fade">
-      <div v-bind:key="currentSet.name" class="exercise">
-        <h2 id="name">{{ currentSet.name }}</h2>
-        <p id="reps" v-if="currentSet.repetitions">Repetitions: {{ currentSet.repetitions }}</p>
-        <p id="weight" v-if="currentSet.weight">Weight: {{ currentSet.weight }}</p>
-        <p id="duration" v-if="currentSet.duration">Duration: {{ format(currentSet.duration) }}</p>
+      <div class="exercise">
+        <div v-bind:key="currentSet.name">
+          <h2 id="name">{{ currentSet.name }}</h2>
+          <p id="reps" v-if="currentSet.repetitions">Repetitions: {{ currentSet.repetitions }}</p>
+          <p id="weight" v-if="currentSet.weight">Weight: {{ currentSet.weight }}</p>
+          <p id="duration" v-if="currentSet.duration">Duration: {{ format(currentSet.duration) }}</p>
+        </div>
+
+        <div class="set-selector">
+          <SetSelector
+              :set-count="currentExercise.length"
+              :set="currentSet.set"
+              @selectSet="selectSet"
+          />
+        </div>
       </div>
     </transition>
   </div>
@@ -19,32 +29,18 @@
 
 <script>
 
+  import SetSelector from '../setSelector/SetSelector';
   export default {
     name: "Exercise",
-    data() {
-      return {
-        exerciseStore: exerciseStore,
-        exercise: exerciseStore.getExercise(),
-        setIndex: 0
-      };
-    },
-    created() {
-      this.exercise = this.exerciseStore.getExercise();
+    components: {
+      SetSelector
     },
     computed: {
-      exerciseIndex() {
-        return this.exerciseStore.state.exerciseIndex;
-      },
       currentSet() {
-        return this.exerciseStore.getExercise().sets[this.setIndex];
-      }
-    },
-    watch: {
-      exerciseIndex() {
-        this.exercise = this.exerciseStore.getExercise();
+        return this.$store.getters.currentSet;
       },
-      currentSet() {
-        console.log("pede")
+      currentExercise() {
+        return this.$store.getters.currentExercise.sets;
       }
     },
     methods: {
@@ -55,6 +51,9 @@
             return `${sec} sec`
           }
           return `${min} min ${sec} sec`;
+      },
+      selectSet(index) {
+        this.$store.commit('selectSet', index)
       },
       openEditModal() {
         this.$emit('openEditModal');
@@ -69,14 +68,13 @@
   }
 
   .exercise {
-    padding-top: 1.5rem;
-    margin: auto;
-    width: 90%;
+    padding: 2rem;
   }
 
   .transition-wrapper {
     display: flex;
     position: relative;
+    height: 52%;
   }
 
   .slide-fade-enter-active {
@@ -96,5 +94,13 @@
     position: absolute;
     right: 1rem;
     top: 2rem;
+  }
+
+  .set-selector {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 </style>

@@ -16,7 +16,7 @@
           <div>
             <p class="title">Set</p>
             <div class="btn-group" role="group">
-              <template v-for="set in this.exercise.sets">
+              <template v-for="set in exercise.sets">
                 <button
                     v-on:click="changeSet(set.set - 1)"
                     :key="set.set"
@@ -74,11 +74,17 @@
     data() {
       return {
         selectedSetId: 0,
-        exercise: {}
+        exercise: {
+          sets: [
+            {
+              repetitions: 0
+            }
+          ]
+        }
       }
     },
-    async mounted() {
-       await axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.$store.getters.currentExercise.groupId)
+    mounted() {
+       axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.$store.getters.currentExercise.groupId)
           .then(response => {
             this.exercise = response.data
           })
