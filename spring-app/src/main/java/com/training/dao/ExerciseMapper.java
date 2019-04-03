@@ -1,7 +1,6 @@
 package com.training.dao;
 
 import com.training.dto.ExerciseDto;
-import com.training.dto.ExerciseGroupDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

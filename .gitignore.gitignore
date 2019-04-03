@@ -1,0 +1,9 @@
+.idea
+vue-project/node_modules
+spring-app/docker-compose.yml
+spring-app/.gradle
+spring-app/build
+.gradle
+spring-app/gradle/wrapper/gradle-wrapper.jar
+spring-app/gradle/wrapper/gradle-wrapper.properties
+spring-app/.env.local
