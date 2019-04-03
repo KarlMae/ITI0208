@@ -35,7 +35,7 @@ import Timer from './components/Timer'
 import Header from './components/Header'
 import ExerciseImage from './components/exercise/ExerciseImage';
 import Exercise from './components/exercise/Exercise';
-import EditModal from './components/editModal/EditModal'
+import EditModal from './components/editmodal/EditModal'
 
 export default {
   name: 'exercise-view',
