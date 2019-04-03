@@ -45,6 +45,8 @@
           training.exercises
         WHERE
             workout_id = #{id}
+        ORDER BY
+          group_id, set
     </select>
 
     <select id="fetchGroup" resultType="com.training.dto.ExerciseDto">
@@ -54,6 +56,8 @@
           training.exercises
         WHERE
           group_id = #{id}
+        ORDER BY
+          group_id, set
     </select>
 
 </mapper>

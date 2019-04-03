@@ -27,7 +27,6 @@
       id: Number,
       name: String,
       description: String,
-      exercises: Array
     },
     methods: {
       selectWorkout() {

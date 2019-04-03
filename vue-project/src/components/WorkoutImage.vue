@@ -16,10 +16,6 @@
       description: String,
       id: Number
     },
-    data() {
-      return {
-      }
-    }
   }
 </script>
 

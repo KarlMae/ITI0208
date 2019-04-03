@@ -2,13 +2,12 @@
 
   <div id="header" class="header">
     <img src="../assets/icons/menu.svg" alt="menu">
-    <Name class="name" />
+    <Name class="name"/>
   </div>
 
 </template>
 
 <script>
-
   import Name from './Name'
 
   export default {
@@ -17,7 +16,6 @@
       Name
     }
   }
-
 </script>
 
 <style scoped>

@@ -16,17 +16,19 @@
         *
       FROM
         training.workouts
+      ORDER BY
+        id, name, description
     </select>
 
     <select id="fetchById" resultType="com.training.dto.WorkoutDto">
       SELECT
-        id,
-        name,
-        description
+        *
       FROM
         training.workouts
       WHERE
         id = #{id}
+      ORDER BY
+        id, name, description
     </select>
 
 </mapper>

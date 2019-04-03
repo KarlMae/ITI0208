@@ -16,7 +16,7 @@
           <div>
             <p class="title">Set</p>
             <div class="btn-group" role="group">
-              <template v-for="set in this.exercise.sets">
+              <template v-for="set in exercise.sets">
                 <button
                     v-on:click="changeSet(set.set - 1)"
                     :key="set.set"
@@ -74,18 +74,19 @@
     data() {
       return {
         selectedSetId: 0,
-        exercise: {}
+        exercise: {
+          sets: [
+            {
+              repetitions: 0
+            }
+          ]
+        }
       }
     },
-    props: {
-      exerciseStore: {
-
-      }
-    },
-    async mounted() {
-       await axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.exerciseStore.getExercise().groupId)
+    mounted() {
+       axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.$store.getters.currentExercise.groupId)
           .then(response => {
-            this.exercise = response.data;
+            this.exercise = response.data
           })
           .catch(e => {
             this.errors.push(e)
@@ -97,30 +98,28 @@
       }
     },
     methods: {
-      closeModal() {
-        this.$emit('close');
-      },
       async saveChanges() {
         await axios.post(process.env.VUE_APP_BACKEND_IP + '/updateExercise', this.exercise)
           .catch(e => {
             this.errors.push(e)
           });
 
-        debugger;
-        this.exerciseStore.updateCurrentExercise(this.exercise);
-
-        this.$emit('close');
+        this.$store.commit('updateCurrentExercise', this.exercise);
+        this.$emit('close')
       },
       changeSet(setNumber) {
-        this.selectedSetId = setNumber;
+        this.selectedSetId = setNumber
       },
       add(element) {
         this.selectedSet[element] = this.selectedSet[element] + 1
       },
       subtract(element) {
-        this.selectedSet[element] = this.selectedSet[element] - 1;
+        this.selectedSet[element] = this.selectedSet[element] - 1
+      },
+      closeModal() {
+        this.$emit('close')
       }
-    },
+    }
   }
 </script>
 

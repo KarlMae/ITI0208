@@ -1,21 +1,11 @@
 <template>
   <div class="line">
-    <button
-        v-on:click="subtract"
-        class="btn amount-btn"
-    >
-      -
-    </button>
+    <button v-on:click="subtract" class="btn amount-btn">-</button>
     <div>
       <p class="title">{{ this.name }}</p>
       <p>{{ displayAmount }}</p>
     </div>
-    <button
-        v-on:click="add"
-        class="btn amount-btn"
-    >
-      +
-    </button>
+    <button v-on:click="add" class="btn amount-btn">+</button>
   </div>
 </template>
 
@@ -40,22 +30,22 @@
     computed: {
       displayAmount() {
         if (this.duration) {
-          return this.duration + "sec";
+          return this.duration + "sec"
         } else if (this.weight) {
-          return this.weight + "kg";
+          return this.weight + "kg"
         } else {
-          return this.repetitions;
+          return this.repetitions
         }
       }
     },
     methods: {
       add() {
-        this.$emit('add', this.name);
+        this.$emit('add', this.name)
       },
       subtract() {
-        this.$emit('subtract', this.name);
+        this.$emit('subtract', this.name)
       }
-    },
+    }
   }
 </script>
 
