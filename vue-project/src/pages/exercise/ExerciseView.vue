@@ -25,6 +25,7 @@
 
     <EditModal
         v-if="isModalVisible"
+        :exerciseSet="currentSet.set"
         @close="toggleEditModal"
     />
   </div>
@@ -49,7 +50,7 @@ export default {
   data() {
     return {
       isModalVisible: false
-    };
+    }
   },
   methods: {
     nextExercise() {
@@ -61,6 +62,9 @@ export default {
     toggleEditModal() {
       this.isModalVisible = !this.isModalVisible;
     },
+    currentSet() {
+      return this.$store.getters.currentSet;
+    }
   },
   computed: {
     previousExercisePresent() {

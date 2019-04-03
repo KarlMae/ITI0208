@@ -13,7 +13,7 @@
           <div>
             <p class="title">Set</p>
             <SetSelector
-                :set-count="exercise.sets.length + 2"
+                :set-count="exercise.sets.length"
                 :set="selectedSetId"
                 @selectSet="selectSet"
             />
@@ -63,6 +63,9 @@
       SetSelector,
       EditModalRow
     },
+    props: {
+      exerciseSet: Number
+    },
     data() {
       return {
         selectedSetId: 2,
@@ -78,7 +81,7 @@
     mounted() {
       axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.$store.getters.currentExercise.groupId)
         .then(response => {
-          this.exercise = response.data
+          this.exercise = response.data;
         })
         .catch(e => {
           this.errors.push(e)

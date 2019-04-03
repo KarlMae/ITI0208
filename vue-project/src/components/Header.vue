@@ -1,7 +1,7 @@
 <template>
 
   <div id="header" class="header">
-    <img src="../assets/icons/menu.svg" alt="menu">
+    <Slide width="170" noOverlay/>
     <Name class="name"/>
   </div>
 
@@ -9,18 +9,21 @@
 
 <script>
   import Name from './Name'
+  import { Slide } from 'vue-burger-menu'
+
 
   export default {
     name: "Header",
     components: {
-      Name
+      Name,
+      Slide
     }
   }
 </script>
 
 <style scoped>
   .header {
-    min-height: 4rem;
+    min-height: 4.5rem;
     width: 100%;
     display: flex;
   }
@@ -28,7 +31,8 @@
   .name {
     color: #3a3a3a;
     font-size: 2rem;
-    margin: auto 2rem;
+    margin-top: auto;
+    margin-right: 36px;
     white-space: nowrap;
   }
 

@@ -1,13 +1,18 @@
 <template>
   <div class="header container-fluid">
-    <img src="../../../assets/icons/menu.svg" class="menu-svg">
+    <Slide width="170" noOverlay/>
     <p v-on:click="toHome" class="logo">Logo</p>
   </div>
 </template>
 
 <script>
-  export default {
+    import { Slide } from 'vue-burger-menu'
+
+    export default {
     name: "Header",
+    components: {
+      Slide
+    },
     methods: {
         toHome() {
             this.$router.push('/')

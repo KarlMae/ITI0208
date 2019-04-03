@@ -21,6 +21,7 @@
     },
     watch: {
       selectedSet(value) {
+        console.log("select: " + (value - 1));
         this.$emit('selectSet', value - 1)
       }
     }

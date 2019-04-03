@@ -16,11 +16,12 @@
 import Header from '../components/Header'
 import Workout from '../components/Workout'
 
+
 export default {
   name: 'app',
   components: {
     Header,
-    Workout,
+    Workout
   },
   data() {
     return {
