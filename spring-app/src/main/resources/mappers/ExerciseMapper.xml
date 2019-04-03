@@ -60,4 +60,11 @@
           group_id, set
     </select>
 
+    <select id="fetchAll" resultType="com.training.dto.ExerciseDto">
+        SELECT
+            *
+        FROM
+            training.exercises
+    </select>
+
 </mapper>

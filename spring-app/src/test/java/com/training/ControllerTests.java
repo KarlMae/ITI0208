@@ -46,7 +46,7 @@ public class ControllerTests {
         WorkoutDto workout2 = new WorkoutDto(2, "Test2", "Test2", new ArrayList<>(), new ArrayList<>());
         List<WorkoutDto> workoutDtos = Arrays.asList(workout, workout2);
         when(workoutService.fetchAll()).thenReturn(workoutDtos);
-        List<WorkoutDto> workouts = controller.fetchAll();
+        List<WorkoutDto> workouts = controller.fetchAllWorkouts();
         verify(workoutService).fetchAll();
         assertEquals(workouts.size(), 2);
     }
