@@ -77,15 +77,10 @@
         exercise: {}
       }
     },
-    props: {
-      exerciseStore: {
-
-      }
-    },
     async mounted() {
-       await axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.exerciseStore.getExercise().groupId)
+       await axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.$store.getters.currentExercise.groupId)
           .then(response => {
-            this.exercise = response.data;
+            this.exercise = response.data
           })
           .catch(e => {
             this.errors.push(e)
@@ -97,30 +92,28 @@
       }
     },
     methods: {
-      closeModal() {
-        this.$emit('close');
-      },
       async saveChanges() {
         await axios.post(process.env.VUE_APP_BACKEND_IP + '/updateExercise', this.exercise)
           .catch(e => {
             this.errors.push(e)
           });
 
-        debugger;
-        this.exerciseStore.updateCurrentExercise(this.exercise);
-
-        this.$emit('close');
+        this.$store.commit('updateCurrentExercise', this.exercise);
+        this.$emit('close')
       },
       changeSet(setNumber) {
-        this.selectedSetId = setNumber;
+        this.selectedSetId = setNumber
       },
       add(element) {
         this.selectedSet[element] = this.selectedSet[element] + 1
       },
       subtract(element) {
-        this.selectedSet[element] = this.selectedSet[element] - 1;
+        this.selectedSet[element] = this.selectedSet[element] - 1
+      },
+      closeModal() {
+        this.$emit('close')
       }
-    },
+    }
   }
 </script>
 

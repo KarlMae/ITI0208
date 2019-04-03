@@ -1,7 +1,7 @@
 <template>
   <div id="exercise-view">
     <button
-        v-if="exerciseStore.previousExercisePresent()"
+        v-if="previousExercisePresent"
         v-on:click="previousExercise"
         class="nav-button"
         style="left: 0.5rem">
@@ -11,14 +11,13 @@
     <div class="exercise-section">
       <Header/>
       <ExerciseImage/>
-      <Exercise
-          v-on:openEditModal="toggleEditModal"
-      />
+      <Exercise v-on:openEditModal="toggleEditModal"/>
+      <hr/>
       <Timer/>
     </div>
 
     <button
-        v-if="exerciseStore.nextExercisePresent()"
+        v-if="nextExercisePresent"
         v-on:click="nextExercise()" class="nav-button" style="right: 0.5rem">
       &gt;
     </button>
@@ -26,63 +25,52 @@
 
     <EditModal
         v-if="isModalVisible"
-        :exercise-store="exerciseStore"
         @close="toggleEditModal"
     />
   </div>
 </template>
 
 <script>
+import Timer from './components/Timer'
+import Header from './components/Header'
+import ExerciseImage from './components/exercise/ExerciseImage';
+import Exercise from './components/exercise/Exercise';
+import EditModal from './components/editModal/EditModal'
 
-  import Timer from './components/Timer'
-  import Header from './components/Header'
-  import ExerciseImage from './components/exercise/ExerciseImage';
-  import Exercise from './components/exercise/Exercise';
-  import EditModal from './components/editmodal/EditModal'
-  import {exerciseStore} from './ExerciseStore.js';
-  import * as Cookies from 'js-cookie';
-
-  export default {
-    name: 'exercise-view',
-    components: {
-      Exercise,
-      ExerciseImage,
-      Header,
-      Timer,
-      EditModal
+export default {
+  name: 'exercise-view',
+  components: {
+    Exercise,
+    ExerciseImage,
+    Header,
+    Timer,
+    EditModal
+  },
+  data() {
+    return {
+      isModalVisible: false
+    };
+  },
+  methods: {
+    nextExercise() {
+      this.$store.commit('nextExercise');
     },
-    data() {
-      return {
-        exerciseStore: exerciseStore,
-        isModalVisible: false
-
-      };
+    previousExercise() {
+      this.$store.commit('previousExercise');
     },
-    created() {
-      this.exerciseStore.setWorkout(JSON.parse(Cookies.get('state')));
+    toggleEditModal() {
+      this.isModalVisible = !this.isModalVisible;
     },
-    methods: {
-      nextExercise() {
-        this.exerciseStore.nextExercise();
-      },
-      previousExercise() {
-        this.exerciseStore.previousExercise();
-      },
-      toggleEditModal() {
-        this.exerciseStore.toggleEditModal();
-      },
+  },
+  computed: {
+    previousExercisePresent() {
+      return this.$store.getters.previousExercisePresent;
     },
-    computed: {
-      isEditModalVisible() {
-        return this.exerciseStore.state.isEditModalVisible;
-      }
-    },
-    watch: {
-      isEditModalVisible() {
-        this.isModalVisible = this.exerciseStore.isEditModalVisible();
-      }
-    },
+    nextExercisePresent() {
+      return this.$store.getters.nextExercisePresent;
+    }
   }
+}
 </script>
 
 <style scoped>

@@ -7,12 +7,7 @@
 
 <script>
   export default {
-    name: "Header",
-    data() {
-      return {
-        exerciseStore: 0
-      };
-    },
+    name: "Header"
   }
 </script>
 

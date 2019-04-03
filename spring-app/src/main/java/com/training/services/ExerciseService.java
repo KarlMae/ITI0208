@@ -21,7 +21,7 @@ public class ExerciseService {
     }
 
     public void update(ExerciseGroupDto dto) {
-        dto.getSets().forEach(set -> exerciseDao.update(set));
+        dto.getSets().forEach(exerciseDao::update);
     }
 
 }

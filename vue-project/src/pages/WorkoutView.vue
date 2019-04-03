@@ -69,12 +69,10 @@
 
 
 <script>
-
   import axios from 'axios';
   import Header from '../components/Header.vue';
   import Vue from 'vue'
   import VueRouter from 'vue-router';
-  import { exerciseStore } from './exercise/ExerciseStore';
   import Workout from "../components/Workout";
 
   Vue.use(VueRouter);
@@ -86,20 +84,21 @@
     },
     data() {
       return {
-        workout: Object,
-        exerciseStore: exerciseStore
-      }
+        workout: {
+          exerciseGroups: []
+        },
+      };
     },
     methods: {
       startWorkout() {
-          this.exerciseStore.setWorkout(this.workout);
+          this.$store.commit('setWorkout', this.workout);
           this.$router.push({ name: 'exercise' });
       },
       getWorkout(category) {
         return this.workout.exerciseGroups.filter(group => group.category === category)
       }
     },
-    created() {
+    mounted() {
       let workoutId = this.$route.query.id;
       axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchWorkout/' + workoutId)
         .then(response => {
