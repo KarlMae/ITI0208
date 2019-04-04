@@ -1,7 +1,6 @@
 <template>
-
   <div id="app">
-    <Header />
+    <Header class="boss" />
     <div id="workouts" class="workouts">
       <Workout v-for="workout in workouts"
                :key="workout.id"
@@ -11,38 +10,36 @@
       />
     </div>
   </div>
-
 </template>
 
 <script>
+import Header from '../components/Header'
+import Workout from '../components/Workout'
 
-  import Header from '../components/Header'
-  import Workout from '../components/Workout'
 
-  export default {
-    name: 'app',
-    components: {
-      Header,
-      Workout,
-    },
-    data() {
-      return {
-        workouts: Array,
-        error: Array
-      }
-    },
-    async mounted() {
-      this.axios
-        .get(process.env.VUE_APP_BACKEND_IP + '/fetchAll')
-        .then(response => {
-          this.workouts = response.data
-        })
-        .catch(error => {
-          this.error = error;
-        })
+export default {
+  name: 'app',
+  components: {
+    Header,
+    Workout
+  },
+  data() {
+    return {
+      workouts: Array,
+      error: Array
     }
+  },
+  async mounted() {
+    this.axios
+      .get(process.env.VUE_APP_BACKEND_IP + '/fetchAllWorkouts')
+      .then(response => {
+        this.workouts = response.data
+      })
+      .catch(error => {
+        this.error = error;
+      })
   }
-
+}
 </script>
 
 <style scoped>

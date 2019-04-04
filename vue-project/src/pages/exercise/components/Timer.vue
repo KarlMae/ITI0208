@@ -21,15 +21,15 @@
       return {
         timer: null,
         totalTime: 0,
-        timerActive: false,
+        timerActive: false
       }
     },
     computed: {
-      minutes: function () {
+      minutes(){
         const minutes = Math.floor(this.totalTime / 60);
         return this.padTime(minutes);
       },
-      seconds: function () {
+      seconds() {
         const seconds = this.totalTime - (this.minutes * 60);
         return this.padTime(seconds);
       }
@@ -53,10 +53,10 @@
         }
       },
       countdown() {
-        this.totalTime++;
+        this.totalTime++
       },
       padTime(time) {
-        return (time < 10 ? '0' : '') + time;
+        return (time < 10 ? '0' : '') + time
       },
     }
   }

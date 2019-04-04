@@ -5,11 +5,13 @@ import VueRouter from 'vue-router';
 import Index from './pages/Index';
 import WorkoutView from "./pages/WorkoutView";
 import Exercise from "./pages/exercise/ExerciseView";
+import WorkoutEdit from "./pages/workoutEdit/WorkoutEdit";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import BootstrapVue from 'bootstrap-vue'
+import store from './store/index'
 
 Vue.use(BootstrapVue);
 
@@ -20,10 +22,12 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
 const routes = [
-  { path: "/", component: Index },
+  { name: "home", path: "/", component: Index },
   { path: '*', component: Index },
   { name: "workout", path: "/workout", component: WorkoutView, props: true },
-  { name: "exercise", path: "/exercise", component: Exercise, props: true }
+  { name: "exercise", path: "/exercise", component: Exercise, props: true },
+  { name: "workoutEdit", path: "/workoutEdit", component: WorkoutEdit, props: true },
+  { name: "newWorkout", path: "/newWorkout", component: WorkoutEdit, props: true },
 ];
 
 const router = new VueRouter({
@@ -33,5 +37,6 @@ const router = new VueRouter({
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store,
 }).$mount('#app');

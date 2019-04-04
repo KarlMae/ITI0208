@@ -1,51 +1,52 @@
 <template>
-  <div class="modal">
-    <div class="modal-dialog">
+  <div class="modal" @click='closeModal'>
+    <div class="modal-dialog" @click.stop='() => {}'>
       <div class="modal-content">
         <div class="modal-header">
-          <button
-              v-on:click="closeModal"
-              class="close"
-          >
+          <button v-on:click="closeModal" class="close">
             <span>&lt;</span>
           </button>
           <h5 class="modal-title">{{ this.exercise.name }}</h5>
         </div>
-        <div class="modal-body">
 
+        <div class="modal-body">
           <div>
             <p class="title">Set</p>
-            <div class="btn-group" role="group">
-              <template v-for="set in this.exercise.sets">
-                <button
-                    v-on:click="changeSet(set.setNumber - 1)"
-                    :key="set.setNumber"
-                    type="button"
-                    class="btn btn-secondary"
-                >
-                  {{ set.setNumber }}
-                </button>
-              </template>
-            </div>
+            <SetSelector
+                :set-count="exercise.sets.length"
+                :set="selectedSet.set"
+                name="edit"
+                @selectSet="selectSet"
+            />
           </div>
 
+
           <EditModalRow
+              v-if="selectedSet.repetitions !== 0"
               name="repetitions"
-              :amount="selectedSet.repetitions"
+              :repetitions="selectedSet.repetitions"
               v-on:add="add"
               v-on:subtract="subtract"
           />
 
           <EditModalRow
-              name="amount"
-              :amount="selectedSet.amount"
+              v-if="selectedSet.duration !== 0"
+              name="duration"
+              :duration="selectedSet.duration"
+              v-on:add="add"
+              v-on:subtract="subtract"
+          />
+
+          <EditModalRow
+              v-if="selectedSet.weight !== 0"
+              name="weight"
+              :weight="selectedSet.weight"
               v-on:add="add"
               v-on:subtract="subtract"
           />
         </div>
-        <button
-            v-on:click="saveChanges"
-            class="btn btn-primary save-button">Save changes
+        <button v-on:click="saveChanges" class="btn btn-primary save-button">
+          Save changes
         </button>
       </div>
     </div>
@@ -54,76 +55,66 @@
 
 <script>
   import EditModalRow from './EditModalRow'
+  import axios from 'axios';
+  import SetSelector from '../setSelector/SetSelector';
 
   export default {
     name: "EditModal",
     components: {
+      SetSelector,
       EditModalRow
     },
     data() {
       return {
-        selectedSet: {}
+        exercise: this.$store.getters.currentExercise
       }
     },
-    props: {
-      exerciseId: {
-        type: Number,
-        required: true
-      }
+    mounted() {
+      axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.$store.getters.currentExercise.groupId)
+        .then(response => {
+          this.exercise = response.data;
+        })
+        .catch(e => {
+          this.errors.push(e)
+        });
     },
-    created() {
-      // Send GET request
-      this.exercise = {
-        name: 'Tuck planche',
-        unit: 'kg',
-        sets: [
-          {
-            setNumber: 1,
-            repetitions: 10,
-            amount: 11
-          },
-          {
-            setNumber: 2,
-            repetitions: 20,
-            amount: 21,
-          },
-          {
-            setNumber: 3,
-            repetitions: 30,
-            amount: 31,
-          },
-          {
-            setNumber: 4,
-            repetitions: 40,
-            amount: 41,
-          }
-        ],
-      };
-
-      this.selectedSet = this.exercise.sets[0]
+    computed: {
+      selectedSet() {
+        return this.$store.getters.currentSet;
+      },
+      selectedExercise() {
+        return this.$store.getters.currentExercise;
+      }
     },
     methods: {
-      closeModal() {
-        this.$emit('close');
+      async saveChanges() {
+        await axios.post(process.env.VUE_APP_BACKEND_IP + '/updateExercise', this.selectedExercise)
+          .catch(e => {
+            this.errors.push(e)
+          });
+
+        this.$store.commit('updateCurrentExercise', this.selectedExercise);
+        this.$emit('close')
       },
-      saveChanges() {
-        // Send POST request
-        this.$emit('close');
-      },
-      changeSet(setNumber) {
-        this.selectedSet = this.exercise.sets[setNumber];
+      selectSet(setNumber) {
+        this.$store.commit('selectSet', setNumber);
       },
       add(element) {
         this.selectedSet[element] = this.selectedSet[element] + 1
       },
       subtract(element) {
-        this.selectedSet[element] = this.selectedSet[element] - 1;
-      }
-    },
+        this.selectedSet[element] = this.selectedSet[element] - 1
+      },
+      closeModal() {
+        this.$store.commit('updateCurrentExercise', this.exercise);
+        this.$emit('close')
+      },
+    }
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import '../../../../assets/colors';
   .modal {
     display: block;
     padding-top: 2rem;
@@ -142,12 +133,15 @@
     padding: 0 1rem 1rem 1rem;
   }
 
-  .modal {
-    background-color: #30000090;
-  }
-
   .save-button {
     padding: 1rem;
+    border-radius: 0;
+    background-color: $primary-main;
+    border: solid 1px $primary-shade;
+  }
+
+  .modal {
+    background-color: #00000070;
   }
 
   .title {

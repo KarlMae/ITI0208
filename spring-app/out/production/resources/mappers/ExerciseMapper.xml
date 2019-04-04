@@ -4,23 +4,56 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.training.dao.ExerciseMapper">
 
-    <select id="fetchAll" resultType="com.training.dto.ExerciseDto">
-      SELECT * FROM training.exercises;
-    </select>
-
-    <insert id="insertExercise">
-        INSERT INTO
-          training.exercises(name, description)
-        VALUES
-          (#{name}, #{description})
+    <insert id="bulkInsert">
+      INSERT INTO
+        training.exercises(name, group_id, workout_id, category, set, repetitions, weight, duration)
+      VALUES
+        <foreach item="exercise" collection="list" separator=",">
+          (#{exercise.name}, #{exercise.groupId}, #{exercise.workoutId}, #{exercise.category}, #{exercise.set},
+            #{exercise.repetitions}, #{exercise.weight}, #{exercise.duration})
+        </foreach>
     </insert>
 
-    <select id="fetchById">
-      SELECT * FROM training.exercises WHERE id = #{id}
+    <update id="update">
+        UPDATE
+          training.exercises
+        SET
+          <if test="weight != null">
+            weight = #{weight},
+          </if>
+          <if test="duration != null">
+            duration = #{duration},
+          </if>
+          repetitions = #{repetitions}
+        WHERE
+          group_id = #{groupId}
+        AND
+          set = #{set}
+    </update>
+
+    <select id="getLastGroupId" resultType="int">
+        SELECT
+          MAX(group_id)
+        FROM
+          training.exercises
     </select>
 
-    <select id="fetchByWorkoutId" parameterType="int" resultType="com.training.dto.ExerciseDto">
-      SELECT * FROM training.workout_exercises WHERE workout_id = #{id}
+    <select id="fetchByWorkoutId" resultType="com.training.dto.ExerciseDto">
+        SELECT
+          *
+        FROM
+          training.exercises
+        WHERE
+            workout_id = #{id}
+    </select>
+
+    <select id="fetchGroup" resultType="com.training.dto.ExerciseDto">
+        SELECT
+          *
+        FROM
+          training.exercises
+        WHERE
+          group_id = #{id}
     </select>
 
 </mapper>

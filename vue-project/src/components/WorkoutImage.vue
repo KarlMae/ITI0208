@@ -1,6 +1,6 @@
 <template>
   <div class="image-wrapper">
-    <img :src="imgurl" alt="workout cover">
+    <img src="../assets/1.jpg" alt="workout cover">
     <div class="workout-info">
       <h3>{{ name }}</h3>
       <p>{{ description }}</p>
@@ -16,11 +16,6 @@
       description: String,
       id: Number
     },
-    data() {
-      return {
-        imgurl: require("../assets/" + this.id + ".jpg")
-      }
-    }
   }
 </script>
 

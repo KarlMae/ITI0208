@@ -12,8 +12,16 @@ public interface ExerciseMapper {
 
     List<ExerciseDto> fetchByWorkoutId(Integer id);
 
+    List<ExerciseDto> fetchGroup(Integer id);
+
+    List<ExerciseDto> fetchAll();
+
     void update(ExerciseDto dto);
 
-    void insert(ExerciseDto dto);
+    void bulkUpdate(List<ExerciseDto> dto);
+
+    void bulkInsert(List<ExerciseDto> dto);
+
+    int getLastGroupId();
 
 }

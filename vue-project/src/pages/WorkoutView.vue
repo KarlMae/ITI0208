@@ -19,8 +19,8 @@
         </b-card-header>
         <b-collapse id="accordion1" accordion="my-accordion" role="tabpanel">
           <b-card-body>
-            <ul v-if="workout.exercises">
-              <li v-for="exercise in filterByCategoryAndDistinct(workout.exercises, 'Warm-up')" :key="exercise.id" class="exercise-list">
+            <ul v-if="workout">
+              <li v-for="exercise in getWorkout('Warm-up')" :key="exercise.id" class="exercise-list">
                 <p>{{ exercise.name }}</p>
               </li>
             </ul>
@@ -34,8 +34,8 @@
         </b-card-header>
         <b-collapse id="accordion2" accordion="my-accordion" role="tabpanel">
           <b-card-body>
-            <ul v-if="workout.exercises">
-              <li v-for="exercise in filterByCategoryAndDistinct(workout.exercises, 'Main exercises')" :key="exercise.id" class="exercise-list">
+            <ul v-if="workout">
+              <li v-for="exercise in getWorkout('Main exercises')" :key="exercise.id" class="exercise-list">
                 <p>{{ exercise.name }}</p>
               </li>
             </ul>
@@ -49,8 +49,8 @@
         </b-card-header>
         <b-collapse id="accordion3" accordion="my-accordion" role="tabpanel">
           <b-card-body>
-            <ul v-if="workout.exercises">
-              <li v-for="exercise in filterByCategoryAndDistinct(workout.exercises, 'Cool-down')" :key="exercise.id" class="exercise-list">
+            <ul v-if="workout">
+              <li v-for="exercise in getWorkout('Cool-down')" :key="exercise.id" class="exercise-list">
                 <p>{{ exercise.name }}</p>
               </li>
             </ul>
@@ -59,24 +59,23 @@
       </b-card>
     </div>
 
-    <b-button variant="danger"
-        v-on:click="startWorkout"
-        v-if="workout.exercises && workout.exercises.length > 0"
-    >Start</b-button>
+    <button class="btn btn-edit" v-on:click="editWorkout">Edit</button>
+
+    <button class="btn btn-start" v-on:click="startWorkout" v-if="workout.exerciseGroups && workout.exerciseGroups.length > 0">
+      Start
+    </button>
+
   </div>
 
 </template>
 
 
 <script>
-
   import axios from 'axios';
   import Header from '../components/Header.vue';
   import Vue from 'vue'
   import VueRouter from 'vue-router';
-  import { exerciseStore } from './exercise/ExerciseStore';
   import Workout from "../components/Workout";
-  import _ from 'lodash';
 
   Vue.use(VueRouter);
 
@@ -87,22 +86,26 @@
     },
     data() {
       return {
-        workout: Object,
-        exerciseStore: exerciseStore
-      }
+        workout: {
+          exerciseGroups: []
+        },
+      };
     },
     methods: {
       startWorkout() {
-          this.exerciseStore.setWorkout(this.workout);
+          this.$store.commit('setWorkout', this.workout);
           this.$router.push({ name: 'exercise' });
       },
-      filterByCategoryAndDistinct: function (exercises, category) {
-          return _.uniqBy(exercises.filter(exercise => exercise.category === category), 'name')
+      getWorkout(category) {
+        return this.workout.exerciseGroups.filter(group => group.category === category)
+      },
+      editWorkout() {
+        this.$router.push({ name: 'workoutEdit', params: {editWorkout: this.workout} });
       }
     },
-    created() {
+    mounted() {
       let workoutId = this.$route.query.id;
-      axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchById/' + workoutId)
+      axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchWorkout/' + workoutId)
         .then(response => {
           this.workout = response.data;
         })
@@ -114,7 +117,8 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../assets/colors";
 
   ul {
     margin: 0;
@@ -170,6 +174,20 @@
     text-align: left;
     padding: 10px;
     margin-bottom: 10px;
+  }
+
+  .btn-start {
+    margin: 3rem;
+    width: 10rem;
+    height: 3rem;
+    background-color: $primary-shade;
+  }
+
+  .btn-edit {
+    margin: 3rem;
+    width: 10rem;
+    height: 3rem;
+    background-color: $secondary-shade;
   }
 
 

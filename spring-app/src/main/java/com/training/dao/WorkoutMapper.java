@@ -15,4 +15,6 @@ public interface WorkoutMapper {
     List<WorkoutDto> fetchAll();
 
     WorkoutDto fetchById(Integer id);
+
+    void update(WorkoutDto dto);
 }

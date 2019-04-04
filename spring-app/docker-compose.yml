@@ -9,7 +9,7 @@ services:
           POSTGRES_USER: user
           POSTGRES_DB: training
     ports:
-      - 8091:5432
+      - 8081:5432
 
   spring-app:
     build: ./
