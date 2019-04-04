@@ -1,7 +1,5 @@
 <template>
   <div>
-
-
     <div id="header" class="header">
       <span v-on:click="openNav"><img src="../assets/icons/menu.svg" alt="alt" class="menu-icon"></span>
       <Name class="name"/>
@@ -34,7 +32,7 @@
         document.getElementById("mySidenav").style.width = "0";
       },
       routeTo(path) {
-        this.$router.push({name: 'newWorkout'});
+        this.$router.push({name: path});
       }
     }
   }
@@ -86,6 +84,7 @@
     color: #f1f1f1;
     display: block;
     transition: 0.3s;
+    white-space: nowrap;
   }
 
   /* When you mouse over the navigation links, change their color */
