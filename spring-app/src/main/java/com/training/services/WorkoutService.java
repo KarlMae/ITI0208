@@ -9,9 +9,12 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 @AllArgsConstructor
@@ -21,7 +24,7 @@ public class WorkoutService {
     private final ExerciseMapper exerciseDao;
 
     @Transactional
-    public void insert(WorkoutDto dto) {
+    public WorkoutDto insert(WorkoutDto dto) {
         workoutDao.insert(dto);
         int lastGroupId = exerciseDao.getLastGroupId();
 
@@ -34,7 +37,29 @@ public class WorkoutService {
             }
         }
 
-        exerciseDao.bulkInsert(dto.getExercises());
+        List<ExerciseDto> exercises =  dto.getExerciseGroups()
+                .stream()
+                .flatMap(x -> x.getSets().stream())
+                .collect(Collectors.toList());
+
+        exerciseDao.bulkInsert(exercises);
+
+        return dto;
+    }
+
+    @Transactional
+    public WorkoutDto update(WorkoutDto dto) {
+        exerciseDao.getLastGroupId();
+
+        List<ExerciseDto> exercises =  dto.getExerciseGroups()
+                .stream()
+                .flatMap(x -> x.getSets().stream())
+                .collect(Collectors.toList());
+
+        workoutDao.update(dto);
+        exerciseDao.bulkUpdate(exercises);
+
+        return dto;
     }
 
     public List<WorkoutDto> fetchAll() {

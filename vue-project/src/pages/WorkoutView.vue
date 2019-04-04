@@ -59,10 +59,12 @@
       </b-card>
     </div>
 
-    <b-button variant="danger"
-        v-on:click="startWorkout"
-        v-if="workout.exerciseGroups && workout.exerciseGroups.length > 0"
-    >Start</b-button>
+    <button class="btn btn-edit" v-on:click="editWorkout">Edit</button>
+
+    <button class="btn btn-start" v-on:click="startWorkout" v-if="workout.exerciseGroups && workout.exerciseGroups.length > 0">
+      Start
+    </button>
+
   </div>
 
 </template>
@@ -96,6 +98,9 @@
       },
       getWorkout(category) {
         return this.workout.exerciseGroups.filter(group => group.category === category)
+      },
+      editWorkout() {
+        this.$router.push({ name: 'workoutEdit', params: {editWorkout: this.workout} });
       }
     },
     mounted() {
@@ -112,7 +117,8 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../assets/colors";
 
   ul {
     margin: 0;
@@ -168,6 +174,20 @@
     text-align: left;
     padding: 10px;
     margin-bottom: 10px;
+  }
+
+  .btn-start {
+    margin: 3rem;
+    width: 10rem;
+    height: 3rem;
+    background-color: $primary-shade;
+  }
+
+  .btn-edit {
+    margin: 3rem;
+    width: 10rem;
+    height: 3rem;
+    background-color: $secondary-shade;
   }
 
 

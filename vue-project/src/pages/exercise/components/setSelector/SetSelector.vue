@@ -1,8 +1,8 @@
 <template>
   <div class="radio-group">
     <template v-for="set in setCount">
-      <input type="radio" :id="set" :value="set" v-model="selectedSet" />
-      <label :for="set">{{ set }}</label>
+      <input type="radio" :id="name + set" :value="set" v-model="selectedSet" />
+      <label :for="name + set">{{ set }}</label>
     </template>
   </div>
 </template>
@@ -18,10 +18,10 @@
     props: {
       setCount: Number,
       set: Number,
+      name: String
     },
     watch: {
       selectedSet(value) {
-        console.log("select: " + (value - 1));
         this.$emit('selectSet', value - 1)
       }
     }

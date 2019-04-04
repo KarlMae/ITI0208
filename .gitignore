@@ -1,6 +1,7 @@
 .gitignore
 .idea
 vue-project/node_modules
+vue-project/.env.local
 spring-app/docker-compose.yml
 spring-app/.gradle
 spring-app/build

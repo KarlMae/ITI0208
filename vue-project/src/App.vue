@@ -14,7 +14,7 @@
     padding: 0;
     height: 100%;
     width: 100%;
-    background-color: #f4f4f4;
+    background-color: #F0F0F0;
   }
 
   #app {

@@ -18,6 +18,8 @@ public interface ExerciseMapper {
 
     void update(ExerciseDto dto);
 
+    void bulkUpdate(List<ExerciseDto> dto);
+
     void bulkInsert(List<ExerciseDto> dto);
 
     int getLastGroupId();

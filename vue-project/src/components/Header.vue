@@ -9,10 +9,9 @@
 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" v-on:click="closeNav">&times;</a>
-      <a href="#">Home</a>
-      <a href="#">Add workout</a>
+      <a v-on:click="routeTo('home')">Home</a>
+      <a v-on:click="routeTo('newWorkout')">Add workout</a>
     </div>
-
 
   </div>
 
@@ -31,9 +30,11 @@
       openNav() {
         document.getElementById("mySidenav").style.width = "180px";
       },
-
       closeNav() {
-       document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("mySidenav").style.width = "0";
+      },
+      routeTo(path) {
+        this.$router.push({name: 'newWorkout'});
       }
     }
   }

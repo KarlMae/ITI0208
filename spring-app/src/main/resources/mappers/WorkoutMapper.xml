@@ -11,6 +11,15 @@
           (#{name}, #{description})
     </insert>
 
+    <update id="update">
+        UPDATE
+          training.workouts
+        SET
+          name = #{name}, description = #{description}
+        WHERE
+          id = #{id}
+    </update>
+
     <select id="fetchAll"  resultType="com.training.dto.WorkoutDto">
       SELECT
         *

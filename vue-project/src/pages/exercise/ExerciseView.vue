@@ -25,7 +25,6 @@
 
     <EditModal
         v-if="isModalVisible"
-        :exerciseSet="currentSet.set"
         @close="toggleEditModal"
     />
   </div>

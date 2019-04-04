@@ -10,9 +10,11 @@ import java.util.List;
 @Repository
 public interface WorkoutMapper {
 
-    int insert(WorkoutDto dto);
+    void insert(WorkoutDto dto);
 
     List<WorkoutDto> fetchAll();
 
     WorkoutDto fetchById(Integer id);
+
+    void update(WorkoutDto dto);
 }

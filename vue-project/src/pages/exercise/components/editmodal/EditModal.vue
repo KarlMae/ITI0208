@@ -14,7 +14,8 @@
             <p class="title">Set</p>
             <SetSelector
                 :set-count="exercise.sets.length"
-                :set="selectedSetId"
+                :set="selectedSet.set"
+                name="edit"
                 @selectSet="selectSet"
             />
           </div>
@@ -63,19 +64,9 @@
       SetSelector,
       EditModalRow
     },
-    props: {
-      exerciseSet: Number
-    },
     data() {
       return {
-        selectedSetId: 2,
-        exercise: {
-          sets: [
-            {
-              repetitions: 0
-            }
-          ]
-        }
+        exercise: this.$store.getters.currentExercise
       }
     },
     mounted() {
@@ -89,21 +80,24 @@
     },
     computed: {
       selectedSet() {
-        return this.exercise.sets[this.selectedSetId]
+        return this.$store.getters.currentSet;
+      },
+      selectedExercise() {
+        return this.$store.getters.currentExercise;
       }
     },
     methods: {
       async saveChanges() {
-        await axios.post(process.env.VUE_APP_BACKEND_IP + '/updateExercise', this.exercise)
+        await axios.post(process.env.VUE_APP_BACKEND_IP + '/updateExercise', this.selectedExercise)
           .catch(e => {
             this.errors.push(e)
           });
 
-        this.$store.commit('updateCurrentExercise', this.exercise);
+        this.$store.commit('updateCurrentExercise', this.selectedExercise);
         this.$emit('close')
       },
       selectSet(setNumber) {
-        this.selectedSetId = setNumber
+        this.$store.commit('selectSet', setNumber);
       },
       add(element) {
         this.selectedSet[element] = this.selectedSet[element] + 1
@@ -112,11 +106,9 @@
         this.selectedSet[element] = this.selectedSet[element] - 1
       },
       closeModal() {
+        this.$store.commit('updateCurrentExercise', this.exercise);
         this.$emit('close')
       },
-      ok() {
-        console.log("ok");
-      }
     }
   }
 </script>
