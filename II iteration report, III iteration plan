@@ -1,0 +1,18 @@
+II iteration
+
+Goals: Add functionality to create a workout and change it.
+
+       creating and saving view; refactor db schema, endpoint; design - Karl;
+       navbar, distribution of exercises, bug fixes, design - Joosep;
+       refactor db schema; endpoints, backend unit tests, bug fixes - Rando.
+
+Finished: 
+1) Create workout
+2) Change workout
+3) Backend unit tests
+4) Better visual appearance
+
+
+III iteration
+
+Add functionality to create a user and improve visual appearance.
