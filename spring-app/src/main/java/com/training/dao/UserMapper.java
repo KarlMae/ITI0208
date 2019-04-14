@@ -1,20 +1,22 @@
 package com.training.dao;
 
-import com.training.dto.UserDto;
+import com.training.dto.user.User;
 import com.training.dto.WorkoutDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 @Repository
 public interface UserMapper {
 
-    void inserUsers();
+    void saveUser();
 
-    List<WorkoutDto> fetchAll();
+    List<WorkoutDto> fetchAllWorkouts();
 
-    UserDto fetchById();
+    User fetchById();
 
+    Optional<User> findByUsername(String username);
 }

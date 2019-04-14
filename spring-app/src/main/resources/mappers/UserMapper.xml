@@ -10,11 +10,21 @@
         VALUES
           (#{name}, #{description})
     </insert>
-    <select id="fetchAll" resultType="hashmap">
+
+    <select id="fetchAllWorkouts" resultType="com.training.dto.user.User">
       SELECT * FROM training.users;
     </select>
 
     <select id="fetchById">
       SELECT * FROM training.users WHERE id = #{id}
     </select>
+
+    <select id="findByUsername" resultType="com.training.dto.user.User">
+        SELECT
+               *
+        FROM
+             training.users
+        WHERE username = #{username}
+    </select>
+
 </mapper>
