@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 public interface UserMapper {
 
-    void saveUser();
+    void insertUser();
 
     List<WorkoutDto> fetchAllWorkouts();
 
