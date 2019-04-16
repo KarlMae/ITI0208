@@ -8,6 +8,7 @@
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" v-on:click="closeNav">&times;</a>
       <a v-on:click="routeTo('home')">Home</a>
+      <a v-on:click="routeTo('login')">Login</a>
       <a v-on:click="routeTo('newWorkout')">Add workout</a>
     </div>
 
