@@ -39,3 +39,41 @@ dependencies {
     compile group: 'org.mockito', name: 'mockito-core', version: '2.13.0'
     compile("org.springframework.boot:spring-boot-starter-security")
 }
+
+task customFatJar(type: Jar) {
+    manifest {
+        attributes "Main-Class": "com.training.Application"
+    }
+    baseName = 'all-in-one-jar'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+task copyJar(type: Copy) {
+    from customFatJar
+    into "/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds"
+}
+
+task buildAndRename {
+    dependsOn copyJar
+    doLast {
+        file("/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds/all-in-one-jar.jar")
+                .renameTo(file("/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds/customName.jar"))
+    }
+}
+
+/*
+
+task copyAndRename (type: Copy) {
+    from customFatJar
+    destinationDir file("/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds")
+    rename 'all-in-one-jar.jar', "customName.jar"
+}
+
+task buildAndName {
+    dependsOn copyAndRename
+}
+
+
+ */
+
