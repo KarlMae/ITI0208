@@ -57,4 +57,9 @@ public class Controller {
         exerciseService.update(dto);
     }
 
+
+    @GetMapping("/fetchSecret")
+    public String fetchSecret() {
+        return "Extremely secret content.";
+    }
 }

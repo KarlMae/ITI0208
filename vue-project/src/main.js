@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import BootstrapVue from 'bootstrap-vue'
 import store from './store/index'
+import SecretPage from "./pages/SecretPage";
 
 Vue.use(BootstrapVue);
 
@@ -30,6 +31,7 @@ const routes = [
   { name: "exercise", path: "/exercise", component: Exercise, props: true },
   { name: "workoutEdit", path: "/workoutEdit", component: WorkoutEdit, props: true },
   { name: "newWorkout", path: "/newWorkout", component: WorkoutEdit, props: true },
+  { name: "secretPage", path: "/secret", component: SecretPage }
 ];
 
 const router = new VueRouter({

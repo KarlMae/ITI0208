@@ -10,6 +10,7 @@
       <a v-on:click="routeTo('home')">Home</a>
       <a v-on:click="routeTo('login')">Login</a>
       <a v-on:click="routeTo('newWorkout')">Add workout</a>
+      <a v-on:click="routeTo('secretPage')">Secret</a>
     </div>
 
   </div>

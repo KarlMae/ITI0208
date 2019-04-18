@@ -1,7 +1,7 @@
 package com.training.dao;
 
-import com.training.dto.user.User;
 import com.training.dto.WorkoutDto;
+import com.training.dto.user.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

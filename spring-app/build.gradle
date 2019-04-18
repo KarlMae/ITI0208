@@ -38,6 +38,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter')
     compile group: 'org.mockito', name: 'mockito-core', version: '2.13.0'
     compile("org.springframework.boot:spring-boot-starter-security")
+    compile("com.auth0:java-jwt:3.4.0")
 }
 
 task customFatJar(type: Jar) {
@@ -61,19 +62,4 @@ task buildAndRename {
                 .renameTo(file("/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds/customName.jar"))
     }
 }
-
-/*
-
-task copyAndRename (type: Copy) {
-    from customFatJar
-    destinationDir file("/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds")
-    rename 'all-in-one-jar.jar', "customName.jar"
-}
-
-task buildAndName {
-    dependsOn copyAndRename
-}
-
-
- */
 
