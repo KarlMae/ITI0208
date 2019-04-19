@@ -9,4 +9,3 @@ spring-app/build
 spring-app/gradle/wrapper/gradle-wrapper.jar
 spring-app/gradle/wrapper/gradle-wrapper.properties
 spring-app/out
-spring-app/.env.local

@@ -46,11 +46,15 @@ task customFatJar(type: Jar) {
         attributes "Main-Class": "com.training.Application"
     }
     baseName = 'all-in-one-jar'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
     with jar
 }
 
-task copyJar(type: Copy) {
+/*task copyJar(type: Copy) {
     from customFatJar
     into "/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds"
 }
@@ -59,7 +63,6 @@ task buildAndRename {
     dependsOn copyJar
     doLast {
         file("/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds/all-in-one-jar.jar")
-                .renameTo(file("/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds/customName.jar"))
+            .renameTo(file("/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds/customName.jar"))
     }
-}
-
+}*/

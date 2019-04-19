@@ -18,7 +18,7 @@ export default new Vuex.Store({
   mutations: {
     setWorkout(state, workout) {
       this.state.exerciseGroups = workout.exerciseGroups;
-      this.state.exerciseIndex = workout.exerciseIndex | 0;
+      this.state.exerciseIndex = workout.exerciseIndex || 0;
     },
     nextExercise() {
       this.state.exerciseIndex++;
@@ -41,11 +41,7 @@ export default new Vuex.Store({
       };
 
       axios.post(process.env.VUE_APP_BACKEND_IP + '/login', data, {
-        headers: headers,
-        /*auth:{
-            username: this.username,
-            password: this.password
-        }*/
+        headers: headers
       }).then(response => {
         this.state.user = user;
         localStorage.setItem('user', user);

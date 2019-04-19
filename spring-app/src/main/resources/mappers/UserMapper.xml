@@ -12,11 +12,11 @@
     </insert>
 
     <select id="fetchAllWorkouts" resultType="com.training.dto.user.User">
-      SELECT * FROM training.users;
+        SELECT * FROM training.users;
     </select>
 
     <select id="fetchById">
-      SELECT * FROM training.users WHERE id = #{id}
+        SELECT * FROM training.users WHERE id = #{id}
     </select>
 
     <select id="findByUsername" resultType="com.training.dto.user.User">

@@ -1,5 +1,6 @@
 package com.training.dto.user;
 
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -9,12 +10,10 @@ import org.springframework.stereotype.Service;
 import static java.util.Collections.emptyList;
 
 @Service
+@AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
-    private ApplicationUserRepository applicationUserRepository;
 
-    public UserDetailsServiceImpl(ApplicationUserRepository applicationUserRepository) {
-        this.applicationUserRepository = applicationUserRepository;
-    }
+    private ApplicationUserRepository applicationUserRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

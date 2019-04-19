@@ -1,12 +1,13 @@
 .gitignore
-.idea
+vue-project/.idea
 vue-project/node_modules
+vue-project/.env
 vue-project/.env.local
+vue-project/vue-project.iml
 spring-app/docker-compose.yml
 spring-app/.gradle
 spring-app/build
-.gradle
 spring-app/gradle/wrapper/gradle-wrapper.jar
 spring-app/gradle/wrapper/gradle-wrapper.properties
-spring-app/.env.local
-node_modules
+spring-app/out
+spring-app/spring-app.iml
