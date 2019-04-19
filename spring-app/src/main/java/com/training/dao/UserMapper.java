@@ -1,7 +1,7 @@
 package com.training.dao;
 
 import com.training.dto.WorkoutDto;
-import com.training.dto.user.User;
+import com.training.dto.user.UserDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -12,11 +12,11 @@ import java.util.Optional;
 @Repository
 public interface UserMapper {
 
-    void insertUser();
+    void registerUser(UserDto user);
 
     List<WorkoutDto> fetchAllWorkouts();
 
-    User fetchById();
+    UserDto fetchById();
 
-    Optional<User> findByUsername(String username);
+    Optional<UserDto> findByUsername(String username);
 }

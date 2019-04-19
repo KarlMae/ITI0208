@@ -23,9 +23,9 @@ CREATE TABLE exercises (
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   username VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL/*,
   roles VARCHAR(255) NOT NULL DEFAULT 'USER',
-  active INTEGER NOT NULL DEFAULT 1
+  active INTEGER NOT NULL DEFAULT 1*/
 );
 
 CREATE TABLE user_workouts (

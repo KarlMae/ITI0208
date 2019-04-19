@@ -1,15 +1,13 @@
 package com.training.dto.user;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.Collections;
 
-public class CustomUserDetails extends User implements UserDetails {
+public class CustomUserDetails extends UserDto implements UserDetails {
 
-    public CustomUserDetails(final User user) {
+    public CustomUserDetails(final UserDto user) {
         super(user);
     }
 
@@ -17,7 +15,8 @@ public class CustomUserDetails extends User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         /*return super.getRoles().stream().map(role -> new SimpleGrantedAuthority("ROLE_" + role.getRole()))
                 .collect(Collectors.toList());*/
-        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + super.getRoles().getRole()));
+//        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + super.getRoles().getRole()));
+        return null;
     }
 
     @Override

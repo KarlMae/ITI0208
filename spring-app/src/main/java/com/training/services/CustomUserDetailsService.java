@@ -1,7 +1,7 @@
 package com.training.services;
 
 import com.training.dto.user.CustomUserDetails;
-import com.training.dto.user.User;
+import com.training.dto.user.UserDto;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,7 +18,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> userOptional = userService.findByUsername(username);
+        Optional<UserDto> userOptional = userService.findByUsername(username);
         userOptional.orElseThrow(() -> new UsernameNotFoundException("Username not found"));
         return userOptional.map(CustomUserDetails::new).get();
     }

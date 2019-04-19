@@ -48,4 +48,4 @@ VALUES
 INSERT INTO
   training.users (username, password)
 VALUES
-  ('rando', 'luik')
+  ('r', 'l')

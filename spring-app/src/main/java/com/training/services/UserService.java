@@ -2,7 +2,7 @@ package com.training.services;
 
 import com.training.dao.UserMapper;
 import com.training.dto.WorkoutDto;
-import com.training.dto.user.User;
+import com.training.dto.user.UserDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,11 @@ public class UserService {
 
     private UserMapper userDao;
 
-    Optional<User> findByUsername(String username) {
+    public void registerUser(UserDto user) {
+        userDao.registerUser(user);
+    }
+
+    public Optional<UserDto> findByUsername(String username) {
         return userDao.findByUsername(username);
     }
 
