@@ -1,18 +1,40 @@
-II iteration
+III iteratsiooni vahearuanne
+Iteratsiooni käigus valminud
+Spring security
+Kasutaja loomine
+JWT
 
-Goals: Add functionality to create a workout and change it.
+Tiimiliikmete tehtud töö
+Rando
+Spring security
 
-       creating and saving view; refactor db schema, endpoint; design - Karl;
-       navbar, distribution of exercises, bug fixes, design - Joosep;
-       refactor db schema; endpoints, backend unit tests, bug fixes - Rando.
+Karl (eelnevate iteratsioonide käigus tegi kõige rohkem tööd)
+Projekti koodi ühtlustamine ja puhastamine
 
-Finished: 
-1) Create workout
-2) Change workout
-3) Backend unit tests
-4) Better visual appearance
+Joosep
+Kasutaja loomine
+JWT
 
 
-III iteration
+Probleemid
+Koodi kvaliteedi kontroll puudub
 
-Add functionality to create a user and improve visual appearance.
+
+Eesseisvad ülesanded
+Rando
+Kasutaja workout’idega seotud andmete registreerimine ja muutmine;
+Backend testid sisukaks;
+Tootetest.
+
+Karl
+UI ilustamine;
+Koodi ilustamine;
+Dokumentatsioon;
+Diagrammid;
+Eelnevate materjalide ilustamine;
+Tootetest.
+
+Joosep
+Kasutaja workout’idega seotud andmete kuvamine;
+Korduva koodi eemaldamine;
+Tootetest.
