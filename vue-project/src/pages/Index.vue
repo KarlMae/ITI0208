@@ -29,9 +29,9 @@ export default {
       error: Array
     }
   },
-  async mounted() {
+  mounted() {
     this.axios
-      .get(process.env.VUE_APP_BACKEND_IP + '/fetchAllWorkouts')
+      .get(process.env.VUE_APP_BACKEND_IP + '/workout/fetchAll')
       .then(response => {
         this.workouts = response.data
       })

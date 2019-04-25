@@ -2,6 +2,7 @@
 .idea
 vue-project/node_modules
 vue-project/.env.local
+vue-project/dist
 spring-app/docker-compose.yml
 spring-app/.gradle
 spring-app/build
@@ -10,3 +11,5 @@ spring-app/gradle/wrapper/gradle-wrapper.jar
 spring-app/gradle/wrapper/gradle-wrapper.properties
 spring-app/.env.local
 node_modules
+vue-project/.env
+vue-project/.env.local

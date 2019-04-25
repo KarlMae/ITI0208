@@ -19,7 +19,7 @@ public class ExerciseGroupDto {
         this.groupId = groupId;
     }
 
-    public static ExerciseGroupDto createExerciseGroupDto(List<ExerciseDto> sets) {
+    public static ExerciseGroupDto createDto(List<ExerciseDto> sets) {
         return new ExerciseGroupDto(sets.get(0).getName(),
                                     sets.get(0).getCategory(),
                                     sets,
