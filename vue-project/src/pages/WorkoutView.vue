@@ -13,50 +13,12 @@
     </div>
 
     <div role="tablist" class="tablist">
-      <b-card no-body class="mb-1">
-        <b-card-header header-tag="header" class="p-1" role="tab">
-          <b-button block href="#" v-b-toggle.accordion1 variant="secondary">Warm-up</b-button>
-        </b-card-header>
-        <b-collapse id="accordion1" accordion="my-accordion" role="tabpanel">
-          <b-card-body>
-            <ul v-if="workout">
-              <li v-for="exercise in getWorkout('Warm-up')" :key="exercise.id" class="exercise-list">
-                <p>{{ exercise.name }}</p>
-              </li>
-            </ul>
-          </b-card-body>
-        </b-collapse>
-      </b-card>
+      <template v-for="group in groupNames">
+        <Accordion
+          :workout="getWorkout(group)"
+          :group="group"/>
+      </template>
 
-      <b-card no-body class="mb-1">
-        <b-card-header header-tag="header" class="p-1" role="tab">
-          <b-button block href="#" v-b-toggle.accordion2 variant="secondary">Main exercises</b-button>
-        </b-card-header>
-        <b-collapse id="accordion2" accordion="my-accordion" role="tabpanel">
-          <b-card-body>
-            <ul v-if="workout">
-              <li v-for="exercise in getWorkout('Main exercises')" :key="exercise.id" class="exercise-list">
-                <p>{{ exercise.name }}</p>
-              </li>
-            </ul>
-          </b-card-body>
-        </b-collapse>
-      </b-card>
-
-      <b-card no-body class="mb-1">
-        <b-card-header header-tag="header" class="p-1" role="tab">
-          <b-button block href="#" v-b-toggle.accordion3 variant="secondary">Cool-down</b-button>
-        </b-card-header>
-        <b-collapse id="accordion3" accordion="my-accordion" role="tabpanel">
-          <b-card-body>
-            <ul v-if="workout">
-              <li v-for="exercise in getWorkout('Cool-down')" :key="exercise.id" class="exercise-list">
-                <p>{{ exercise.name }}</p>
-              </li>
-            </ul>
-          </b-card-body>
-        </b-collapse>
-      </b-card>
     </div>
 
     <button class="btn btn-edit" v-on:click="editWorkout">Edit</button>
@@ -76,11 +38,13 @@
   import Vue from 'vue'
   import VueRouter from 'vue-router';
   import Workout from "../components/Workout";
+  import Accordion from "../components/Accordion";
 
   Vue.use(VueRouter);
 
   export default {
     components: {
+      Accordion,
       Workout,
       Header
     },
@@ -89,6 +53,11 @@
         workout: {
           exerciseGroups: []
         },
+        groupNames: [
+          'Warm-up',
+          'Main exercises',
+          'Cool-down'
+        ]
       };
     },
     methods: {
@@ -96,11 +65,12 @@
           this.$store.commit('setWorkout', this.workout);
           this.$router.push({ name: 'exercise' });
       },
-      getWorkout(category) {
-        return this.workout.exerciseGroups.filter(group => group.category === category)
-      },
       editWorkout() {
         this.$router.push({ name: 'workoutEdit', params: {editWorkout: this.workout} });
+      },
+      getWorkout(category) {
+
+        return this.workout.exerciseGroups.filter(group => group.category === category)
       }
     },
     mounted() {

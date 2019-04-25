@@ -5,8 +5,8 @@
       <Name class="name"/>
     </div>
 
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" v-on:click="closeNav">&times;</a>
+    <div id="mySidenav" class="sidenav" v-bind:style="sideNavStyle">
+      <a class="closebtn" v-on:click="closeNav">&times;</a>
       <a v-on:click="routeTo('home')">Home</a>
       <a v-on:click="routeTo('newWorkout')">Add workout</a>
     </div>
@@ -24,12 +24,24 @@
     components: {
       Name,
     },
+    data() {
+      return {
+        isOpen : false
+      }
+    },
+    computed: {
+      sideNavStyle() {
+        return {
+          width: this.isOpen ? '180px' : '0px',
+        }
+      },
+    },
     methods: {
       openNav() {
-        document.getElementById("mySidenav").style.width = "180px";
+        this.isOpen = true;
       },
       closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
+        this.isOpen = false;
       },
       routeTo(path) {
         this.$router.push({name: path});
@@ -62,6 +74,7 @@
     height: 4rem;
     padding: 1rem;
   }
+
 
   .sidenav {
     height: 100%; /* 100% Full-height */
@@ -100,7 +113,7 @@
     margin-left: 50px;
   }
 
-  .menu-icon {
+  .menu-icon, .closebtn, a {
     cursor: pointer;
   }
 
