@@ -36,16 +36,18 @@ public class WorkoutServiceTests {
 
     @Test
     public void testAddWorkoutWithOneExerciseAndGetExerciseGroupId() {
-        ExerciseDto exercise = new ExerciseDto(1, 1, 1, "Push up", "Warm-up", 1,
-                10, 0, 0);
+        ExerciseDto exercise = new ExerciseDto(1, 1, 1, "Push up", "Warm-up",
+                1, 10, 0, 0);
         List<ExerciseDto> exercises = Collections.singletonList(exercise);
         ExerciseGroupDto pushUpExerciseGroup = createExerciseGroupDto(Collections.singletonList(exercise));
-        WorkoutDto workout = new WorkoutDto(1, "Test", "Test",
-                Collections.singletonList(pushUpExerciseGroup), exercises);
+        List<ExerciseGroupDto> exerciseGroupDtos = Collections.singletonList(pushUpExerciseGroup);
+        WorkoutDto workout = new WorkoutDto(1, "Test", "Test", exerciseGroupDtos, exercises);
+
         when(workoutService.getLastExerciseGroupId()).thenReturn(0);
         int lastExerciseGroupId = workoutService.getLastExerciseGroupId();
         workoutService.insert(workout);
         verify(workoutDao).insert(workout);
+
         when(workoutDao.fetchById(1)).thenReturn(workout);
         List<ExerciseGroupDto> exerciseGroups = workoutService.fetchById(1).getExerciseGroups();
         assertEquals(exerciseGroups.get(0).getGroupId(), lastExerciseGroupId + 1);
@@ -53,27 +55,31 @@ public class WorkoutServiceTests {
 
     @Test
     public void testAddWorkoutWithMultipleExercisesThenGetExerciseGroupIds() {
-        ExerciseDto exercise = new ExerciseDto(1, 1, 1, "Push up", "Warm-up", 1,
-                10, 0, 0);
-        ExerciseDto exercise2_1 = new ExerciseDto(2, 2, 1, "Plank", "Warm-up", 1,
-                0, 0, 60);
-        ExerciseDto exercise2_2 = new ExerciseDto(3, 2, 1, "Plank", "Warm-up", 1,
-                0, 0, 65);
+        ExerciseDto exercise = new ExerciseDto(1, 1, 1, "Push up", "Warm-up",
+                1, 10, 0, 0);
+        ExerciseDto exercise2_1 = new ExerciseDto(2, 2, 1, "Plank", "Warm-up",
+                1, 0, 0, 60);
+        ExerciseDto exercise2_2 = new ExerciseDto(3, 2, 1, "Plank", "Warm-up",
+                1, 0, 0, 65);
         List<ExerciseDto> exercises = Arrays.asList(exercise, exercise2_1, exercise2_2);
         ExerciseGroupDto pushUpExerciseGroup = createExerciseGroupDto(Collections.singletonList(exercise));
         ExerciseGroupDto plankExerciseGroup = createExerciseGroupDto(Arrays.asList(exercise2_1, exercise2_2));
-        List<ExerciseGroupDto> exerciseGroups = Arrays.asList(pushUpExerciseGroup, plankExerciseGroup);
-        WorkoutDto workout = new WorkoutDto(1, "Test", "Test", exerciseGroups, exercises);
+        List<ExerciseGroupDto> exerciseGroupDtos = Arrays.asList(pushUpExerciseGroup, plankExerciseGroup);
+        WorkoutDto workoutDto = new WorkoutDto(1, "Test", "Test", exerciseGroupDtos, exercises);
+
         when(workoutService.getLastExerciseGroupId()).thenReturn(0);
         int lastExerciseGroupId = workoutService.getLastExerciseGroupId();
-        workoutService.insert(workout);
-        verify(workoutDao).insert(workout);
-        when(workoutDao.fetchById(1)).thenReturn(workout);
-        List<ExerciseGroupDto> exerciseGroupDtos = workoutService.fetchById(1).getExerciseGroups();
-        assertEquals(exerciseGroupDtos.get(0).getGroupId(), lastExerciseGroupId + 1);
+        workoutService.insert(workoutDto);
+        verify(workoutDao).insert(workoutDto);
+
+        when(workoutDao.fetchById(1)).thenReturn(workoutDto);
+        WorkoutDto workout = workoutService.fetchById(1);
+        List<ExerciseGroupDto> exerciseGroups = workout.getExerciseGroups();
+        assertEquals(exerciseGroups.get(0).getGroupId(), lastExerciseGroupId + 1);
+
         when(workoutService.getLastExerciseGroupId()).thenReturn(1);
         lastExerciseGroupId = workoutService.getLastExerciseGroupId();
-        assertEquals(exerciseGroupDtos.get(1).getGroupId(), lastExerciseGroupId + 1);
+        assertEquals(exerciseGroups.get(1).getGroupId(), lastExerciseGroupId + 1);
     }
 
     @Test
@@ -81,6 +87,7 @@ public class WorkoutServiceTests {
         WorkoutDto workout = new WorkoutDto(1, "Test", "Test", new ArrayList<>(), new ArrayList<>());
         WorkoutDto workout2 = new WorkoutDto(2, "Test2", "Test2", new ArrayList<>(), new ArrayList<>());
         List<WorkoutDto> workoutDtos = Arrays.asList(workout, workout2);
+
         when(workoutDao.fetchAll()).thenReturn(workoutDtos);
         List<WorkoutDto> workouts = workoutService.fetchAll();
         verify(workoutDao).fetchAll();
@@ -95,5 +102,4 @@ public class WorkoutServiceTests {
         verify(workoutDao).fetchById(1);
         assertEquals(workout.getId(), 1);
     }
-
 }
