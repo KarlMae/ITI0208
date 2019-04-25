@@ -32,20 +32,14 @@ VALUES
 INSERT INTO
   training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
 VALUES
-(1, 5, 'Pushup', 'Warm-up', 100, 100, 2, 1);
+(1, 5, 'Push up', 'Warm-up', 100, 100, 2, 1);
 
 INSERT INTO
   training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
 VALUES
-(2, 5, 'Pushup', 'Warm-up', 100, 100, 2, 1);
+(2, 5, 'Push up', 'Warm-up', 100, 100, 2, 1);
 
 INSERT INTO
   training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
 VALUES
-(3, 5, 'Pushup', 'Warm-up', 100, 100, 2, 1);
-
-
-INSERT INTO
-  training.users (username, password)
-VALUES
-  ('r', 'l')
+(3, 5, 'Push up', 'Warm-up', 100, 100, 2, 1);

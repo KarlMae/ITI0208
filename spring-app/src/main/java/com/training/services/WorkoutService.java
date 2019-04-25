@@ -9,12 +9,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 @AllArgsConstructor
@@ -23,18 +20,29 @@ public class WorkoutService {
     private final WorkoutMapper workoutDao;
     private final ExerciseMapper exerciseDao;
 
+    private void setExerciseWorkoutId(ExerciseDto exercise, WorkoutDto workout) {
+        exercise.setWorkoutId(workout.getId());
+    }
+
+    private int setExerciseGroupId(ExerciseGroupDto group, WorkoutDto workout, int groupId) {
+        for (ExerciseDto exercise : group.getSets()) {
+            setExerciseWorkoutId(exercise, workout);
+            exercise.setGroupId(groupId);
+        }
+        return groupId;
+    }
+
+    public int getLastExerciseGroupId() {
+        return exerciseDao.getLastGroupId();
+    }
+
     @Transactional
     public WorkoutDto insert(WorkoutDto dto) {
         workoutDao.insert(dto);
-        int lastGroupId = exerciseDao.getLastGroupId();
+        int nextGroupId = getLastExerciseGroupId() + 1;
 
         for (ExerciseGroupDto group : dto.getExerciseGroups()) {
-            lastGroupId += 1;
-
-            for (ExerciseDto exercise : group.getSets()) {
-                exercise.setWorkoutId(dto.getId());
-                exercise.setGroupId(lastGroupId);
-            }
+            nextGroupId = setExerciseGroupId(group, dto, nextGroupId) + 1;
         }
 
         List<ExerciseDto> exercises =  dto.getExerciseGroups()
