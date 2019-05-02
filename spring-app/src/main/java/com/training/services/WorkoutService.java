@@ -9,12 +9,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 @AllArgsConstructor
@@ -76,7 +73,7 @@ public class WorkoutService {
         Map<Integer, List<ExerciseDto>> grouped =  exercises.stream().collect(Collectors.groupingBy(ExerciseDto::getGroupId));
 
         for (List<ExerciseDto> groupedExercises: grouped.values()) {
-            workoutDto.addExerciseGroup(ExerciseGroupDto.createExerciseGroupDto(groupedExercises));
+            workoutDto.addExerciseGroup(ExerciseGroupDto.createDto(groupedExercises));
         }
 
         return workoutDto;

@@ -180,9 +180,9 @@
       },
       getUrl() {
         if (this.$route.path === '/workoutEdit') {
-          return process.env.VUE_APP_BACKEND_IP + '/updateWorkout'
+          return process.env.VUE_APP_BACKEND_IP + '/workout/update'
         } else {
-          return process.env.VUE_APP_BACKEND_IP + '/insert'
+          return process.env.VUE_APP_BACKEND_IP + '/workout/insert'
         }
       }
     },
