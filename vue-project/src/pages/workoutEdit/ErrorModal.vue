@@ -3,7 +3,7 @@
     <div class="modal-dialog" @click.stop='() => {}'>
       <div class="modal-content">
         <div class="modal-header">
-          <button v-on:click="closeModal" class="close">
+          <button @click="closeModal" class="close">
             <span>&lt;</span>
           </button>
           <h5 class="modal-title">Validation error</h5>

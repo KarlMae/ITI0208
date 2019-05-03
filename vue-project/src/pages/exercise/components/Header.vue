@@ -1,6 +1,6 @@
 <template>
   <div class="header container-fluid">
-    <p v-on:click="toHome" class="logo">Logo</p>
+    <p @click="toHome" class="logo">Logo</p>
   </div>
 </template>
 

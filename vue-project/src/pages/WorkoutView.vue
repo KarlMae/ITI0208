@@ -59,9 +59,9 @@
       </b-card>
     </div>
 
-    <button class="btn btn-edit" v-on:click="editWorkout">Edit</button>
+    <button class="btn btn-edit" @click="editWorkout">Edit</button>
 
-    <button class="btn btn-start" v-on:click="startWorkout" v-if="workout.exerciseGroups && workout.exerciseGroups.length > 0">
+    <button class="btn btn-start" @click="startWorkout" v-if="workout.exerciseGroups && workout.exerciseGroups.length > 0">
       Start
     </button>
 
@@ -75,7 +75,7 @@
   import Header from '../components/Header.vue';
   import Vue from 'vue'
   import VueRouter from 'vue-router';
-  import Workout from "../components/Workout";
+  import Workout from '../components/Workout';
 
   Vue.use(VueRouter);
 

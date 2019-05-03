@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
-import {AUTH_REQUEST} from "./constants";
-import axios from "axios";
+import {AUTH_REQUEST} from './constants';
+import axios from 'axios';
 
 Vue.use(Vuex);
 Vue.config.devtools = true;

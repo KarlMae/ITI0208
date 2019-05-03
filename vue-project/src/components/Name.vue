@@ -1,6 +1,6 @@
 <template>
 
-  <p v-on:click="toHome" id="name" class="name">Workout app</p>
+  <p @click="toHome" id="name" class="name">Workout app</p>
 
 </template>
 

@@ -3,7 +3,7 @@
     <div class="modal-dialog" @click.stop='() => {}'>
       <div class="modal-content">
         <div class="modal-header">
-          <button v-on:click="closeModal" class="close">
+          <button @click="closeModal" class="close">
             <span>&lt;</span>
           </button>
           <h5 class="modal-title">{{ this.exercise.name }}</h5>
@@ -25,27 +25,27 @@
               v-if="selectedSet.repetitions !== 0"
               name="repetitions"
               :repetitions="selectedSet.repetitions"
-              v-on:add="add"
-              v-on:subtract="subtract"
+              @add="add"
+              @subtract="subtract"
           />
 
           <EditModalRow
               v-if="selectedSet.duration !== 0"
               name="duration"
               :duration="selectedSet.duration"
-              v-on:add="add"
-              v-on:subtract="subtract"
+              @add="add"
+              @subtract="subtract"
           />
 
           <EditModalRow
               v-if="selectedSet.weight !== 0"
               name="weight"
               :weight="selectedSet.weight"
-              v-on:add="add"
-              v-on:subtract="subtract"
+              @add="add"
+              @subtract="subtract"
           />
         </div>
-        <button v-on:click="saveChanges" class="btn btn-primary save-button">
+        <button @click="saveChanges" class="btn btn-primary save-button">
           Save changes
         </button>
       </div>

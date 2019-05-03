@@ -1,16 +1,16 @@
 <template>
   <div>
     <div id="header" class="header">
-      <span v-on:click="openNav"><img src="../assets/icons/menu.svg" alt="alt" class="menu-icon"></span>
+      <span @click="openNav"><img src="../assets/icons/menu.svg" alt="alt" class="menu-icon"></span>
       <Name class="name"/>
     </div>
 
     <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" v-on:click="closeNav">&times;</a>
-      <a v-on:click="routeTo('home')">Home</a>
-      <a v-on:click="routeTo('login')">Login</a>
-      <a v-on:click="routeTo('newWorkout')">Add workout</a>
-      <a v-on:click="routeTo('secretPage')">Secret</a>
+      <a href="javascript:void(0)" class="closebtn" @click="closeNav">&times;</a>
+      <a @click="routeTo('home')">Home</a>
+      <a @click="routeTo('login')">Login</a>
+      <a @click="routeTo('newWorkout')">Add workout</a>
+      <a @click="routeTo('secretPage')">Secret</a>
     </div>
 
   </div>
@@ -19,10 +19,10 @@
 
 <script>
   import Name from './Name'
-
+  import routeTo from '../functions'
 
   export default {
-    name: "Header",
+    name: 'Header',
     components: {
       Name,
     },
@@ -33,9 +33,7 @@
       closeNav() {
         document.getElementById("mySidenav").style.width = "0";
       },
-      routeTo(path) {
-        this.$router.push({name: path});
-      }
+      routeTo
     }
   }
 </script>

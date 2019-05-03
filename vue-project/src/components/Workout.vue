@@ -1,6 +1,6 @@
 <template>
 
-  <div v-on:click="selectWorkout" id="workout" class="workout">
+  <div @click="selectWorkout" id="workout" class="workout">
     <WorkoutImage
       :id="id"
       :name="name"

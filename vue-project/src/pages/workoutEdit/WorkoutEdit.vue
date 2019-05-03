@@ -40,22 +40,22 @@
                         <label for="repetitions">Repetitions</label>
 
                         <div class="set-parameter">
-                          <button v-on:click="() => {set.repetitions = parseInt(set.repetitions) - 1}"
+                          <button @click="() => {set.repetitions = parseInt(set.repetitions) - 1}"
                                   class="btn amount-btn">-
                           </button>
                           <input class="set-parameter" v-model="set.repetitions" id="repetitions">
-                          <button v-on:click="() => {set.repetitions = parseInt(set.repetitions) + 1}"
+                          <button @click="() => {set.repetitions = parseInt(set.repetitions) + 1}"
                                   class="btn amount-btn">+
                           </button>
 
                         </div>
                         <label for="weight">Weight</label>
                         <div class="set-parameter">
-                          <button v-on:click="() => {set.weight = parseInt(set.weight) - 1}" class="btn amount-btn">
+                          <button @click="() => {set.weight = parseInt(set.weight) - 1}" class="btn amount-btn">
                             -
                           </button>
                           <input type="number" class="set-parameter" v-model="set.weight" id="weight">
-                          <button v-on:click="() => {set.weight = parseInt(set.weight) + 1}" class="btn amount-btn">
+                          <button @click="() => {set.weight = parseInt(set.weight) + 1}" class="btn amount-btn">
                             +
                           </button>
                         </div>
@@ -63,12 +63,12 @@
 
                         <label for="duration">Duration</label>
                         <div class="set-parameter">
-                          <button v-on:click="() => {set.duration = parseInt(set.duration) - 1}" class="btn amount-btn">
+                          <button @click="() => {set.duration = parseInt(set.duration) - 1}" class="btn amount-btn">
                             -
                           </button>
                           <input class="set-parameter" v-model="set.duration" id="duration">
 
-                          <button v-on:click="() => {set.duration = parseInt(set.duration) + 1}" class="btn amount-btn">
+                          <button @click="() => {set.duration = parseInt(set.duration) + 1}" class="btn amount-btn">
                             +
                           </button>
                         </div>
@@ -76,10 +76,10 @@
                     </template>
 
                     <div class="set-buttons">
-                      <button class="btn" type="button" v-on:click="addSet(exercise)">Add set</button>
-                      <button class="btn" type="button" v-on:click="removeSet(exercise)">Remove set</button>
+                      <button class="btn" type="button" @click="addSet(exercise)">Add set</button>
+                      <button class="btn" type="button" @click="removeSet(exercise)">Remove set</button>
                     </div>
-                    <button class="btn exercise-btn" type="button" v-on:click="removeExercise(exercise.index)">Remove
+                    <button class="btn exercise-btn" type="button" @click="removeExercise(exercise.index)">Remove
                       exercise
                     </button>
                   </div>
@@ -87,7 +87,7 @@
                 </div>
               </template>
 
-              <button class="btn exercise-btn" type="button" v-on:click="addNewExercise(group)">Add exercise</button>
+              <button class="btn exercise-btn" type="button" @click="addNewExercise(group)">Add exercise</button>
 
             </b-card-body>
           </b-collapse>
@@ -96,7 +96,7 @@
       </template>
     </div>
 
-    <button class="btn" type="button" v-on:click="save">Save</button>
+    <button class="btn" type="button" @click="save">Save</button>
   </div>
 </template>
 
