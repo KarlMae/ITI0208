@@ -10,6 +10,8 @@
       <input type="submit" value="Sign up">
       <br>
       <a @click="routeTo('login')">Login</a>
+      <p v-if="success">{{ success }}</p>
+      <p v-if="error">{{ error }}</p>
     </form>
   </div>
 </template>
@@ -26,13 +28,25 @@
     data() {
       return {
         username: '',
-        password: ''
+        password: '',
+        success: null,
+        error: null
       }
     },
     methods: {
       signUp() {
-        const { username, password } = this;
-
+        const data = `{ "username": "${this.username}", "password": "${this.password}" }`;
+        const headers = {
+          'Content-type': 'application/json'
+        };
+        this.axios.post(process.env.VUE_APP_BACKEND_IP + '/user/sign-up', data, {
+          headers: headers
+        }).then(response => {
+            this.success = 'Account successfully created'
+          })
+          .catch(error => {
+            this.error = 'Username already taken';
+          })
       },
       routeTo
     }

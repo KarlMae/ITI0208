@@ -35,7 +35,7 @@ export default new Vuex.Store({
       Vue.set(this.state.exerciseGroups, this.state.exerciseIndex, exercise);
     },
     [AUTH_REQUEST]: (state, user) => {
-      let data = 'username=' + user.username + '&password=' + user.password;
+      let data = `username=${user.username}&password=${user.password}`;
       let headers = {
         'Content-type': 'application/x-www-form-urlencoded'
       };

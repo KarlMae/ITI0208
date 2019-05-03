@@ -29,6 +29,7 @@ public class UserController {
 
     @PostMapping("/sign-up")
     public void signUp(@RequestBody UserDto user) {
+        System.out.println("feg");
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.registerUser(user);
     }
