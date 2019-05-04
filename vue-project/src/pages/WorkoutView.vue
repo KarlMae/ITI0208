@@ -76,7 +76,6 @@
   import Vue from 'vue'
   import VueRouter from 'vue-router';
   import Workout from '../components/Workout';
-  import routeTo from '../functions'
 
   Vue.use(VueRouter);
 
@@ -93,19 +92,18 @@
       };
     },
     methods: {
-      routeTo,
       startWorkout() {
           this.$store.commit('setWorkout', this.workout)
-          this.routeTo('/exercise')
+          this.$router.push('/exercise')
       },
       getWorkout(category) {
         return this.workout.exerciseGroups.filter(group => group.category === category)
       },
       editWorkout() {
-        routeTo({ name: 'workoutEdit', params: {editWorkout: this.workout} })
+        this.$router.push({ name: 'workoutEdit', params: {editWorkout: this.workout} })
       }
     },
-    mounted() {
+    async mounted() {
       let workoutId = this.$route.query.id;
       axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchWorkout/' + workoutId)
         .then(response => {

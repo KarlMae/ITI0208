@@ -9,9 +9,8 @@
       <a href="javascript:void(0)" class="closebtn" @click="closeNav">&times;</a>
       <a @click="routeTo('home')">Home</a>
       <a @click="routeTo('login')">Login</a>
-      <a v-if="loggedIn" @click="routeTo('userWorkouts')">My workouts</a>
+      <a @click="routeTo('userWorkouts')">My workouts</a>
       <a @click="routeTo('newWorkout')">Add workout</a>
-      <a @click="routeTo('secretPage')">Secret</a>
     </div>
 
   </div>
@@ -20,10 +19,9 @@
 
 <script>
   import Name from './Name'
-  import routeTo from '../functions'
 
   export default {
-    name: 'Header',
+    name: 'app-header',
     components: {
       Name,
     },
@@ -34,10 +32,9 @@
       closeNav() {
         document.getElementById("mySidenav").style.width = "0"
       },
-      loggedIn() {
-        return this.$store.getters.isAuthenticated
-      },
-      routeTo
+      routeTo(path) {
+        this.$router.push({ name: path })
+      }
     }
   }
 </script>

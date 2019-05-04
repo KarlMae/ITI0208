@@ -18,10 +18,9 @@
 
 <script>
   import Header from '../components/Header'
-  import routeTo from '../functions'
 
   export default {
-    name: 'signUp',
+    name: 'SignUp',
     components: {
       Header
     },
@@ -39,16 +38,19 @@
         const headers = {
           'Content-type': 'application/json'
         };
+
         this.axios.post(process.env.VUE_APP_BACKEND_IP + '/user/sign-up', data, {
           headers: headers
         }).then(response => {
             this.success = response.data
           })
-          .catch(error => {
+          .catch(() => {
             this.error = 'Username already taken'
           })
       },
-      routeTo
+      routeTo(path) {
+        this.$router.push({ name: path })
+      }
     }
   }
 </script>

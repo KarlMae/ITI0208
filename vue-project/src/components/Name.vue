@@ -3,13 +3,10 @@
 </template>
 
 <script>
-  import routeTo from '../functions'
-
   export default {
     methods: {
-      routeTo,
       toHome() {
-        this.routeTo('/')
+        this.$router.push({ name: 'home' })
       }
     }
   }

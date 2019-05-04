@@ -38,7 +38,7 @@ import Exercise from './components/exercise/Exercise';
 import EditModal from './components/editmodal/EditModal'
 
 export default {
-  name: 'exercise-view',
+  name: 'ExerciseView',
   components: {
     Exercise,
     ExerciseImage,

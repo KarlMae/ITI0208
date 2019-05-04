@@ -5,14 +5,11 @@
 </template>
 
 <script>
-  import routeTo from '../../../functions'
-
   export default {
-  name: 'header',
+  name: 'AppHeader',
   methods: {
-    routeTo,
     toHome() {
-      this.routeTo('/')
+      this.$router.push({ name: 'home' })
     }
   }
 }

@@ -35,18 +35,18 @@ export default new Vuex.Store({
       Vue.set(this.state.exerciseGroups, this.state.exerciseIndex, exercise);
     },
     [AUTH_REQUEST]: (state, user) => {
-      let data = `username=${user.username}&password=${user.password}`;
-      let headers = {
-        'Content-type': 'application/x-www-form-urlencoded'
+      const data = `{ "username": "${user.username}", "password": "${user.password}" }`;
+      const headers = {
+        'Content-type': 'application/json'
       };
 
       axios.post(process.env.VUE_APP_BACKEND_IP + '/login', data, {
         headers: headers
-      }).then(response => {
-        this.state.user = user;
+      }).then(() => {
+        state.user = user;
         localStorage.setItem('user', user);
-      }).catch(error => {
-        this.state.user = '';
+      }).catch(() => {
+        state.user = '';
         localStorage.removeItem('user');
       })
     }

@@ -20,7 +20,6 @@
             />
           </div>
 
-
           <EditModalRow
               v-if="selectedSet.repetitions !== 0"
               name="repetitions"

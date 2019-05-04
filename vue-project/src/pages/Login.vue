@@ -2,7 +2,6 @@
   <div>
     <Header/>
     <br>
-    <!-- action="/login"-->
     <form id="login" @submit.prevent="login">
       <label for="username">Username</label>
       <input id="username" type='text' placeholder='username' autocomplete="off" v-model='username'><br>
@@ -18,10 +17,9 @@
 <script>
   import Header from '../components/Header'
   import {AUTH_REQUEST} from '../store/constants'
-  import routeTo from '../functions'
 
   export default {
-    name: 'login',
+    name: 'Login',
     components: {
       Header
     },
@@ -32,11 +30,14 @@
       }
     },
     methods: {
-      routeTo,
+      routeTo(path) {
+        this.$router.push({ name: path })
+      },
       login () {
         const { username, password } = this;
-        this.$store.dispatch(AUTH_REQUEST, {username, password}).then(() => {
-          this.routeTo('userWorkouts')
+        this.$store.dispatch(AUTH_REQUEST, {username, password})
+          .then(() => {
+            this.routeTo('userWorkouts')
         })
       }
     }
