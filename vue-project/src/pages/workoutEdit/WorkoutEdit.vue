@@ -103,7 +103,8 @@
 <script>
   import Header from '../../components/Header'
   import ErrorModal from './ErrorModal'
-  import axios from 'axios';
+  import axios from 'axios'
+  import routeTo from '../../functions'
 
   export default {
     name: 'WorkoutEdit',
@@ -125,6 +126,7 @@
     },
     props: ['editWorkout'],
     methods: {
+      routeTo,
       addNewExercise(category) {
         this.workout.exerciseGroups.push(
           {
@@ -164,7 +166,7 @@
             this.errors.push(e)
           });
 
-        this.$router.push('/workout/?id=' + workoutId);
+        this.routeTo('/workout/?id=' + workoutId);
       },
       removeExercise(index) {
         for (let i = this.workout.exerciseGroups.length - 1; i >= 0; i--) {

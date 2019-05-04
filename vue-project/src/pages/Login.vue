@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Header />
+    <Header/>
+    <br>
     <!-- action="/login"-->
     <form id="login" @submit.prevent="login">
       <label for="username">Username</label>
@@ -31,13 +32,13 @@
       }
     },
     methods: {
+      routeTo,
       login () {
         const { username, password } = this;
         this.$store.dispatch(AUTH_REQUEST, {username, password}).then(() => {
-          this.$router.push('/')
+          this.routeTo('userWorkouts')
         })
-      },
-      routeTo
+      }
     }
   }
 </script>

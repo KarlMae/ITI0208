@@ -1,6 +1,5 @@
 package com.training.controllers;
 
-import com.training.dto.WorkoutDto;
 import com.training.dto.user.UserDto;
 import com.training.services.UserService;
 import lombok.AllArgsConstructor;
@@ -10,8 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -23,14 +20,16 @@ public class UserController {
 
 //    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping("/fetchAllWorkouts")
-    public List<WorkoutDto> fetchAllWorkouts() {
-        return userService.fetchAllWorkouts();
+//    public List<WorkoutDto> fetchAllWorkouts() {
+    public String fetchAllWorkouts() {
+//        return userService.fetchAllWorkouts();
+        return "success";
     }
 
     @PostMapping("/sign-up")
-    public void signUp(@RequestBody UserDto user) {
-        System.out.println("feg");
+    public String signUp(@RequestBody UserDto user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.registerUser(user);
+        return "Account successfully created";
     }
 }

@@ -1,26 +1,23 @@
 <template>
-
   <p @click="toHome" id="name" class="name">Workout app</p>
-
 </template>
 
 <script>
+  import routeTo from '../functions'
 
   export default {
     methods: {
+      routeTo,
       toHome() {
-        this.$router.push('/')
+        this.routeTo('/')
       }
     }
   }
-
 </script>
 
 <style>
-
   .name {
     margin: 0 auto;
     cursor: pointer;
   }
-
 </style>

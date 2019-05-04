@@ -15,6 +15,7 @@
   import Vue from 'vue'
   import VueRouter from 'vue-router';
   import WorkoutImage from '../components/WorkoutImage';
+  import routeTo from '../functions'
 
   Vue.use(VueRouter);
 
@@ -29,8 +30,9 @@
       description: String,
     },
     methods: {
+      routeTo,
       selectWorkout() {
-        this.$router.push('/workout/?id=' + this.id)
+        this.routeTo('/workout/?id=' + this.id)
       }
     }
   }

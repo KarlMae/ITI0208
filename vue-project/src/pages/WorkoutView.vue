@@ -76,6 +76,7 @@
   import Vue from 'vue'
   import VueRouter from 'vue-router';
   import Workout from '../components/Workout';
+  import routeTo from '../functions'
 
   Vue.use(VueRouter);
 
@@ -92,15 +93,16 @@
       };
     },
     methods: {
+      routeTo,
       startWorkout() {
-          this.$store.commit('setWorkout', this.workout);
-          this.$router.push({ name: 'exercise' });
+          this.$store.commit('setWorkout', this.workout)
+          this.routeTo('/exercise')
       },
       getWorkout(category) {
         return this.workout.exerciseGroups.filter(group => group.category === category)
       },
       editWorkout() {
-        this.$router.push({ name: 'workoutEdit', params: {editWorkout: this.workout} });
+        routeTo({ name: 'workoutEdit', params: {editWorkout: this.workout} })
       }
     },
     mounted() {

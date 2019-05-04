@@ -56,10 +56,4 @@ public class Controller {
     public void updateExercise(@RequestBody ExerciseGroupDto dto) {
         exerciseService.update(dto);
     }
-
-
-    @GetMapping("/fetchSecret")
-    public String fetchSecret() {
-        return "Extremely secret content.";
-    }
 }

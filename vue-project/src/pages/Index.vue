@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header class="boss" />
+    <Header/>
     <div id="workouts" class="workouts">
       <Workout v-for="workout in workouts"
                :key="workout.id"
@@ -26,12 +26,11 @@ export default {
   data() {
     return {
       workouts: Array,
-      error: Array
+      error: null
     }
   },
-  async mounted() {
-    this.axios
-      .get(process.env.VUE_APP_BACKEND_IP + '/fetchAllWorkouts')
+  mounted() {
+    this.axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchAllWorkouts')
       .then(response => {
         this.workouts = response.data
       })

@@ -13,8 +13,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import BootstrapVue from 'bootstrap-vue'
 import store from './store/index'
-import SecretPage from './pages/SecretPage';
 import SignUp from './pages/SignUp';
+import UserWorkouts from './pages/user/UserWorkouts';
 
 Vue.use(BootstrapVue);
 
@@ -32,8 +32,8 @@ const routes = [
   { name: 'workout', path: '/workout', component: WorkoutView, props: true },
   { name: 'exercise', path: '/exercise', component: Exercise, props: true },
   { name: 'workoutEdit', path: '/workoutEdit', component: WorkoutEdit, props: true },
-  { name: 'ewWorkout', path: '/newWorkout', component: WorkoutEdit, props: true },
-  { name: 'secretPage', path: '/secret', component: SecretPage }
+  { name: 'newWorkout', path: '/newWorkout', component: WorkoutEdit, props: true },
+  { name: 'userWorkouts', path: '/user/myWorkouts', component: UserWorkouts }
 ];
 
 const router = new VueRouter({
@@ -41,16 +41,16 @@ const router = new VueRouter({
   routes
 });
 
-/*router.beforeEach((to, from, next) => {
-  const publicPages = ['/login'];
-  const authRequired = !publicPages.includes(to.path);
+router.beforeEach((to, from, next) => {
+  const privatePages = ['/user/myWorkouts'];
+  const authRequired = privatePages.includes(to.path);
   const loggedIn = store.getters.isAuthenticated;
 
   if (authRequired && !loggedIn) {
     return next('/login');
   }
   next();
-});*/
+});
 
 new Vue({
   render: h => h(App),

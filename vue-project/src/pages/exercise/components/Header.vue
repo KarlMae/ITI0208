@@ -5,22 +5,20 @@
 </template>
 
 <script>
+  import routeTo from '../../../functions'
 
-    export default {
-    name: "Header",
-    components: {
-
-    },
-    methods: {
-        toHome() {
-            this.$router.push('/')
-        }
+  export default {
+  name: 'header',
+  methods: {
+    routeTo,
+    toHome() {
+      this.routeTo('/')
     }
   }
+}
 </script>
 
 <style scoped>
-
   .header {
     display: flex;
     justify-content: space-between;
@@ -33,5 +31,4 @@
     margin-bottom: 0;
     cursor: pointer;
   }
-
 </style>

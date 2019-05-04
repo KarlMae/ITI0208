@@ -13,6 +13,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import static com.training.security.SecurityConstants.LOGIN_URL;
 import static com.training.security.SecurityConstants.SIGN_UP_URL;
 
 
@@ -26,6 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
+                .antMatchers(LOGIN_URL).permitAll()
                 .antMatchers(SIGN_UP_URL).permitAll()
                 .anyRequest().authenticated()
                 .and()
