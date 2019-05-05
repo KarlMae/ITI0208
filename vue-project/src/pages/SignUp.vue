@@ -1,14 +1,14 @@
 <template>
   <div>
     <Header/>
+    <p v-if="success">{{ success }}</p>
+    <p v-else-if="error">{{ error }}</p>
+    <br v-else>
     <form @submit.prevent="signUp">
-      <p v-if="success">{{ success }}</p>
-      <p v-else-if="error">{{ error }}</p>
-      <br v-else>
       <label for="username">Username</label>
-      <input id="username" type='text' placeholder='username' autocomplete="off" v-model='username'><br>
+      <input id="username" type='text' placeholder='username' autocomplete="off" v-model='username' required><br>
       <label for="password">Password</label>
-      <input id="password" type='password' placeholder='password' autocomplete="off" v-model='password'><br>
+      <input id="password" type='password' placeholder='password' autocomplete="off" v-model='password' required><br>
       <input type="submit" value="Sign up">
       <br>
       <a @click="routeTo('login')">Login</a>
@@ -41,8 +41,8 @@
 
         this.axios.post(process.env.VUE_APP_BACKEND_IP + '/user/sign-up', data, {
           headers: headers
-        }).then(response => {
-            this.success = response.data
+        }).then(() => {
+            this.success = 'Account successfully created'
           })
           .catch(() => {
             this.error = 'Username already taken'

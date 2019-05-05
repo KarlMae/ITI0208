@@ -27,9 +27,8 @@ public class UserController {
     }
 
     @PostMapping("/sign-up")
-    public String signUp(@RequestBody UserDto user) {
+    public void signUp(@RequestBody UserDto user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.registerUser(user);
-        return "Account successfully created";
     }
 }

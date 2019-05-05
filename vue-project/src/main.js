@@ -25,15 +25,58 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
 const routes = [
-  { name: 'home', path: '/', component: Index },
-  { path: '*', component: Index },
-  { name: 'login', path: '/login', component: Login },
-  { name: 'signUp', path: '/signUp', component: SignUp },
-  { name: 'workout', path: '/workout', component: WorkoutView, props: true },
-  { name: 'exercise', path: '/exercise', component: Exercise, props: true },
-  { name: 'workoutEdit', path: '/workoutEdit', component: WorkoutEdit, props: true },
-  { name: 'newWorkout', path: '/newWorkout', component: WorkoutEdit, props: true },
-  { name: 'userWorkouts', path: '/user/myWorkouts', component: UserWorkouts }
+  {
+    name: 'home',
+    path: '/',
+    component: Index
+  },
+  {
+    path: '*',
+    component: Index
+  },
+  {
+    name: 'login',
+    path: '/login',
+    component: Login
+  },
+  {
+    name: 'signUp',
+    path: '/signUp',
+    component: SignUp
+  },
+  {
+    name: 'workout',
+    path: '/workout',
+    component: WorkoutView,
+    props: true
+  },
+  {
+    name: 'exercise',
+    path: '/exercise',
+    component: Exercise,
+    props: true
+  },
+  {
+    name: 'workoutEdit',
+    path: '/workoutEdit',
+    component: WorkoutEdit,
+    props: true
+  },
+  {
+    name: 'newWorkout',
+    path: '/newWorkout',
+    component: WorkoutEdit,
+    props: true
+  },
+  {
+    name: 'userWorkouts',
+    path: '/user/myWorkouts',
+    component: UserWorkouts,
+    props: true,
+    meta: {
+      requiresAuth: true
+    }
+  }
 ];
 
 const router = new VueRouter({
@@ -42,15 +85,25 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const privatePages = ['/user/myWorkouts'];
-  const authRequired = privatePages.includes(to.path);
-  const loggedIn = store.getters.isAuthenticated;
-
-  if (authRequired && !loggedIn) {
-    return next('/login');
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    const loggedIn = store.getters.isAuthenticated;
+    if (!loggedIn) {
+      next({
+        path: '/login',
+        query: { redirect: this.path }
+      })
+    } else {
+      next()
+    }
+  } else {
+    next()
   }
-  next();
 });
+
+const token = localStorage.getItem('user-token');
+if (token) {
+  axios.defaults.headers.common['Authorization'] = token
+}
 
 new Vue({
   render: h => h(App),
