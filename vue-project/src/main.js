@@ -88,10 +88,7 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     const loggedIn = store.getters.isAuthenticated;
     if (!loggedIn) {
-      next({
-        path: '/login',
-        query: { redirect: this.path }
-      })
+      next({ name: 'login' })
     } else {
       next()
     }

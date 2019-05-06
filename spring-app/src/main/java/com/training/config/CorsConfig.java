@@ -22,6 +22,7 @@ public class CorsConfig {
         config.setAllowedOrigins(Collections.singletonList("http://localhost:8080"));
         config.setAllowedMethods(Arrays.asList("GET", "POST"));
         config.setAllowedHeaders(Collections.singletonList("*"));
+        config.setExposedHeaders(Collections.singletonList("Authorization"));
         source.registerCorsConfiguration("/**", config);
         FilterRegistrationBean bean = new FilterRegistrationBean<>(new CorsFilter(source));
         bean.setOrder(Ordered.HIGHEST_PRECEDENCE);

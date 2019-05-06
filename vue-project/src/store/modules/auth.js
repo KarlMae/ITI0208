@@ -14,18 +14,18 @@ const getters = {
 const actions = {
   [AUTH_REQUEST]: ({ commit }, user) => {
     return new Promise((resolve, reject) => {
-      const data = `{ "username": "${user.username}", "password": "${user.password}" }`;
+      const data = JSON.stringify(user);
       const headers = {
         'Content-type': 'application/json'
       };
 
-      axios({url: `${process.env.VUE_APP_BACKEND_IP}/login`, data: data, headers: headers, method: 'POST' })
+      axios({url: `${process.env.VUE_APP_BACKEND_IP}/login`, data: data, headers: headers, method: 'POST'})
         .then(response => {
-          const token = 'token';
+          const token = response.headers.authorization;
           localStorage.setItem('user-token', token);
           axios.defaults.headers.common['Authorization'] = token;
           commit(AUTH_SUCCESS, token);
-          resolve()
+          resolve(response)
         }).catch(error => {
           localStorage.removeItem('user-token');
           commit(AUTH_ERROR);

@@ -4,6 +4,23 @@
   </div>
 </template>
 
+<script>
+  import {AUTH_LOGOUT} from "./store/constants";
+
+  export default {
+    created: function () {
+      this.axios.interceptors.response.use(undefined, function (err) {
+        return new Promise(function() {
+          if (err.status === 401 && err.config && !err.config.__isRetryRequest) {
+            this.$store.dispatch(AUTH_LOGOUT);
+          }
+          throw err;
+        });
+      });
+    }
+  }
+</script>
+
 <style>
   html {
     height: 100%;

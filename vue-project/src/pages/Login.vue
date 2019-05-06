@@ -3,7 +3,7 @@
     <Header/>
     <p v-if="error">{{ error }}</p>
     <br v-else>
-    <form id="login" @submit.prevent="login">
+    <form @submit.prevent="login">
       <label for="username">Username</label>
       <input id="username" type='text' placeholder='username' autocomplete="off" v-model='username' required><br>
       <label for="password">Password</label>
