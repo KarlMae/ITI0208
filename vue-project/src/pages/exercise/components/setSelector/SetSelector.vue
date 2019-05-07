@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: "SetSelector",
+    name: 'SetSelector',
     data() {
       return {
         selectedSet: this.set,

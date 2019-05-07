@@ -2,7 +2,7 @@
   <div id="exercise-view">
     <button
         v-if="previousExercisePresent"
-        v-on:click="previousExercise"
+        @click="previousExercise"
         class="nav-button"
         style="left: 0.5rem">
       &lt;
@@ -10,14 +10,14 @@
 
     <div class="exercise-section">
       <ExerciseImage/>
-      <Exercise v-on:openEditModal="toggleEditModal"/>
+      <Exercise @openEditModal="toggleEditModal"/>
       <hr/>
       <Timer/>
     </div>
 
     <button
         v-if="nextExercisePresent"
-        v-on:click="nextExercise()" class="nav-button" style="right: 0.5rem">
+        @click="nextExercise()" class="nav-button" style="right: 0.5rem">
       &gt;
     </button>
 
@@ -36,7 +36,7 @@ import Exercise from './components/exercise/Exercise';
 import EditModal from './components/editmodal/EditModal'
 
 export default {
-  name: 'exercise-view',
+  name: 'ExerciseView',
   components: {
     Exercise,
     ExerciseImage,

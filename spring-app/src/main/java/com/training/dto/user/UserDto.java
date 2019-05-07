@@ -1,8 +1,10 @@
-package com.training.dto;
+package com.training.dto.user;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class UserDto {
 
     private int id;

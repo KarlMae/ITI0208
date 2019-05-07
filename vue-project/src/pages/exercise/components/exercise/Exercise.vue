@@ -3,7 +3,7 @@
     <img
         src="../../../../assets/icons/edit.svg"
         class="edit-icon"
-        v-on:click="openEditModal"
+        @click="openEditModal"
     >
 
     <transition name="slide-fade">

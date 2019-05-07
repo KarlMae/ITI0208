@@ -5,6 +5,7 @@ import com.training.dto.ExerciseDto;
 import com.training.dto.ExerciseGroupDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,8 +25,8 @@ public class ExerciseService {
         return exerciseDao.fetchAll();
     }
 
+    @Transactional
     public void update(ExerciseGroupDto dto) {
         dto.getSets().forEach(exerciseDao::update);
     }
-
 }

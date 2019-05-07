@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
+import auth from "./modules/auth";
 
 Vue.use(Vuex);
 Vue.config.devtools = true;
@@ -15,7 +16,7 @@ export default new Vuex.Store({
   mutations: {
     setWorkout(state, workout) {
       this.state.exerciseGroups = workout.exerciseGroups;
-      this.state.exerciseIndex = workout.exerciseIndex | 0;
+      this.state.exerciseIndex = workout.exerciseIndex || 0;
     },
     nextExercise() {
       this.state.exerciseIndex++;
@@ -30,20 +31,23 @@ export default new Vuex.Store({
     },
     updateCurrentExercise(state, exercise) {
       Vue.set(this.state.exerciseGroups, this.state.exerciseIndex, exercise);
-    },
+    }
   },
   getters: {
     previousExercisePresent: state => {
-      return state.exerciseIndex > 0;
+      return state.exerciseIndex > 0
     },
     nextExercisePresent: state => {
-      return state.exerciseIndex < state.exerciseGroups.length - 1;
+      return state.exerciseIndex < state.exerciseGroups.length - 1
     },
     currentExercise: state => {
-      return state.exerciseGroups[state.exerciseIndex];
+      return state.exerciseGroups[state.exerciseIndex]
     },
     currentSet: state => {
-      return state.exerciseGroups[state.exerciseIndex].sets[state.currentSetIndex];
+      return state.exerciseGroups[state.exerciseIndex].sets[state.currentSetIndex]
     }
+  },
+  modules: {
+    auth
   }
 });

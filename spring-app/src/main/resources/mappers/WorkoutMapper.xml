@@ -20,7 +20,7 @@
           id = #{id}
     </update>
 
-    <select id="fetchAll"  resultType="com.training.dto.WorkoutDto">
+    <select id="fetchAll" resultType="com.training.dto.WorkoutDto">
       SELECT
         *
       FROM

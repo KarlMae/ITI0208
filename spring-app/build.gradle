@@ -37,5 +37,32 @@ dependencies {
     compile group: 'javax.xml', name: 'jaxb-api', version: '2.1'
     compile('org.springframework.boot:spring-boot-starter')
     compile group: 'org.mockito', name: 'mockito-core', version: '2.13.0'
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("com.auth0:java-jwt:3.4.0")
 }
+
+task customFatJar(type: Jar) {
+    manifest {
+        attributes "Main-Class": "com.training.Application"
+    }
+    baseName = 'all-in-one-jar'
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    with jar
+}
+
+/*task copyJar(type: Copy) {
+    from customFatJar
+    into "/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds"
+}
+
+task buildAndRename {
+    dependsOn copyJar
+    doLast {
+        file("/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds/all-in-one-jar.jar")
+            .renameTo(file("/Users/joosepnoot/Tarkvara projekt/ITI0208/spring-app/build/customBuilds/customName.jar"))
+    }
+}*/

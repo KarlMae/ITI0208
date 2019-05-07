@@ -1,13 +1,15 @@
 <template>
   <div>
     <div id="header" class="header">
-      <span v-on:click="openNav"><img src="../assets/icons/menu.svg" alt="alt" class="menu-icon"></span>
+      <span @click="openNav"><img src="../assets/icons/menu.svg" alt="alt" class="menu-icon"></span>
       <Name class="name"/>
     </div>
 
     <div id="mySidenav" class="sidenav" v-bind:style="sideNavStyle">
       <a class="closebtn" v-on:click="closeNav">&times;</a>
       <a v-on:click="routeTo('home')">Home</a>
+      <a v-on:click="routeTo('login')">Login</a>
+      <a v-on:click="routeTo('userWorkouts')">My workouts</a>
       <a v-on:click="routeTo('newWorkout')">Add workout</a>
     </div>
 
@@ -18,9 +20,8 @@
 <script>
   import Name from './Name'
 
-
   export default {
-    name: "Header",
+    name: 'app-header',
     components: {
       Name,
     },
@@ -44,14 +45,13 @@
         this.isOpen = false;
       },
       routeTo(path) {
-        this.$router.push({name: path});
+        this.$router.push({ name: path })
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-
   @import '../assets/colors.scss';
 
   p {
@@ -118,5 +118,4 @@
   .menu-icon, .closebtn, a {
     cursor: pointer;
   }
-
 </style>
