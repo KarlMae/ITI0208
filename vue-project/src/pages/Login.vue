@@ -15,6 +15,8 @@
 </template>
 
 <script>
+  import { AUTH_REQUEST } from '../store/constants'
+
 
   export default {
     name: 'Login',

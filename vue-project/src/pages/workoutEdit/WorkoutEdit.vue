@@ -112,7 +112,8 @@
               minLength: minLength(5),
               required
             }
-          }
+          },
+          required
         }
       }
     },
@@ -179,6 +180,10 @@
         })
       },
       validate() {
+        if (this.workout.exerciseGroups.length === 0) {
+          alert('Workout needs to have at least one exercise with one set');
+          return true;
+        }
         this.isSavePressed = true;
 
         this.$v.$touch();

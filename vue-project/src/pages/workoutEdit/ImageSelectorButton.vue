@@ -1,11 +1,11 @@
 <template>
   <div class="image-select-button" v-on:click="() => $emit('clicked')">
     <div v-if="image">
-      <img :src="image" alt="alt" class="svg-icon">
+      <img :src="image" alt="alt" class="icon image-margin">
     </div>
 
     <div v-if="!image">
-      <img src="../../assets/icons/camera.svg" alt="alt" class="svg-icon">
+      <img src="../../assets/icons/camera.svg" alt="alt" class="icon">
     </div>
 
   </div>
@@ -29,7 +29,12 @@
     border: #3a3a3a solid 1px;
   }
 
-  .svg-icon {
+  .icon {
     max-height: 5rem;
   }
+
+  .image-margin {
+    margin: 1rem;
+  }
+
 </style>

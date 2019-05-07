@@ -14,7 +14,6 @@ public class WorkoutDto {
 
     private Integer id;
     private String name;
-    private String description;
     private String image;
     private List<ExerciseGroupDto> exerciseGroups = new ArrayList<>();
     private List<ExerciseDto> exercises;

@@ -11,12 +11,14 @@ export default new Vuex.Store({
   state: {
     exerciseGroups: [],
     exerciseIndex: 0,
-    currentSetIndex: 0
+    currentSetIndex: 0,
+    workoutImage: ''
   },
   mutations: {
     setWorkout(state, workout) {
       this.state.exerciseGroups = workout.exerciseGroups;
       this.state.exerciseIndex = workout.exerciseIndex || 0;
+      this.state.workoutImage = workout.image;
     },
     nextExercise() {
       this.state.exerciseIndex++;

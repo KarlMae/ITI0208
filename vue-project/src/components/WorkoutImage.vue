@@ -21,7 +21,9 @@
     },
     methods: {
       selectWorkout() {
-        this.$router.push('/workout/?id=' + this.id)
+        if (this.id) {
+          this.$router.push('/workout/?id=' + this.id)
+        }
       }
     },
     computed: {

@@ -1,17 +1,17 @@
 INSERT INTO
-  training.workouts(name, description)
+  training.workouts(name)
 VALUES
-  ('Planche basics', 'The most popular calisthenics move');
+  ('Planche basics');
 
 INSERT INTO
-  training.workouts(name, description)
+  training.workouts(name)
 VALUES
-  ('Killer workout 5000', 'Väga ull workout');
+  ('Killer workout 5000');
 
 INSERT INTO
-  training.workouts(name, description)
+  training.workouts(name)
 VALUES
-('Demo workout', 'Best workout for demo purposes');
+('Demo workout');
 
 
 INSERT INTO

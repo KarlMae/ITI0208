@@ -6,16 +6,16 @@
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         INSERT INTO
-          training.workouts(name, description, image)
+          training.workouts(name, image)
         VALUES
-          (#{name}, #{description}, #{image})
+          (#{name}, #{image})
     </insert>
 
     <update id="update">
         UPDATE
           training.workouts
         SET
-          name = #{name}, description = #{description}, image = #{image}
+          name = #{name}, image = #{image}
         WHERE
           id = #{id}
     </update>
@@ -26,7 +26,7 @@
       FROM
         training.workouts
       ORDER BY
-        id, name, description
+        id, name
     </select>
 
     <select id="fetchById" resultType="com.training.dto.WorkoutDto">
@@ -37,7 +37,7 @@
       WHERE
         id = #{id}
       ORDER BY
-        id, name, description
+        id, name
     </select>
 
 </mapper>
