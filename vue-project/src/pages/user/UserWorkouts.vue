@@ -1,17 +1,14 @@
 <template>
   <div>
-    <Header/>
     {{ userWorkouts }}
   </div>
 </template>
 
 <script>
-  import Header from "../../components/Header";
 
   export default {
     name: 'UserWorkouts',
     components: {
-      Header
     },
     data() {
       return {

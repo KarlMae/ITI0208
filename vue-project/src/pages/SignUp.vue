@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header/>
     <p v-if="success">{{ success }}</p>
     <p v-else-if="error">{{ error }}</p>
     <br v-else>
@@ -17,12 +16,10 @@
 </template>
 
 <script>
-  import Header from '../components/Header'
 
   export default {
     name: 'SignUp',
     components: {
-      Header
     },
     data() {
       return {

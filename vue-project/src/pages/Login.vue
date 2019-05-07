@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header/>
     <p v-if="error">{{ error }}</p>
     <br v-else>
     <form @submit.prevent="login">
@@ -16,13 +15,10 @@
 </template>
 
 <script>
-  import Header from '../components/Header'
-  import {AUTH_REQUEST} from '../store/constants'
 
   export default {
     name: 'Login',
     components: {
-      Header
     },
     data() {
       return {
