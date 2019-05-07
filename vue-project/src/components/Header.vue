@@ -54,25 +54,27 @@
 
   @import '../assets/colors.scss';
 
+  p {
+    margin-bottom: 0;
+  }
+
   .header {
     min-height: 4.5rem;
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
   }
 
   .name {
     color: #3a3a3a;
     font-size: 2rem;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 36px;
-    white-space: nowrap;
   }
 
   img {
-    width: 4rem;
     height: 4rem;
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
 

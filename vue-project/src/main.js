@@ -2,24 +2,23 @@ import Vue from 'vue';
 import App from './App.vue';
 import axios from 'axios';
 import VueRouter from 'vue-router';
-import Index from './pages/Index';
-import WorkoutView from "./pages/WorkoutView";
+import Index from './pages/Home';
+import WorkoutView from "./pages/workout/WorkoutView";
 import Exercise from "./pages/exercise/ExerciseView";
 import WorkoutEdit from "./pages/workoutEdit/WorkoutEdit";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import BootstrapVue from 'bootstrap-vue'
-import store from './store/index'
-
-Vue.use(BootstrapVue);
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import BootstrapVue from 'bootstrap-vue';
+import store from './store/index';
+import Vuelidate from 'vuelidate';
 
 Vue.prototype.axios = axios;
-
 Vue.config.productionTip = false;
-
+Vue.use(BootstrapVue);
 Vue.use(VueRouter);
+Vue.use(Vuelidate);
 
 const routes = [
   { name: "home", path: "/", component: Index },

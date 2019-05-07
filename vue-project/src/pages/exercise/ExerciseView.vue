@@ -9,7 +9,6 @@
     </button>
 
     <div class="exercise-section">
-      <Header/>
       <ExerciseImage/>
       <Exercise v-on:openEditModal="toggleEditModal"/>
       <hr/>
@@ -32,7 +31,6 @@
 
 <script>
 import Timer from './components/Timer'
-import Header from './components/Header'
 import ExerciseImage from './components/exercise/ExerciseImage';
 import Exercise from './components/exercise/Exercise';
 import EditModal from './components/editmodal/EditModal'
@@ -42,7 +40,6 @@ export default {
   components: {
     Exercise,
     ExerciseImage,
-    Header,
     Timer,
     EditModal
   },
@@ -89,7 +86,6 @@ export default {
     height: 100%;
     width: 100%;
     text-align: left;
-    padding: 2rem;
   }
 
   .nav-button {

@@ -1,20 +1,30 @@
 <template>
   <div id="app">
+    <Header />
     <router-view></router-view>
   </div>
 </template>
 
+<script>
+  import Header from './components/Header'
+
+  export default {
+    name: 'App',
+    components: {
+      Header
+    },
+  }
+</script>
+
 <style>
-  html {
+  html, body, #app {
     height: 100%;
+    overflow: auto;
+    background-color: #F0F0F0;
   }
 
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #F0F0F0;
+  p {
+    margin-bottom: 0;
   }
 
   #app {
@@ -22,7 +32,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    height: 100%;
+    padding: 0 2rem 2rem;
   }
 
   @font-face {

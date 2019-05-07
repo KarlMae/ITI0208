@@ -1,32 +1,30 @@
 <template>
 
   <div>
-    <Header />
     <div class="workout-view">
-      <ul v-if="workout">
-        <Workout :id = workout.id />
-        <div class="workout-info">
-          <h3>{{ workout.name }}</h3>
-          <p>{{ workout.description }}</p>
-        </div>
-      </ul>
+      <WorkoutImage
+          :src="workout.image"
+      />
+      <div class="workout-info padding-bottom">
+        <h3>{{ workout.name }}</h3>
+      </div>
     </div>
 
-    <div role="tablist" class="tablist">
+    <div role="tablist" class="tablist padding-bottom">
       <template v-for="group in groupNames">
         <Accordion
-          :workout="getWorkout(group)"
-          :group="group"/>
+            :workout="getWorkout(group)"
+            :group="group"/>
       </template>
-
     </div>
 
-    <button class="btn btn-edit" v-on:click="editWorkout">Edit</button>
 
-    <button class="btn btn-start" v-on:click="startWorkout" v-if="workout.exerciseGroups && workout.exerciseGroups.length > 0">
-      Start
-    </button>
-
+    <div class="absolute">
+      <div class="footer-buttons">
+        <button class="btn btn-edit" v-on:click="editWorkout">Edit</button>
+        <button class="btn btn-start" v-on:click="startWorkout">Start</button>
+      </div>
+    </div>
   </div>
 
 </template>
@@ -34,19 +32,15 @@
 
 <script>
   import axios from 'axios';
-  import Header from '../components/Header.vue';
   import Vue from 'vue'
   import VueRouter from 'vue-router';
-  import Workout from "../components/Workout";
-  import Accordion from "../components/Accordion";
-
-  Vue.use(VueRouter);
+  import WorkoutImage from "../../components/WorkoutImage";
+  import Accordion from "../../components/Accordion";
 
   export default {
     components: {
       Accordion,
-      Workout,
-      Header
+      WorkoutImage,
     },
     data() {
       return {
@@ -62,11 +56,11 @@
     },
     methods: {
       startWorkout() {
-          this.$store.commit('setWorkout', this.workout);
-          this.$router.push({ name: 'exercise' });
+        this.$store.commit('setWorkout', this.workout);
+        this.$router.push({name: 'exercise'});
       },
       editWorkout() {
-        this.$router.push({ name: 'workoutEdit', params: {editWorkout: this.workout} });
+        this.$router.push({name: 'workoutEdit', params: {editWorkout: this.workout}});
       },
       getWorkout(category) {
 
@@ -88,9 +82,9 @@
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/colors";
+  @import "../../assets/colors";
 
-  ul {
+  ul, p {
     margin: 0;
     padding: 0;
   }
@@ -99,26 +93,16 @@
     padding: 1rem;
   }
 
-  p {
-    margin: 0;
-    padding: 0.5rem;
-  }
-
   .workout-view h4 {
     text-align: left;
   }
 
   .workout-info {
-    padding-left: 1rem;
     text-align: left;
   }
 
   .workout-info h3, p {
     font-weight: bolder;
-  }
-
-  .tablist {
-    padding: 1rem;
   }
 
   .exercise-list {
@@ -147,18 +131,46 @@
   }
 
   .btn-start {
-    margin: 3rem;
-    width: 10rem;
-    height: 3rem;
+    width: 35%;
+    height: 90%;
     background-color: $primary-shade;
   }
 
   .btn-edit {
-    margin: 3rem;
-    width: 10rem;
-    height: 3rem;
+    width: 35%;
+    height: 90%;
     background-color: $secondary-shade;
   }
 
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    bottom: 0;
+  }
+
+  .absolute {
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+  }
+
+  .footer-buttons {
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 4rem;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    bottom: -1.5rem;
+    background-color: #dfdfdf;
+    -webkit-box-shadow: inset 0px 10px 5px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0px 10px 5px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 10px 5px -10px rgba(0, 0, 0, 0.75);
+  }
 
 </style>

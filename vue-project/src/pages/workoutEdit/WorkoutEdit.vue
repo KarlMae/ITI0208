@@ -1,229 +1,213 @@
 <template>
   <div class="workout-edit">
-    <ErrorModal
-        v-if="isModalVisible"
-        message="error"/>
-
-    <Header/>
-    <div class="text-input">
-      <label for="workoutName">Workout name</label>
-      <input id="workoutName" v-model="workout.name">
-    </div>
-
-    <div class="text-input">
-      <label for="workoutDescription">Workout description</label>
-      <input id="workoutDescription" v-model="workout.description">
-    </div>
-
-
+    <validated-field
+        label="Workout name"
+        :default-value="workout.name"
+        :validation-errors="$v.workout.name"
+        :has-been-used="isSavePressed"
+        @valueChanged="(value) => workout.name = value"
+    />
+    <image-selector-button
+        @clicked="imageSelectorModalOpen = true"
+        :image="workout.image"
+    />
     <div role="tablist">
-      <template v-for="(group, index) in groups">
-        <b-card no-body class="mb-1">
-          <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block href="#" v-b-toggle="'accordion-' + index">{{group}}</b-button>
-          </b-card-header>
-
+      <template v-for="(group, index) in categories">
+        <div v-bind:key="group">
+          <b-button block href="#" v-b-toggle="'accordion-' + index">{{ group }}</b-button>
           <b-collapse :id="'accordion-' + index" accordion="my-accordion" role="tabpanel">
             <b-card-body>
 
-              <template v-for="exercise in exercisesByGroup(group)">
-                <div class="exercise">
-
-                  <div class="text-input">
-                    <label for="exerciseName">Exercise name</label>
-                    <input id="exerciseName" v-model="exercise.name">
-                  </div>
-
-                  <div class="midagi">
-                    <template v-for="set in exercise.sets">
-                      <div class="set">
-                        <label for="repetitions">Repetitions</label>
-
-                        <div class="set-parameter">
-                          <button v-on:click="() => {set.repetitions = parseInt(set.repetitions) - 1}"
-                                  class="btn amount-btn">-
-                          </button>
-                          <input class="set-parameter" v-model="set.repetitions" id="repetitions">
-                          <button v-on:click="() => {set.repetitions = parseInt(set.repetitions) + 1}"
-                                  class="btn amount-btn">+
-                          </button>
-
-                        </div>
-                        <label for="weight">Weight</label>
-                        <div class="set-parameter">
-                          <button v-on:click="() => {set.weight = parseInt(set.weight) - 1}" class="btn amount-btn">
-                            -
-                          </button>
-                          <input type="number" class="set-parameter" v-model="set.weight" id="weight">
-                          <button v-on:click="() => {set.weight = parseInt(set.weight) + 1}" class="btn amount-btn">
-                            +
-                          </button>
-                        </div>
-
-
-                        <label for="duration">Duration</label>
-                        <div class="set-parameter">
-                          <button v-on:click="() => {set.duration = parseInt(set.duration) - 1}" class="btn amount-btn">
-                            -
-                          </button>
-                          <input class="set-parameter" v-model="set.duration" id="duration">
-
-                          <button v-on:click="() => {set.duration = parseInt(set.duration) + 1}" class="btn amount-btn">
-                            +
-                          </button>
-                        </div>
-                      </div>
-                    </template>
-
-                    <div class="set-buttons">
-                      <button class="btn" type="button" v-on:click="addSet(exercise)">Add set</button>
-                      <button class="btn" type="button" v-on:click="removeSet(exercise)">Remove set</button>
-                    </div>
-                    <button class="btn exercise-btn" type="button" v-on:click="removeExercise(exercise.index)">Remove
-                      exercise
-                    </button>
-                  </div>
-
-                </div>
+              <template v-for="exercise in exercisesByCategory(group)">
+                <exercise-component
+                    v-if="exercise"
+                    v-bind:key="exercise.id"
+                    :exercise="exercise"
+                    :field-validators="$v.workout.exerciseGroups.$each[index].name"
+                    :is-save-pressed="isSavePressed"
+                    @removeExercise="removeExercise"
+                    @addSet="addSet"
+                    @removeSet="(id) => removeSet(exercise, id)"
+                />
               </template>
 
-              <button class="btn exercise-btn" type="button" v-on:click="addNewExercise(group)">Add exercise</button>
+              <button class="btn exercise-btn" type="button" v-on:click="addExercise(group)">Add exercise</button>
 
             </b-card-body>
           </b-collapse>
-
-        </b-card>
+        </div>
       </template>
     </div>
 
-    <button class="btn" type="button" v-on:click="save">Save</button>
+    <image-selector
+        v-if="imageSelectorModalOpen"
+        @selectImage="(src) => workout.image = src"
+        @close="imageSelectorModalOpen = false"
+    />
+
+    <div class="absolute">
+      <div class="footer-buttons">
+        <button class="btn save-btn" type="button" v-on:click="save">Save</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import Header from '../../components/Header'
-  import ErrorModal from './ErrorModal'
-  import axios from 'axios';
+  import ExerciseComponent from './ExerciseComponent';
+  import ImageSelector from './ImageSelector';
+  import ImageSelectorButton from './ImageSelectorButton';
+  import ValidatedField from '../../components/ValidatedField';
+  import { sendRequest } from './service'
+  import { minLength, required } from 'vuelidate/lib/validators'
+
 
   export default {
     name: 'WorkoutEdit',
     components: {
-      Header,
-      ErrorModal
-    },
-    data() {
-      return {
-        groups: ['Warm-up', 'Main exercises', 'Cool-down'],
-        exerciseCount: 0,
-        workout: this.editWorkout ||
-        {
-          name: '',
-          exerciseGroups: [],
-        },
-        isModalVisible: false
-      }
+      ImageSelector,
+      ImageSelectorButton,
+      ValidatedField,
+      ExerciseComponent,
     },
     props: ['editWorkout'],
+    data() {
+      return {
+        workout: {
+          exerciseGroups: [],
+          name: ''
+        },
+        categories: ['Warm-up', 'Main exercises', 'Cool-down'],
+        validationErrors: false,
+        isSavePressed: false,
+        imageSelectorModalOpen: false,
+        uniqueId: 0,
+      }
+    },
+    mounted() {
+      if (this.editWorkout) {
+        this.workout = this.editWorkout;
+        this.workout.exerciseGroups.forEach((group) => {
+            if (group.sets[0].weight) {
+              group.weighed = true;
+            }
+
+            if (group.sets[0].duration) {
+              group.timed = true;
+            }
+
+          }
+        )
+      }
+    },
+    validations: {
+      workout: {
+        name: {
+          minLength: minLength(5),
+          required
+        },
+        exerciseGroups: {
+          $each: {
+            name: {
+              minLength: minLength(5),
+              required
+            }
+          }
+        }
+      }
+    },
     methods: {
-      addNewExercise(category) {
+      addExercise(category) {
         this.workout.exerciseGroups.push(
           {
-            setIndex: 1,
             name: '',
             category: category,
             sets: [],
-            index: this.exerciseCount
+            weighed: false,
+            timed: false,
+            id: this.uniqueId
           }
         );
-        this.exerciseCount += 1;
+
+        this.uniqueId += 1;
       },
       addSet(exercise) {
         exercise.sets.push({
-          set: exercise.setIndex,
-          name: exercise.name,
-          category: exercise.category,
+          repetitions: 1,
+          weight: 0,
           duration: 0,
-          repetitions: 0,
-          weight: 0
+          id: this.uniqueId
         });
 
-        exercise.setIndex += 1;
+        this.uniqueId += 1;
       },
-      removeSet(exercise) {
-        exercise.sets.splice(-1, 1);
-        exercise.setIndex -= 1;
+      removeExercise(id) {
+        this.workout.exerciseGroups = this.workout.exerciseGroups.filter(group => group.id !== id);
       },
-      async save() {
-        let workoutId;
-
-        await axios.post(this.getUrl(), this.workout)
-          .then(function (response) {
-            workoutId = response.data.id;
-          })
-          .catch(e => {
-            this.errors.push(e)
-          });
-
-        this.$router.push('/workout/?id=' + workoutId);
+      removeSet(exercise, id) {
+        exercise.sets = exercise.sets.filter(set => set.id !== id)
       },
-      removeExercise(index) {
-        for (let i = this.workout.exerciseGroups.length - 1; i >= 0; i--) {
-          if (this.workout.exerciseGroups[i].index === index) {
-            this.workout.exerciseGroups.splice(i, 1);
-          }
-        }
-      },
-      exercisesByGroup(group) {
+      exercisesByCategory(group) {
         return this.workout.exerciseGroups.filter(exercise => {
           return exercise.category === group
         });
       },
-      getUrl() {
-        if (this.$route.path === '/workoutEdit') {
-          return process.env.VUE_APP_BACKEND_IP + '/workout/update'
-        } else {
-          return process.env.VUE_APP_BACKEND_IP + '/workout/insert'
+      async save() {
+        if (this.validate()) {
+          return;
         }
-      }
-    },
+        this.cleanData();
+
+        let workoutId = await sendRequest(this.workout, this.$route.path);
+
+        this.$router.push('/workout/?id=' + workoutId);
+      },
+      cleanData() {
+        this.workout.exerciseGroups.forEach(group => {
+          if (!group.weighed) {
+            group.sets.forEach(set => delete set.weight);
+          }
+
+          if (!group.timed) {
+            group.sets.forEach(set => delete set.duration);
+          }
+
+          group.sets.forEach(set => {
+            set.name = group.name;
+            set.category = group.category;
+          });
+        })
+      },
+      validate() {
+        this.isSavePressed = true;
+
+        this.$v.$touch();
+        return !!this.$v.$invalid;
+      },
+    }
   }
 </script>
 
 <style lang="scss" scoped>
   @import "../../assets/colors";
 
-  .text-input {
-    overflow: hidden;
-
-    input {
-      margin-bottom: 1rem;
-    }
-
-    label {
-      margin-bottom: 0;
-      text-align: left;
-      width: 100%;
-    }
-  }
-
-  input {
-    width: 100%;
-  }
-
   p {
     margin: 0;
   }
 
+  a, button {
+    border-radius: 0;
+    border-color: transparent;
+  }
+
   .workout-edit {
     background-color: #F0F0F0;
-    padding: 1rem;
+    max-height: calc(100% - 7rem);
+    overflow: scroll;
   }
 
   .exercise {
-    background-color: #00000050;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.3rem;
+    background-color: #00000010;
   }
 
   .set {
@@ -231,38 +215,18 @@
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
+    padding: 1rem;
+    position: relative;
   }
 
-  .btn {
+  .btn, .btn:hover, .btn:focus {
     margin: 1rem 0;
-    background-color: $light;
-    min-width: 10rem;
-  }
-
-  .btn-info {
-    background-color: $secondary-main;
-    border-color: $secondary-shade;
-    box-shadow: transparent;
-  }
-
-  .btn-info:hover {
-    background-color: $secondary-shade;
-    border-color: $secondary-shade;
-    box-shadow: transparent;
-  }
-
-  .btn-info:active {
-    background-color: $secondary-shade;
-    border-color: $secondary-shade;
-    box-shadow: transparent;
+    background-color: $primary-main !important;
+    color: #f0f0f0 !important;
   }
 
   .exercise-btn {
-    width: 23.5rem;
-    height: 4rem;
-    background-color: $secondary-shade;
+    width: 100%;
   }
 
   .set-buttons {
@@ -270,33 +234,63 @@
     justify-content: space-around;
   }
 
-  .group {
-    width: 100%;
-    background-color: #00000050;
-    margin-top: 1rem;
-    padding-top: 1rem;
+  .card-body {
+    padding: 0;
   }
 
-  .set-parameter {
+  .footer-buttons {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    bottom: -1.5rem;
+    background-color: #dfdfdf;
+    -webkit-box-shadow: inset 0px 10px 5px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0px 10px 5px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 10px 5px -10px rgba(0, 0, 0, 0.75);
+  }
+
+  .sticky {
+    position: sticky;
+  }
+
+  .absolute {
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+  }
+
+  .transparent-button {
+    background-color: transparent;
+  }
+
+  .header {
     display: flex;
-    justify-content: space-around;
-
-    .btn {
-      min-width: 3rem;
-      min-height: 3rem;
-    }
-
-    label {
-      text-align: center;
-    }
-    input {
-      margin: 1rem;
-      display: inline-block;
-      text-align: center;
-      background-color: #ffffff20;
-      border: transparent;
-      width: 3rem;
-      height: 3rem;
-    }
+    justify-content: space-between;
+    align-items: baseline;
   }
+
+  .text-input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+  }
+
+  .save-btn {
+    width: 10rem;
+  }
+
+
 </style>

@@ -10,7 +10,7 @@ public class ExerciseGroupDto {
     private String name;
     private String category;
     private List<ExerciseDto> sets;
-    private int groupId;
+    private Integer groupId;
 
     public ExerciseGroupDto(String name, String category, List<ExerciseDto> sets, int groupId) {
         this.name = name;

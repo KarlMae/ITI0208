@@ -6,16 +6,16 @@
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         INSERT INTO
-          training.workouts(name, description)
+          training.workouts(name, description, image)
         VALUES
-          (#{name}, #{description})
+          (#{name}, #{description}, #{image})
     </insert>
 
     <update id="update">
         UPDATE
           training.workouts
         SET
-          name = #{name}, description = #{description}
+          name = #{name}, description = #{description}, image = #{image}
         WHERE
           id = #{id}
     </update>

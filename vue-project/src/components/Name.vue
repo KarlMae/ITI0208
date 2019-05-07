@@ -19,7 +19,6 @@
 <style>
 
   .name {
-    margin: 0 auto;
     cursor: pointer;
   }
 

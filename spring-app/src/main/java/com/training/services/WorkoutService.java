@@ -23,40 +23,42 @@ public class WorkoutService {
     @Transactional
     public WorkoutDto insert(WorkoutDto dto) {
         workoutDao.insert(dto);
-        int lastGroupId = exerciseDao.getLastGroupId();
 
-        for (ExerciseGroupDto group : dto.getExerciseGroups()) {
-            lastGroupId += 1;
-
-            for (ExerciseDto exercise : group.getSets()) {
-                exercise.setWorkoutId(dto.getId());
-                exercise.setGroupId(lastGroupId);
-            }
-        }
-
-        List<ExerciseDto> exercises =  dto.getExerciseGroups()
-                .stream()
-                .flatMap(x -> x.getSets().stream())
-                .collect(Collectors.toList());
-
-        exerciseDao.bulkInsert(exercises);
+        insertExercises(dto);
 
         return dto;
     }
 
     @Transactional
     public WorkoutDto update(WorkoutDto dto) {
-        exerciseDao.getLastGroupId();
-
-        List<ExerciseDto> exercises =  dto.getExerciseGroups()
-                .stream()
-                .flatMap(x -> x.getSets().stream())
-                .collect(Collectors.toList());
-
         workoutDao.update(dto);
-        exerciseDao.bulkUpdate(exercises);
+        exerciseDao.deleteOldExercises(dto.getExerciseGroups().get(0).getSets().get(0).getWorkoutId());
+
+        insertExercises(dto);
 
         return dto;
+    }
+
+    private void insertExercises(WorkoutDto dto) {
+        List<ExerciseDto> exercises = prepareExercisesForInsert(dto);
+        exerciseDao.bulkInsert(exercises);
+    }
+
+    private List<ExerciseDto> prepareExercisesForInsert(WorkoutDto dto) {
+        Integer lastGroupId = exerciseDao.getLastGroupId();
+
+        for (ExerciseGroupDto group : dto.getExerciseGroups()) {
+            lastGroupId += 1;
+            for (ExerciseDto exercise : group.getSets()) {
+                exercise.setGroupId(lastGroupId);
+                exercise.setWorkoutId(dto.getId());
+            }
+        }
+
+        return dto.getExerciseGroups()
+                .stream()
+                .flatMap(workoutDto -> workoutDto.getSets().stream())
+                .collect(Collectors.toList());
     }
 
     public List<WorkoutDto> fetchAll() {
@@ -70,9 +72,9 @@ public class WorkoutService {
         WorkoutDto workoutDto = workoutDao.fetchById(id);
         List<ExerciseDto> exercises = exerciseDao.fetchByWorkoutId(workoutDto.getId());
 
-        Map<Integer, List<ExerciseDto>> grouped =  exercises.stream().collect(Collectors.groupingBy(ExerciseDto::getGroupId));
+        Map<Integer, List<ExerciseDto>> grouped = exercises.stream().collect(Collectors.groupingBy(ExerciseDto::getGroupId));
 
-        for (List<ExerciseDto> groupedExercises: grouped.values()) {
+        for (List<ExerciseDto> groupedExercises : grouped.values()) {
             workoutDto.addExerciseGroup(ExerciseGroupDto.createDto(groupedExercises));
         }
 
