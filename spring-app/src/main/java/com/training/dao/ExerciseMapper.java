@@ -22,6 +22,8 @@ public interface ExerciseMapper {
 
     void bulkInsert(List<ExerciseDto> dto);
 
-    int getLastGroupId();
+    Integer getLastGroupId();
+
+    void deleteOldExercises(Integer workoutId);
 
 }

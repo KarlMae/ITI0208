@@ -69,7 +69,7 @@
       }
     },
     mounted() {
-      axios.get(process.env.VUE_APP_BACKEND_IP + '/fetchGroup/' + this.$store.getters.currentExercise.groupId)
+      axios.get(process.env.VUE_APP_BACKEND_IP + '/exercise/fetchGroup/' + this.$store.getters.currentExercise.groupId)
         .then(response => {
           this.exercise = response.data;
         })
@@ -87,7 +87,7 @@
     },
     methods: {
       async saveChanges() {
-        await axios.post(process.env.VUE_APP_BACKEND_IP + '/updateExercise', this.selectedExercise)
+        await axios.post(process.env.VUE_APP_BACKEND_IP + '/exercise/update', this.selectedExercise)
           .catch(e => {
             this.errors.push(e)
           });

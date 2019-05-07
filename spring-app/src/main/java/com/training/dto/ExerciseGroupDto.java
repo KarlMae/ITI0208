@@ -1,20 +1,25 @@
 package com.training.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 public class ExerciseGroupDto {
 
     private String name;
     private String category;
     private List<ExerciseDto> sets;
-    private int groupId;
+    private Integer groupId;
 
-    public static ExerciseGroupDto createExerciseGroupDto(List<ExerciseDto> sets) {
+    public ExerciseGroupDto(String name, String category, List<ExerciseDto> sets, int groupId) {
+        this.name = name;
+        this.category = category;
+        this.sets = sets;
+        this.groupId = groupId;
+    }
+
+    public static ExerciseGroupDto createDto(List<ExerciseDto> sets) {
         return new ExerciseGroupDto(sets.get(0).getName(),
                                     sets.get(0).getCategory(),
                                     sets,

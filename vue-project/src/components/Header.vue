@@ -1,16 +1,14 @@
 <template>
   <div>
     <div id="header" class="header">
-      <span @click="openNav"><img src="../assets/icons/menu.svg" alt="alt" class="menu-icon"></span>
+      <span v-on:click="openNav"><img src="../assets/icons/menu.svg" alt="alt" class="menu-icon"></span>
       <Name class="name"/>
     </div>
 
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" @click="closeNav">&times;</a>
-      <a @click="routeTo('home')">Home</a>
-      <a @click="routeTo('login')">Login</a>
-      <a @click="routeTo('userWorkouts')">My workouts</a>
-      <a @click="routeTo('newWorkout')">Add workout</a>
+    <div id="mySidenav" class="sidenav" v-bind:style="sideNavStyle">
+      <a class="closebtn" v-on:click="closeNav">&times;</a>
+      <a v-on:click="routeTo('home')">Home</a>
+      <a v-on:click="routeTo('newWorkout')">Add workout</a>
     </div>
 
   </div>
@@ -20,48 +18,65 @@
 <script>
   import Name from './Name'
 
+
   export default {
-    name: 'app-header',
+    name: "Header",
     components: {
       Name,
     },
+    data() {
+      return {
+        isOpen : false
+      }
+    },
+    computed: {
+      sideNavStyle() {
+        return {
+          width: this.isOpen ? '180px' : '0px',
+        }
+      },
+    },
     methods: {
       openNav() {
-        document.getElementById("mySidenav").style.width = "180px"
+        this.isOpen = true;
       },
       closeNav() {
-        document.getElementById("mySidenav").style.width = "0"
+        this.isOpen = false;
       },
       routeTo(path) {
-        this.$router.push({ name: path })
+        this.$router.push({name: path});
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+
   @import '../assets/colors.scss';
+
+  p {
+    margin-bottom: 0;
+  }
 
   .header {
     min-height: 4.5rem;
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
   }
 
   .name {
     color: #3a3a3a;
     font-size: 2rem;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 36px;
-    white-space: nowrap;
   }
 
   img {
-    width: 4rem;
     height: 4rem;
-    padding: 1rem;
+    padding: 1rem 0;
   }
+
 
   .sidenav {
     height: 100%; /* 100% Full-height */
@@ -100,7 +115,8 @@
     margin-left: 50px;
   }
 
-  .menu-icon {
+  .menu-icon, .closebtn, a {
     cursor: pointer;
   }
+
 </style>

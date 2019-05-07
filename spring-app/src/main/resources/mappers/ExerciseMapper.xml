@@ -51,7 +51,7 @@
 
     <select id="getLastGroupId" resultType="int">
         SELECT
-          MAX(group_id)
+          COALESCE(MAX(group_id), 10000)
         FROM
           training.exercises
     </select>
@@ -84,5 +84,12 @@
         FROM
             training.exercises
     </select>
+
+    <delete id="deleteOldExercises">
+      DELETE FROM
+        training.exercises
+      WHERE
+        workout_id = #{workoutId}
+    </delete>
 
 </mapper>

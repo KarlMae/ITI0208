@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ExerciseDto {
 
-    private int id;
-    private int groupId;
-    private int workoutId;
+    private Integer id;
+    private Integer groupId;
+    private Integer workoutId;
     private String name;
     private String category;
-    private int set;
-    private int repetitions;
-    private int weight;
-    private int duration;
+    private Integer set;
+    private Integer repetitions;
+    private Integer weight;
+    private Integer duration;
 }

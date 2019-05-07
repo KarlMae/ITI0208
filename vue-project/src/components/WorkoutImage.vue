@@ -1,9 +1,8 @@
 <template>
-  <div class="image-wrapper">
-    <img src="../assets/1.jpg" alt="workout cover">
+  <div v-on:click="selectWorkout" id="workout" class="image-wrapper">
+    <img v-bind:src="displaySource" alt="workout cover">
     <div class="workout-info">
       <h3>{{ name }}</h3>
-      <p>{{ description }}</p>
     </div>
   </div>
 </template>
@@ -13,9 +12,23 @@
     name: "WorkoutImage",
     props: {
       name: String,
-      description: String,
-      id: Number
+      id: Number,
+      src: String,
+      route: {
+        type: String,
+        default: '/workout/?id='
+      }
     },
+    methods: {
+      selectWorkout() {
+        this.$router.push('/workout/?id=' + this.id)
+      }
+    },
+    computed: {
+      displaySource() {
+        return this.src || 'https://dailyburn.com/life/wp-content/uploads/2016/06/Beach-HIIT-Workouts.jpg'
+      }
+    }
   }
 </script>
 
@@ -26,6 +39,9 @@
     position: relative;
     margin: auto;
     border-radius: 1rem;
+    text-align: left;
+    width: 100%;
+
   }
 
   .image-wrapper::after {

@@ -18,7 +18,7 @@ public class ExerciseService {
     public ExerciseGroupDto fetchGroup(int id) {
         List<ExerciseDto> exercises = exerciseDao.fetchGroup(id);
 
-        return ExerciseGroupDto.createExerciseGroupDto(exercises);
+        return ExerciseGroupDto.createDto(exercises);
     }
 
     public List<ExerciseDto> fetchAll() {
