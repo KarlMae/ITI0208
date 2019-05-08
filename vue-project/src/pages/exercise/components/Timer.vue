@@ -7,7 +7,7 @@
     </div>
     <div class="col">
       <img
-          v-on:="resetTimer"
+          v-on:click="resetTimer"
           src="../../../assets/icons/restart.svg"
           class="restart">
     </div>

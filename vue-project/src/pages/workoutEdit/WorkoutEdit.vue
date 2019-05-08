@@ -89,6 +89,7 @@
       if (this.editWorkout) {
         this.workout = this.editWorkout;
         this.workout.exerciseGroups.forEach((group) => {
+            group.id = group.groupId;
             if (group.sets[0].weight !== null) {
               group.weighed = true;
             }

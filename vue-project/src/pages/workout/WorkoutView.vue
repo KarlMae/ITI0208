@@ -103,10 +103,12 @@
 
   .btn-start {
     background-color: $primary-shade;
+    color: white;
   }
 
   .btn-edit {
     background-color: $secondary-shade;
+    color: white;
   }
 
   .absolute {
@@ -133,4 +135,7 @@
     box-shadow: inset 0px 10px 5px -10px rgba(0, 0, 0, 0.75);
   }
 
+  .tablist {
+    margin-bottom: 4rem;
+  }
 </style>

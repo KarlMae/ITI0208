@@ -70,12 +70,15 @@
 
   .exercise {
     padding: 2rem 0;
+    width: 100%;
   }
 
   .transition-wrapper {
-    display: flex;
     position: relative;
     height: 52%;
+    align-items: baseline;
+    display: flex;
+    flex-direction: row-reverse;
   }
 
   .slide-fade-enter-active {
@@ -89,12 +92,6 @@
   .slide-fade-enter, .slide-fade-leave-to {
     transform: translateX(3rem);
     opacity: 0;
-  }
-
-  .edit-icon {
-    position: absolute;
-    right: 1rem;
-    top: 2rem;
   }
 
   .set-selector {

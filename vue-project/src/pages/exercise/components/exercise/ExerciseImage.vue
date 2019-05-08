@@ -1,7 +1,6 @@
 <template>
   <div class="img-wrapper">
     <img :src="image" class="image">
-    <img src="../../../../assets/icons/info.svg" class="info-svg">
   </div>
 </template>
 
@@ -20,7 +19,6 @@
 
   .img-wrapper {
     overflow: auto;
-    position: relative;
     margin: auto;
     border-radius: 1rem;
   }
@@ -28,12 +26,6 @@
   .image {
     max-width: 100%;
     height: auto;
-  }
-
-  .info-svg {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
   }
 
 </style>
