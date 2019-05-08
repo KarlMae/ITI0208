@@ -2,7 +2,7 @@
   <div id="exercise-view">
     <button
         v-if="previousExercisePresent"
-        @click="previousExercise"
+        v-on:click="previousExercise"
         class="nav-button"
         style="left: 0.5rem">
       &lt;
@@ -17,7 +17,7 @@
 
     <button
         v-if="nextExercisePresent"
-        @click="nextExercise()" class="nav-button" style="right: 0.5rem">
+        v-on:click="nextExercise()" class="nav-button" style="right: 0.5rem">
       &gt;
     </button>
 

@@ -2,12 +2,12 @@
   <div class="timer container-fluid">
     <div class="col">
     </div>
-    <div @click="toggleTimer">
+    <div v-on:click="toggleTimer">
       <p class="timer-text col">{{ minutes }}:{{ seconds }}</p>
     </div>
     <div class="col">
       <img
-          @click="resetTimer"
+          v-on:="resetTimer"
           src="../../../assets/icons/restart.svg"
           class="restart">
     </div>

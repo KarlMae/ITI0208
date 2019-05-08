@@ -10,7 +10,7 @@
       <input id="password" type='password' placeholder='password' autocomplete="off" v-model='password' required><br>
       <input type="submit" value="Sign up">
       <br>
-      <a @click="routeTo('login')">Login</a>
+      <a v-on:click="routeTo('login')">Login</a>
     </form>
   </div>
 </template>

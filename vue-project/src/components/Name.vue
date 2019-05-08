@@ -1,5 +1,5 @@
 <template>
-  <p @click="toHome" id="name" class="name">Workout app</p>
+  <p v-on:click="toHome" id="name" class="name">Workout app</p>
 </template>
 
 <script>

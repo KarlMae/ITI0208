@@ -1,11 +1,11 @@
 <template>
   <div class="line">
-    <button @click="subtract" class="btn amount-btn">-</button>
+    <button v-on:click="subtract" class="btn amount-btn">-</button>
     <div>
       <p class="title">{{ this.name }}</p>
       <p>{{ displayAmount }}</p>
     </div>
-    <button @click="add" class="btn amount-btn">+</button>
+    <button v-on:click="add" class="btn amount-btn">+</button>
   </div>
 </template>
 

@@ -1,9 +1,9 @@
 <template>
-  <div class="modal" @click='closeModal'>
+  <div class="modal" v-on:click='closeModal'>
     <div class="modal-dialog" @click.stop='() => {}'>
       <div class="modal-content">
         <div class="modal-header">
-          <button @click="closeModal" class="close">
+          <button v-on:click="closeModal" class="close">
             <span>&lt;</span>
           </button>
           <h5 class="modal-title">{{ this.exercise.name }}</h5>
@@ -44,7 +44,7 @@
               @subtract="subtract"
           />
         </div>
-        <button @click="saveChanges" class="btn btn-primary save-button">
+        <button v-on:click="saveChanges" class="btn btn-primary save-button">
           Save changes
         </button>
       </div>

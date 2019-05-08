@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="header" class="header">
-      <span @click="openNav"><img src="../assets/icons/menu.svg" alt="alt" class="menu-icon"></span>
+      <span v-on:click="openNav"><img src="../assets/icons/menu.svg" alt="alt" class="menu-icon"></span>
       <Name class="name"/>
     </div>
 
