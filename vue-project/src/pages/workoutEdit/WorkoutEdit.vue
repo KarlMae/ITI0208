@@ -75,7 +75,8 @@
       return {
         workout: {
           exerciseGroups: [],
-          name: ''
+          name: '',
+          userId: this.$store.getters.getUserId
         },
         categories: ['Warm-up', 'Main exercises', 'Cool-down'],
         validationErrors: false,

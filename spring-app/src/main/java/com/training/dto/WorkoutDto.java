@@ -13,6 +13,7 @@ import java.util.List;
 public class WorkoutDto {
 
     private Integer id;
+    private Integer userId;
     private String name;
     private String image;
     private List<ExerciseGroupDto> exerciseGroups = new ArrayList<>();

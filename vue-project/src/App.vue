@@ -50,4 +50,10 @@
     font-family: "Panton";
     src: url("./assets/font/PantonDemo-LightItalic.otf");
   }
+
+  .workouts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 </style>

@@ -4,6 +4,7 @@ SET search_path TO training;
 
 CREATE TABLE workouts (
   id SERIAL PRIMARY KEY,
+  user_id INTEGER,
   name VARCHAR(255) NOT NULL,
   image VARCHAR(255)
 );

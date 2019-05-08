@@ -14,7 +14,7 @@ public interface UserMapper {
 
     void registerUser(UserDto user);
 
-    List<WorkoutDto> fetchAllWorkouts();
+    List<WorkoutDto> fetchAll(Integer id);
 
     UserDto fetchById();
 

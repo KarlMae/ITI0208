@@ -1,8 +1,11 @@
 package com.training.controllers;
 
+import com.training.dto.WorkoutDto;
 import com.training.dto.user.UserDto;
 import com.training.services.UserService;
+import com.training.services.WorkoutService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -31,10 +36,8 @@ public class UserController {
         return userService.getId(username);
     }
 
-    @GetMapping("/fetchAllWorkouts")
-//    public List<WorkoutDto> fetchAllWorkouts() {
-    public String fetchAllWorkouts() {
-//        return userService.fetchAllWorkouts();
-        return "success";
+    @GetMapping("/fetchAll/{id}")
+    public List<WorkoutDto> fetchAll(@PathVariable(value="id") Integer id) {
+        return userService.fetchAll(id);
     }
 }

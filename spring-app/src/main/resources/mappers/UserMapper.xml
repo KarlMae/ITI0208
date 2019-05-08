@@ -11,11 +11,13 @@
             (#{username}, #{password})
     </insert>
 
-    <select id="fetchAllWorkouts" resultType="com.training.dto.WorkoutDto">
+    <select id="fetchAll" resultType="com.training.dto.WorkoutDto">
         SELECT
             *
         FROM
-            training.workouts;
+            training.workouts
+        WHERE
+            user_id = #{id}
     </select>
 
     <select id="fetchById">

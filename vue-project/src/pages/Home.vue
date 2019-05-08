@@ -39,12 +39,6 @@
 </script>
 
 <style scoped>
-  .workouts {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
   #workout {
     margin-bottom: 2rem;
   }

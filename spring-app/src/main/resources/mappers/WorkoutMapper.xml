@@ -6,9 +6,9 @@
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         INSERT INTO
-          training.workouts(name, image)
+          training.workouts(name, user_id, image)
         VALUES
-          (#{name}, #{image})
+          (#{name}, #{userId}, #{image})
     </insert>
 
     <update id="update">
@@ -25,6 +25,8 @@
         *
       FROM
         training.workouts
+      WHERE
+        user_id IS NULL
       ORDER BY
         id, name
     </select>

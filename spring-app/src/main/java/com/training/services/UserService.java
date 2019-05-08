@@ -6,6 +6,7 @@ import com.training.dto.user.UserDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +28,7 @@ public class UserService {
         return userDao.getId(username);
     }
 
-    public List<WorkoutDto> fetchAllWorkouts() {
-        return userDao.fetchAllWorkouts();
+    public List<WorkoutDto> fetchAll(Integer id) {
+        return userDao.fetchAll(id);
     }
 }
