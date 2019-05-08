@@ -1,45 +1,130 @@
 INSERT INTO
   training.workouts(name)
 VALUES
-  ('Planche basics');
-
-INSERT INTO
-  training.workouts(name)
-VALUES
-  ('Killer workout 5000');
-
-INSERT INTO
-  training.workouts(name)
-VALUES
-('Demo workout');
+  ('Day one');
 
 
 INSERT INTO
-  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
 VALUES
-(1, 5, 'Plank', 'Warm-up', 100, 100, 1, 1);
+(1, 8, 'Barbell Squat', 'Main exercises', 40, 1, 1);
 
 INSERT INTO
-  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
 VALUES
-(2, 5, 'Plank', 'Warm-up', 100, 100, 1, 1);
+(2, 8, 'Barbell Squat', 'Main exercises', 40, 1, 1);
 
 INSERT INTO
-  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
 VALUES
-(3, 5, 'Plank', 'Warm-up', 100, 100, 1, 1);
+(3, 8, 'Barbell Squat', 'Main exercises', 40, 1, 1);
 
 INSERT INTO
-  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
 VALUES
-(1, 5, 'Push up', 'Warm-up', 100, 100, 2, 1);
+(4, 8, 'Barbell Squat', 'Main exercises', 40, 1, 1);
+
 
 INSERT INTO
-  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
 VALUES
-(2, 5, 'Push up', 'Warm-up', 100, 100, 2, 1);
+(1, 8, 'Barbell Bench Press - Medium Grip', 'Main exercises', 40, 2, 1);
 
 INSERT INTO
-  training.exercises (set, repetitions, name, category, weight, duration, group_id, workout_id)
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
 VALUES
-(3, 5, 'Push up', 'Warm-up', 100, 100, 2, 1);
+(2, 8, 'Barbell Bench Press - Medium Grip', 'Main exercises', 40, 2, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
+VALUES
+(3, 8, 'Barbell Bench Press - Medium Grip', 'Main exercises', 40, 2, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
+VALUES
+(4, 8, 'Barbell Bench Press - Medium Grip', 'Main exercises', 40, 2, 1);
+
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, group_id, workout_id)
+VALUES
+(1, 8, 'Pullups', 'Main exercises', 3, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, group_id, workout_id)
+VALUES
+(2, 8, 'Pullupsp', 'Main exercises', 3, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, group_id, workout_id)
+VALUES
+(3, 8, 'Pullups', 'Main exercises', 3, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, group_id, workout_id)
+VALUES
+(4, 8, 'Pullups', 'Main exercises', 3, 1);
+
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
+VALUES
+(1, 8, 'Standing Military Press', 'Main exercises', 40, 4, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
+VALUES
+(2, 8, 'Standing Military Press', 'Main exercises', 40, 4, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
+VALUES
+(3, 8, 'Standing Military Press', 'Main exercises', 40, 4, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
+VALUES
+(4, 8, 'Standing Military Press', 'Main exercises', 40, 4, 1);
+
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
+VALUES
+(1, 8, 'Barbell curl', 'Main exercises', 40, 5, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
+VALUES
+(2, 8, 'Barbell curl', 'Main exercises', 40, 5, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
+VALUES
+(3, 8, 'Barbell curl', 'Main exercises', 40, 5, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, weight, group_id, workout_id)
+VALUES
+(4, 8, 'Barbell curl', 'Main exercises', 40, 5, 1);
+
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, group_id, workout_id)
+VALUES
+(1, 8, 'Ab roller', 'Main exercises', 6, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, group_id, workout_id)
+VALUES
+(2, 8, 'Ab roller', 'Main exercises', 6, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, group_id, workout_id)
+VALUES
+(3, 8, 'Ab roller', 'Main exercises', 6, 1);
+
+INSERT INTO
+  training.exercises (set, repetitions, name, category, group_id, workout_id)
+VALUES
+(4, 8, 'Ab roller', 'Main exercises', 6, 1);

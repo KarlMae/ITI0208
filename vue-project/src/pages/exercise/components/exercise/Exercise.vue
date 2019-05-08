@@ -11,8 +11,8 @@
         <div v-bind:key="currentSet.name">
           <h2 id="name">{{ currentSet.name }}</h2>
           <p id="reps" v-if="currentSet.repetitions">Repetitions: {{ currentSet.repetitions }}</p>
-          <p id="weight" v-if="currentSet.hasOwnProperty('weight')">Weight: {{ currentSet.weight }} kg</p>
-          <p id="duration" v-if="currentSet.hasOwnProperty('duration')">Duration: {{ format(currentSet.duration) }}</p>
+          <p id="weight" v-if="currentSet.weight !== null">Weight: {{ currentSet.weight }} kg</p>
+          <p id="duration" v-if="currentSet.duration  !== null">Duration: {{ format(currentSet.duration) }}</p>
         </div>
 
         <div class="set-selector">
