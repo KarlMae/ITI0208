@@ -19,7 +19,6 @@
 <style scoped>
 
   .img-wrapper {
-    height: 15rem;
     overflow: auto;
     position: relative;
     margin: auto;

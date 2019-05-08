@@ -45,7 +45,8 @@
         this.isOpen = false;
       },
       routeTo(path) {
-        this.$router.push({ name: path })
+        this.closeNav();
+        this.$router.push({ name: path });
       }
     }
   }

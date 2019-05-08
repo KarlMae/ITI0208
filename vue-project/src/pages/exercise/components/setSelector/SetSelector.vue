@@ -23,6 +23,11 @@
     watch: {
       selectedSet(value) {
         this.$emit('selectSet', value - 1)
+      },
+      set: {
+        handler(newValue) {
+         this.selectedSet = newValue
+        }
       }
     }
   }
