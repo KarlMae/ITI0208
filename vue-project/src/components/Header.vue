@@ -9,7 +9,7 @@
       <a class="closebtn" v-on:click="closeNav">&times;</a>
       <a v-on:click="routeTo('home')">Home</a>
       <a v-if="!loggedIn" v-on:click="routeTo('login')">Login</a>
-      <a v-else v-on:click="logout">Logout</a>
+      <a v-else v-on:click="logOut">Logout</a>
       <a v-on:click="routeTo('userWorkouts')">My workouts</a>
       <a v-on:click="routeTo('newWorkout')">Add workout</a>
     </div>
