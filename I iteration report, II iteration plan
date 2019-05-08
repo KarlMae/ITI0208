@@ -1,13 +1,14 @@
-I iteration
+# I iteration
 
-Goals: Working prototype, proof of concept with one pre-prepared workout plan, which is stored in a database.
-       Overview of a workout plan and an exercise.
+## Goals
+Working prototype, proof of concept with one pre-prepared workout plan, which is stored in a database. Overview of a workout plan and an exercise.
 
-       database - Karl;
-       workouts view - Joosep;
-       exercies view - Rando.
+## Work allocation
+- Database -> Karl;
+- Workouts view -> Joosep;
+- Exercies view -> Rando.
 
-Finished: 
+## Finished
 1) Backend
 2) First pre-prepared workouts
 3) Initial view with all available workouts
@@ -15,6 +16,6 @@ Finished:
 5) Exercise view
 
 
-II iteration
+# II iteration
 
 Add functionality for a user to create his/her own workout plan, change it and save the changes.
