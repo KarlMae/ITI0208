@@ -7,14 +7,16 @@ A fitness web application for following pre-prepared workout sessions or customi
 
 ## Project plan:
 
-### Iterations:
+### Iterations
+
 1. Working prototype, proof of concept with one pre-prepared workout plan, which is stored in a database. Overview of a workout plan and an exercise.
 
-database - Karl;
-workouts view - Joosep;
-exercies view - Rando.
+#### Work allocation
+- Database -> Karl;
+- Workouts view -> Joosep;
+- Exercies view -> Rando.
 
-#### user stories:
+#### User stories
 - As a user i want to work out without having to waste time on coming up with a workout plan;
 - As a user i want to gain access to the application;
 - As a user i want an initial overview of the chosen workout;
@@ -23,11 +25,12 @@ exercies view - Rando.
 
 2. Add functionality for a user to create his/her own workout plan, change it and save the changes.
 
-create workout plan - Joosep;
-change workout plan - Rando;
-save changes - Karl.
+#### Work allocation
+- Create workout plan -> Joosep;
+- Change workout plan -> Rando;
+- Save changes -> Karl.
 
-#### user stories:
+#### User stories
 - As a user i want to create my own workout plan;
 - As a user i want to modify my created workout;
 - As a user i want to navigate between exercises;
@@ -36,11 +39,12 @@ save changes - Karl.
 
 3. Add the possibility to create an account and login. Design
 
-design - Karl;
-login - Rando;
-account creation - Joosep.
+#### User stories
+- Design -> Karl;
+- Login -> Rando;
+- Account creation -> Joosep.
 
-#### user stories:
+#### User stories
 - As a user i want to create an account;
 - As a user i want to login;
 - As a user i want an eye-pleasing experience;
