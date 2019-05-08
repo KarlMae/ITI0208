@@ -10,7 +10,7 @@
 
 - Karl **(put in most effort in previous iterations)** -> Code clean;
 
-- Joosep ->
+- Joosep
   - Create an account;
   - JWT.
 
@@ -20,18 +20,18 @@
 
 
 ## Work to be done
-- Rando ->
+- Rando
   - User created workouts and modifying them;
   - Fix backend tests;
   - UX tests.
 
-- Karl ->
+- Karl
   - Code clean;
   - Documentation;
   - Diagrams;
   - UX tests.
 
-- Joosep ->
+- Joosep
   - Display user workouts data;
   - Remove code repetitions;
   - UX test.
