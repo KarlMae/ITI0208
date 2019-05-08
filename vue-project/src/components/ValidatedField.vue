@@ -8,6 +8,7 @@
 
     <input
         id="workoutName"
+        :type="type"
         v-model="fieldValue"
         v-bind:class="{'border-red': isError}"
     >
@@ -39,7 +40,14 @@
       defaultValue: {
         type: String,
       },
-      hasBeenUsed: false,
+      hasBeenUsed: {
+        type: Boolean,
+        default: false
+      },
+      type: {
+        type: String,
+        default: 'text'
+      }
     },
     watch: {
       validationErrors: {

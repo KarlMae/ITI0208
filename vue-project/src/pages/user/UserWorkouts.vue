@@ -1,11 +1,14 @@
 <template>
   <div>
-    <WorkoutImage v-for="workout in workouts"
-                  :src="workout.image"
-                  :key="workout.id"
-                  :id="workout.id"
-                  :name="workout.name"
-    />
+    <p v-if="!workouts.length" class="mt-4">You currently have no workouts</p>
+    <div v-else>
+      <WorkoutImage v-for="workout in workouts"
+                    :src="workout.image"
+                    :key="workout.id"
+                    :id="workout.id"
+                    :name="workout.name"
+      />
+    </div>
   </div>
 </template>
 
