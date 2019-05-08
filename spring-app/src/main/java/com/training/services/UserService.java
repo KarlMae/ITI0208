@@ -23,6 +23,10 @@ public class UserService {
         return userDao.findByUsername(username);
     }
 
+    public Integer getId(String username) {
+        return userDao.getId(username);
+    }
+
     public List<WorkoutDto> fetchAllWorkouts() {
         return userDao.fetchAllWorkouts();
     }

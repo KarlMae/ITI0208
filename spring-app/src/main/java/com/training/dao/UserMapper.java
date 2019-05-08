@@ -19,4 +19,6 @@ public interface UserMapper {
     UserDto fetchById();
 
     Optional<UserDto> findByUsername(String username);
+
+    Integer getId(String username);
 }

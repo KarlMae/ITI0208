@@ -8,7 +8,8 @@
     <div id="mySidenav" class="sidenav" v-bind:style="sideNavStyle">
       <a class="closebtn" v-on:click="closeNav">&times;</a>
       <a v-on:click="routeTo('home')">Home</a>
-      <a v-on:click="routeTo('login')">Login</a>
+      <a v-if="!loggedIn" v-on:click="routeTo('login')">Login</a>
+      <a v-else v-on:click="logout">Logout</a>
       <a v-on:click="routeTo('userWorkouts')">My workouts</a>
       <a v-on:click="routeTo('newWorkout')">Add workout</a>
     </div>
@@ -19,6 +20,7 @@
 
 <script>
   import Name from './Name'
+  import {AUTH_LOGOUT} from "../store/constants";
 
   export default {
     name: 'app-header',
@@ -27,7 +29,8 @@
     },
     data() {
       return {
-        isOpen : false
+        isOpen: false,
+        authenticated: false
       }
     },
     computed: {
@@ -36,6 +39,9 @@
           width: this.isOpen ? '180px' : '0px',
         }
       },
+      loggedIn() {
+        return this.$store.getters.isAuthenticated
+      }
     },
     methods: {
       openNav() {
@@ -47,6 +53,12 @@
       routeTo(path) {
         this.closeNav();
         this.$router.push({ name: path });
+      },
+      logout() {
+        this.$store.dispatch(AUTH_LOGOUT)
+          .then(() => {
+            this.routeTo('login')
+          })
       }
     }
   }

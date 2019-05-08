@@ -42,6 +42,7 @@
             this.success = 'Account successfully created'
           })
           .catch(() => {
+            this.success = null;
             this.error = 'Username already taken'
           })
       },

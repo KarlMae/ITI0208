@@ -17,7 +17,6 @@ import static com.training.security.SecurityConstants.SIGN_UP_URL;
 
 
 @EnableWebSecurity
-//@EnableGlobalMethodSecurity(prePostEnabled = true)
 @AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 

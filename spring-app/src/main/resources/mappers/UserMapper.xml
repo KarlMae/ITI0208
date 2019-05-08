@@ -6,28 +6,43 @@
 
     <insert id="registerUser">
         INSERT INTO
-          training.users(username, password)
+            training.users(username, password)
         VALUES
-          (#{username}, #{password})
+            (#{username}, #{password})
     </insert>
 
     <select id="fetchAllWorkouts" resultType="com.training.dto.WorkoutDto">
         SELECT
-               *
+            *
         FROM
-             training.workouts;
+            training.workouts;
     </select>
 
     <select id="fetchById">
-        SELECT * FROM training.users WHERE id = #{id}
+        SELECT
+            *
+        FROM
+            training.users
+        WHERE
+            id = #{id}
     </select>
 
     <select id="findByUsername" resultType="com.training.dto.user.UserDto">
         SELECT
-               *
+            *
         FROM
-             training.users
-        WHERE username = #{username}
+            training.users
+        WHERE
+            username = #{username}
+    </select>
+
+    <select id="getId" resultType="java.lang.Integer">
+        SELECT
+            id
+        FROM
+            training.users
+        WHERE
+            username = #{username}
     </select>
 
 </mapper>

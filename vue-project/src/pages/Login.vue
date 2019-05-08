@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import { AUTH_REQUEST } from '../store/constants'
+  import {AUTH_REQUEST, AUTH_REQUEST_GET_ID} from '../store/constants'
 
 
   export default {
@@ -37,7 +37,10 @@
         const { username, password } = this;
         this.$store.dispatch(AUTH_REQUEST, { username, password })
           .then(() => {
-            this.routeTo('userWorkouts')
+            this.$store.dispatch(AUTH_REQUEST_GET_ID, username)
+              .then(() => {
+                this.routeTo('userWorkouts')
+              })
           }).catch(() => {
             this.error = 'Bad credentials'
         })

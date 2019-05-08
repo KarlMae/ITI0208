@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ userWorkouts }}
+
   </div>
 </template>
 
@@ -12,6 +12,7 @@
     },
     data() {
       return {
+        userId: Number,
         userWorkouts: String,
         error: null
       }
