@@ -12,18 +12,18 @@
         :image="workout.image"
     />
     <div role="tablist">
-      <template v-for="(group, index) in categories">
+      <template v-for="(group, groupIndex) in categories">
         <div v-bind:key="group">
-          <b-button block href="#" v-b-toggle="'accordion-' + index">{{ group }}</b-button>
-          <b-collapse :id="'accordion-' + index" accordion="my-accordion" role="tabpanel">
+          <b-button block href="#" v-b-toggle="'accordion-' + groupIndex">{{ group }}</b-button>
+          <b-collapse :id="'accordion-' + groupIndex" accordion="my-accordion" role="tabpanel">
             <b-card-body>
 
-              <template v-for="exercise in exercisesByCategory(group)">
+              <template v-for="(exercise, exerciseIndex) in exercisesByCategory(group)">
                 <exercise-component
                     v-if="exercise"
                     v-bind:key="exercise.id"
                     :exercise="exercise"
-                    :field-validators="$v.workout.exerciseGroups.$each[index].name"
+                    :field-validators="$v.workout.exerciseGroups.$each[exerciseIndex].name"
                     :is-save-pressed="isSavePressed"
                     @removeExercise="removeExercise"
                     @addSet="addSet"

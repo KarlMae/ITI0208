@@ -24,7 +24,9 @@
     },
     watch: {
       value: {
-        handler() {}
+        handler(newValue) {
+          this.actualValue = newValue;
+        }
       },
       actualValue(newVal, oldVal) {
         if (isNaN(newVal) || newVal > 100) {
