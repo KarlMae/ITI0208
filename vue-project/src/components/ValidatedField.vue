@@ -93,4 +93,10 @@
   .label {
     text-align: left;
   }
+
+  .text-input {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
 </style>
