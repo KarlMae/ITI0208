@@ -84,6 +84,7 @@
 
   .header {
     position: relative;
+    padding: 0 2rem;
   }
 
   .close-button {
@@ -113,6 +114,7 @@
     margin: 1rem 0;
     background-color: #3a3a3a;
     color: #f0f0f0;
+    width: 8rem;
   }
 
   .btn:focus{
@@ -123,7 +125,8 @@
 
   .buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 2rem;
   }
 
   .title {
