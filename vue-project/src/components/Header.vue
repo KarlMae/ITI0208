@@ -54,10 +54,10 @@
         this.closeNav();
         this.$router.push({ name: path });
       },
-      logout() {
+      logOut() {
         this.$store.dispatch(AUTH_LOGOUT)
           .then(() => {
-            this.routeTo('login')
+            this.routeTo('home')
           })
       }
     }
