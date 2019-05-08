@@ -21,7 +21,7 @@
           </div>
 
           <EditModalRow
-              v-if="selectedSet.repetitions !== 0"
+              v-if="selectedSet.repetitions"
               name="repetitions"
               :repetitions="selectedSet.repetitions"
               @add="add"
@@ -29,7 +29,7 @@
           />
 
           <EditModalRow
-              v-if="selectedSet.duration !== 0"
+              v-if="selectedSet.duration"
               name="duration"
               :duration="selectedSet.duration"
               @add="add"
@@ -37,7 +37,7 @@
           />
 
           <EditModalRow
-              v-if="selectedSet.weight !== 0"
+              v-if="selectedSet.weight"
               name="weight"
               :weight="selectedSet.weight"
               @add="add"
@@ -95,8 +95,8 @@
         this.$store.commit('updateCurrentExercise', this.selectedExercise);
         this.$emit('close')
       },
-      selectSet(setNumber) {
-        this.$store.commit('selectSet', setNumber);
+      selectSet(index) {
+        this.$emit('selectSet', index);
       },
       add(element) {
         this.selectedSet[element] = this.selectedSet[element] + 1

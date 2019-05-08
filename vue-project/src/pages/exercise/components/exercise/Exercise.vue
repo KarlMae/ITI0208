@@ -11,15 +11,15 @@
         <div v-bind:key="currentSet.name">
           <h2 id="name">{{ currentSet.name }}</h2>
           <p id="reps" v-if="currentSet.repetitions">Repetitions: {{ currentSet.repetitions }}</p>
-          <p id="weight" v-if="currentSet.weight">Weight: {{ currentSet.weight }}</p>
-          <p id="duration" v-if="currentSet.duration">Duration: {{ format(currentSet.duration) }}</p>
+          <p id="weight" v-if="currentSet.hasOwnProperty('weight')">Weight: {{ currentSet.weight }} kg</p>
+          <p id="duration" v-if="currentSet.hasOwnProperty('duration')">Duration: {{ format(currentSet.duration) }}</p>
         </div>
 
         <div class="set-selector">
           <SetSelector
               :set-count="currentExercise.length"
               :set="currentSet.set"
-              name="exercise"
+              :name="currentSet.name"
               @selectSet="selectSet"
           />
         </div>
@@ -42,7 +42,7 @@
       },
       currentExercise() {
         return this.$store.getters.currentExercise.sets;
-      }
+      },
     },
     methods: {
       format: function (duration) {
@@ -54,11 +54,11 @@
           return `${min} min ${sec} sec`;
       },
       selectSet(index) {
-        this.$store.commit('selectSet', index)
+        this.$emit('selectSet', index);
       },
       openEditModal() {
         this.$emit('openEditModal');
-      }
+      },
     }
   }
 </script>
@@ -69,7 +69,7 @@
   }
 
   .exercise {
-    padding: 2rem;
+    padding: 2rem 0;
   }
 
   .transition-wrapper {

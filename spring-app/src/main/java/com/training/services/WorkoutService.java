@@ -32,7 +32,7 @@ public class WorkoutService {
     @Transactional
     public WorkoutDto update(WorkoutDto dto) {
         workoutDao.update(dto);
-        exerciseDao.deleteOldExercises(dto.getExerciseGroups().get(0).getSets().get(0).getWorkoutId());
+        exerciseDao.deleteOldExercises(dto.getId());
 
         insertExercises(dto);
 
