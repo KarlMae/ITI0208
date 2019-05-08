@@ -1,7 +1,6 @@
 <template>
   <div>
-    <p v-if="success">{{ success }}</p>
-    <br v-else>
+    <br>
     <form @submit.prevent="validateInput">
       <validated-field
         label="Username"
@@ -38,8 +37,7 @@
       return {
         username: '',
         password: '',
-        isSavePressed: false,
-        success: null
+        isSavePressed: false
       }
     },
     methods: {
@@ -52,10 +50,9 @@
         this.axios.post(process.env.VUE_APP_BACKEND_IP + '/user/sign-up', data, {
           headers: headers
         }).then(() => {
-            this.success = 'Account successfully created'
+            alert('Account successfully created')
           })
           .catch(() => {
-            this.success = null;
             alert('Username already taken')
           })
       },
