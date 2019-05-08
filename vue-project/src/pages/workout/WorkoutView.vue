@@ -1,18 +1,19 @@
 <template>
 
   <div>
-    <div class="workout-view">
+    <div class="workout-view margin-bottom">
       <WorkoutImage
           :src="workout.image"
       />
-      <div class="workout-info padding-bottom">
-        <h3>{{ workout.name }}</h3>
+      <div class="workout-info">
+        <h3 class="name">{{ workout.name }}</h3>
       </div>
     </div>
 
-    <div role="tablist" class="tablist padding-bottom">
+    <div role="tablist" class="tablist">
       <template v-for="group in groupNames">
         <Accordion
+            v-if="getWorkout(group).length"
             :workout="getWorkout(group)"
             :group="group"/>
       </template>
@@ -32,8 +33,6 @@
 
 <script>
   import axios from 'axios';
-  import Vue from 'vue'
-  import VueRouter from 'vue-router';
   import WorkoutImage from "../../components/WorkoutImage";
   import Accordion from "../../components/Accordion";
 
@@ -63,8 +62,7 @@
         this.$router.push({name: 'workoutEdit', params: {editWorkout: this.workout}});
       },
       getWorkout(category) {
-
-        return this.workout.exerciseGroups.filter(group => group.category === category)
+        return this.workout.exerciseGroups.filter(group => group.category === category);
       }
     },
     mounted() {
@@ -74,7 +72,7 @@
           this.workout = response.data;
         })
         .catch(e => {
-          this.errors.push(e)
+          this.errors.push(e);
         })
     }
   }
@@ -84,69 +82,31 @@
 <style lang="scss" scoped>
   @import "../../assets/colors";
 
-  ul, p {
-    margin: 0;
-    padding: 0;
+  p {
+    margin-bottom: 0;
   }
 
-  body {
-    padding: 1rem;
-  }
-
-  .workout-view h4 {
-    text-align: left;
-  }
-
-  .workout-info {
-    text-align: left;
-  }
-
-  .workout-info h3, p {
+  .name {
     font-weight: bolder;
-  }
-
-  .exercise-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid black;
-  }
-
-  .exercise-list:last-child {
-    border-bottom: none;
-  }
-
-  .b-card-body {
-    padding: 0;
-  }
-
-  .exercise {
-    border: 1px solid black;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
     text-align: left;
-    padding: 10px;
-    margin-bottom: 10px;
+    margin-top: 1rem;
+  }
+
+  .margin-bottom {
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    width: 35%;
+    height: 90%;
   }
 
   .btn-start {
-    width: 35%;
-    height: 90%;
     background-color: $primary-shade;
   }
 
   .btn-edit {
-    width: 35%;
-    height: 90%;
     background-color: $secondary-shade;
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    position: sticky;
-    bottom: 0;
   }
 
   .absolute {

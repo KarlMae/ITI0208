@@ -15,9 +15,9 @@ CREATE TABLE exercises (
   workout_id INTEGER NOT NULL,
   name VARCHAR(255) NOT NULL,
   category VARCHAR(255) NOT NULL DEFAULT 'Main exercises',
-  set INTEGER DEFAULT 1,
+  set INTEGER NOT NULL,
   repetitions INTEGER NOT NULL,
-  weight INTEGER DEFAULT NULL,
+  weight FLOAT DEFAULT NULL,
   duration INTEGER DEFAULT NULL
 );
 

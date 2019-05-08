@@ -89,11 +89,11 @@
       if (this.editWorkout) {
         this.workout = this.editWorkout;
         this.workout.exerciseGroups.forEach((group) => {
-            if (group.sets[0].weight) {
+            if (group.sets[0].weight !== null) {
               group.weighed = true;
             }
 
-            if (group.sets[0].duration) {
+            if (group.sets[0].duration !== null) {
               group.timed = true;
             }
 
@@ -110,7 +110,7 @@
         exerciseGroups: {
           $each: {
             name: {
-              minLength: minLength(5),
+              minLength: minLength(4),
               required
             }
           },
@@ -174,9 +174,12 @@
             group.sets.forEach(set => delete set.duration);
           }
 
+          let setIndex = 1;
           group.sets.forEach(set => {
             set.name = group.name;
             set.category = group.category;
+            set.set = setIndex;
+            setIndex += 1;
           });
         })
       },

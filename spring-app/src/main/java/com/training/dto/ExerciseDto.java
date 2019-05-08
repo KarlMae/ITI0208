@@ -16,6 +16,6 @@ public class ExerciseDto {
     private String category;
     private Integer set;
     private Integer repetitions;
-    private Integer weight;
+    private Double weight;
     private Integer duration;
 }

@@ -10,8 +10,10 @@
 
     <div class="exercise-section">
       <ExerciseImage/>
-      <Exercise @openEditModal="toggleEditModal"/>
-      <hr/>
+      <Exercise
+          @openEditModal="toggleEditModal"
+          @selectSet="selectSet"
+      />
       <Timer/>
     </div>
 
@@ -25,6 +27,7 @@
     <EditModal
         v-if="isModalVisible"
         @close="toggleEditModal"
+        @selectSet="selectSet"
     />
   </div>
 </template>
@@ -60,7 +63,10 @@ export default {
     },
     currentSet() {
       return this.$store.getters.currentSet;
-    }
+    },
+    selectSet(setNumber) {
+      this.$store.commit('selectSet', setNumber);
+    },
   },
   computed: {
     previousExercisePresent() {
@@ -77,6 +83,7 @@ export default {
 
   #exercise-view {
     height: 100%;
+    padding: 1rem;
   }
 
   .exercise-section {

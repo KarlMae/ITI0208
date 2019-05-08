@@ -10,9 +10,9 @@
     <amount-selector
         name="Repetitions"
         :value="set.repetitions"
-        @add="() => set.repetitions = parseInt(set.repetitions) + 1"
-        @remove="() => set.repetitions = parseInt(set.repetitions) - 1"
-        @set="(newVal) => set.repetitions = parseInt(newVal)"
+        @add="() => set.repetitions = parseFloat(set.repetitions) + 1"
+        @remove="() => set.repetitions = parseFloat(set.repetitions) - 1"
+        @set="(newVal) => set.repetitions = parseFloat(newVal)"
     />
 
     <amount-selector
@@ -20,9 +20,9 @@
         name="Duration"
         unit="s"
         :value="set.duration"
-        @add="() => set.duration = parseInt(set.duration) + 1"
-        @remove="() => set.duration = parseInt(set.duration) - 1"
-        @set="(newVal) => set.duration = parseInt(newVal)"
+        @add="() => set.duration = parseFloat(set.duration) + 1"
+        @remove="() => set.duration = parseFloat(set.duration) - 1"
+        @set="(newVal) => set.duration = parseFloat(newVal)"
     />
 
     <amount-selector
@@ -30,9 +30,9 @@
         name="Weight"
         unit="kg"
         :value="set.weight"
-        @add="() => set.weight = parseInt(set.weight) + 1"
-        @remove="() => set.weight = parseInt(set.weight) - 1"
-        @set="(newVal) => set.weight = parseInt(newVal)"
+        @add="() => set.weight = parseFloat(set.weight) + 1"
+        @remove="() => set.weight = parseFloat(set.weight) - 1"
+        @set="(newVal) => set.weight = parseFloat(newVal)"
     />
   </div>
 </template>

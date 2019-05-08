@@ -23,18 +23,16 @@
       }
     },
     watch: {
-      value(newVal, oldVal) {
-        newVal = parseInt(newVal);
-
+      value: {
+        handler() {}
+      },
+      actualValue(newVal, oldVal) {
         if (isNaN(newVal) || newVal > 100) {
           this.actualValue = oldVal;
         } else {
-          this.actualValue = newVal;
+          this.$emit('set', newVal);
         }
       },
-      actualValue(newVal) {
-        this.$emit('set', newVal);
-      }
     },
     methods: {
       add() {
